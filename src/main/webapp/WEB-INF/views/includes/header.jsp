@@ -40,9 +40,15 @@
 				<ul class="tab_1">
 					<a href="#"><li>HOME</li></a>
 					<a href="#" target="_blank"><li>회사소개</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
-					<a href="/register/step0"><li>회원가입</li></a>
-					<a href="/login"><li>로그인</li></a>
-					<a href="/mypage" target="_blank"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
+					<!-- 로그인 안됐을시 로그인/회원가입 보여줌 -->
+					<c:if test="${empty info}">
+						<a href="/login"><li>로그인</li></a>
+						<a href="/register/step0"><li>회원가입</li></a>
+					</c:if>
+					<!-- 로그인 되면 마이페이지 보여줌 -->
+					<c:if test="${!empty info}">
+						<a href="/mypage" target="_blank"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
+					</c:if>
 				</ul>
 				<div class="clear"></div>
 					<ul style="margin-top:15px;" class="tab_2">

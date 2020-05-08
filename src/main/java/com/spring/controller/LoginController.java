@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.domain.AuthInfo;
+import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
 import com.spring.service.KakaoService;
 import com.spring.service.RegisterService;
@@ -28,11 +30,8 @@ public class LoginController {
 	@Autowired
 	private RegisterService service;
 	
-	@GetMapping("/login")
-	public void login() {
-		
-	}
-	
+
+// 	---------------------------- 회원가입 관련 ------------------------------
 	
 	@GetMapping("/register/step0")
 	public void step0() {
@@ -92,9 +91,24 @@ public class LoginController {
         session.setAttribute("nickname", nickname);
 			
 	}
+
+// -------------------------- 로그인 관련 -------------------------------------
 	
-	@GetMapping("/register/test")
-	public void test() {
+	@GetMapping("/login")
+	public void login() {
 		
+	}
+	
+	@PostMapping("/login")
+	public String loginPost(LoginVO vo,HttpSession session) {
+		
+		AuthInfo info = service.loginMember(vo);
+		
+		if(info!=null) {
+			session.setAttribute("info", info);
+			return "redirect:/";
+		}else {
+			return "redirect:/login";
+		}
 	}
 }

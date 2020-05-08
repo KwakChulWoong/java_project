@@ -4,8 +4,13 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertMember">
-		insert into members(userid,name,passwd,passwdconfirm,gender,email) 
-		values(#{userid},#{name},#{passwd},#{passwdConfirm},#{gender},#{email})
+		insert into members(userid,name,passwd,passwdconfirm,gender,address,email) 
+		values(#{userid},#{name},#{passwd},#{passwdconfirm},#{gender},#{address},#{email})
 	</insert>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="com.spring.domain.AuthInfo">
+		select userid,name from members where userid=#{userid} and passwd=#{current_password}
+	</select>
 
 </mapper>

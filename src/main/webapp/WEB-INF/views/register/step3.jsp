@@ -21,6 +21,6 @@
 		</ol>
 	</header>
 
-<h1> 반갑습니다 </h1>
+<h1> ${vo.name}님 반갑습니다 </h1>
 </body>
 </html>

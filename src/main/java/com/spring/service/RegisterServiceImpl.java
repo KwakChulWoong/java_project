@@ -3,6 +3,8 @@ package com.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.domain.AuthInfo;
+import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
 import com.spring.mapper.RegisterMapper;
 
@@ -15,6 +17,11 @@ public class RegisterServiceImpl implements RegisterService {
 	@Override
 	public boolean registMember(RegisterVO vo) {
 		return mapper.insertMember(vo)>0?true:false;
+	}
+
+	@Override
+	public AuthInfo loginMember(LoginVO vo) {
+		return mapper.login(vo);
 	}
 
 }
