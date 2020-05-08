@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="includes/header.jsp"/>
-
+<link href="/resources/dist/css/mypage.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <div>
 <!-- 서브 메뉴 -->
 	<div class="mytmall_menu" style="float:left;">
@@ -16,7 +18,7 @@
 	    
 	    <dl class="third">
 	        <dt><strong>회원 탈퇴</strong></dt>
-	        <dd><a href="http://buy.11st.co.kr/order/OrderList.tmall" >회원 탈퇴</a></dd>
+	        <dd><a href="/leave/leave" >회원 탈퇴</a></dd>
 	    </dl>
 	    
 	    <dl class="fourth">
@@ -31,31 +33,30 @@
 	</div>
 	<!-- //서브메뉴 -->
 	
-
-	<!-- 테이블 -->
-	<div style="float:left;">
-		<table>
+	<div id="mystyle" style="float:left; margin-left:50px;">
+		<!-- 테이블 -->
+		<table class="table table-hover" style="width:870px; margin-top:10px;">
 		    <caption>
 				거래 내역
 		    </caption>
 		    <thead>
-		        <tr>
+		        <tr style="width:200px;">
 		            <th>작성일자</th>
-		            <th>물품 상세정보</th>
-		            <th>가격</th>
+		            <th class="text-center">물품 상세정보</th>
+		            <th class="text-center">가격</th>
 		        </tr>
 		    </thead>
 		
 		    <tbody>
 		        <tr>
 		            <td>2020-05-06</td>
-		            <td>캠핑카</td>
-		            <td>$22</td>
+		            <td class="text-center">캠핑카</td>
+		            <td class="text-center">$22</td>
 		        </tr>
 		        <tr>
 		            <td>2020-05-11</td>
-		            <td>피아노</td>
-		            <td>$17</td>
+		            <td class="text-center">피아노</td>
+		            <td class="text-center">$17</td>
 		        </tr>
 		    </tbody>
 		</table>
