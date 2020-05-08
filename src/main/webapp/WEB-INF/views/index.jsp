@@ -90,9 +90,14 @@
        </nav>
        <section class="cards-wrap">
            <article class="card-top">
-               <a class="card-link" data-event-label="79349776" href="/articles/79349776">
+               <a class="card-link" data-event-label="79349776" href="/board/ItemDetail">
                    <div class="card-photo">
-                       <img alt="철제 케비넷" src="https://dnvefa72aowie.cloudfront.net/origin/article/202004/45d54176373319865a7cacb8841143bf0b0980a034e73a4ffac0e9856730f058.webp?q=82&amp;s=300x300&amp;t=crop" />
+                      <!--  <img alt="철제 케비넷" src="https://dnvefa72aowie.cloudfront.net/origin/article/202004/45d54176373319865a7cacb8841143bf0b0980a034e73a4ffac0e9856730f058.webp?q=82&amp;s=300x300&amp;t=crop" /> -->
+                   <img
+                            
+                              alt="이케아 선반 판매합니다~의 사진 2"
+                              src="https://dnvefa72aowie.cloudfront.net/origin/article/202004/013DCA043E91076B4E2AEF3EA5DBF128EE60D5C4D0DFDC09A3F04F949AA12420.jpg?q=95&amp;s=1440x1440&amp;t=inside"
+                            />
                    </div>
                    <div class="card-desc">
                        <h2 class="card-title">철제 케비넷</h2>
@@ -100,7 +105,7 @@
                            경남 김해시 내덕동
                        </div>
                        <div class="card-price">
-                           5,000원
+                           10,000원
                        </div>
                        <div class="card-counts">
                            <span>
