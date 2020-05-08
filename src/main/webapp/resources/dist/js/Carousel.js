@@ -27,7 +27,7 @@ class Carousel {
 
     // default setting
 //    this.element.children[0].style.width = `${this.element.clientWidth * this.element.children[0].children.length}px`;
-    for (let i = 0; i < this.element.children[0].children.length; i++) {
+    for (let i = 0; i < this.element.children[0].children.length-1; i++) { //이거 해야지 마지막에 아무것도 없는 화면이 안뜸
       this.element.children[0].children[i].style.width = `${this.element.clientWidth}px`;
     };
 
