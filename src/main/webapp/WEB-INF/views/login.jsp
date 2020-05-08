@@ -24,7 +24,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>로그인</h3>
+                    <h3 style="text-align:center;">로그인</h3>
                 </div>
                 <div class="card-body">
                     <form>

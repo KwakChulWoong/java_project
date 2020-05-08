@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class LeaveController {
+public class SignOutController {
 	
-	@GetMapping("/leave/leave")
+	@GetMapping("/signout/signout")
 	public String home(Locale locale, Model model) {
-		return "/leave/leave";
+		return "/signout/signout";
 	}
 }

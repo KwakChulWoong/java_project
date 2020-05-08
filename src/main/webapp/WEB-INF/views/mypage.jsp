@@ -18,7 +18,7 @@
 	    
 	    <dl class="third">
 	        <dt><strong>회원 탈퇴</strong></dt>
-	        <dd><a href="/leave/leave" >회원 탈퇴</a></dd>
+	        <dd><a href="/signout/signout" >회원 탈퇴</a></dd>
 	    </dl>
 	    
 	    <dl class="fourth">
