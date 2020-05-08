@@ -92,9 +92,5 @@ public class LoginController {
         session.setAttribute("nickname", nickname);
 			
 	}
-	
-	@GetMapping("/register/test")
-	public void test() {
-		
-	}
+
 }
