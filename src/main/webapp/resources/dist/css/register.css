@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.body_extend .member_wrap{width:960px;margin:49px auto 60px;border:none;padding:0;}
+.member_header{position:relative;z-index:1;padding-bottom:28px;margin-bottom:41px;border-bottom:1px solid #333;}
+.member_header .tit{font-size:26px;color:#111;line-height:28px;}
+.member_header .tit span{display:inline-block;margin-bottom:2px;}
+.member_header .location{position:absolute;right:0;top:12px;}
+.member_header .location li{float:left;margin-left:18px;font-size:15px;letter-spacing:-0.5px;color:#999;}
+.member_header .location li.on{color:#111;font-weight:bold;}
+
+.join_person {
+    position: relative;
+    z-index: 2;
+    width: 960px;
+    height: 400px;
+    background: url(/resources/images/person.png) no-repeat 0 0;
+}
