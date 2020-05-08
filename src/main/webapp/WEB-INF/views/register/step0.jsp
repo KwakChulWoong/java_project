@@ -39,7 +39,11 @@
 					<ul class="sns_list">
 <!--						<li><a href="javascript:goOauth('naver');"><span class="sp_login naver">네이버계정으로 가입</span></a></li> -->
 																							
-						<li><a href="javascript:goOauth('kakao');"><span class="sp_login kakao"><img id="loginClass" src="../resources/img/kakao_login_btn_medium_wide.png"/>카카오계정으로 가입</span></a></li>
+						<li><a href="https://kauth.kakao.com/oauth/authorize
+							?client_id=aa1b2c4de3d7d82d21d7071bd9edf938
+							&redirect_uri=http://localhost:8080/register/kakaologin
+							&response_type=code">
+							<span class="sp_login kakao"><img id="loginClass" src="../resources/dist/images/kakao_login_btn_medium_wide.png"/>카카오계정으로 가입</span></a></li>
 					</ul>
 				</li>
 			</ul>
