@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="/resources/css/mycss.css" /> 
+<link rel="stylesheet" href="/resources/dist/css/register.css" /> 
 <style>
 	.body{
 	
@@ -37,7 +37,7 @@
 				<li>	
 <!-- 					<button id="oauthListButton" type="button" class="btn_join" onclick="toggleOauthJoin();">소셜계정 간편가입<span>리스트 열기</span></button> -->
 					<ul class="sns_list">
-						<li><a href="javascript:goOauth('naver');"><span class="sp_login naver">네이버계정으로 가입</span></a></li>
+<!--						<li><a href="javascript:goOauth('naver');"><span class="sp_login naver">네이버계정으로 가입</span></a></li> -->
 																							
 						<li><a href="javascript:goOauth('kakao');"><span class="sp_login kakao"><img id="loginClass" src="../resources/img/kakao_login_btn_medium_wide.png"/>카카오계정으로 가입</span></a></li>
 					</ul>

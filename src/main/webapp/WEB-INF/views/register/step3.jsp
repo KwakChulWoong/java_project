@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 완료</title>
-<link rel="stylesheet" href="/resources/css/mycss.css" />  
+<link rel="stylesheet" href="/resources/dist/css/register.css" />  
 </head>
 <body>
 <header class="member_header">
