@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.mytmall_menu { border: 1px solid #cdcdcd; border-top: none; width: 163px; padding-bottom: 20px; margin-left:410px;}
+
+.mytmall_menu dl { border-top: 1px solid #e4e4e4; padding: 10px 0 4px 20px; }
+
+.mytmall_menu dl.first { border: none; }
+
+.mytmall_menu dl dt { padding-bottom: 12px; }
+
+.mytmall_menu dl dt a, .mytmall_menu dl dt strong { font-weight: bold; color: #252525; }
+
+.mytmall_menu dl dd { padding: 0 0 3px 1px; }
+
+.mytmall_menu dl dd a { display: inline-block; font-size: 11px; color: #666; vertical-align: middle; line-height: 15px; }
+
+.mytmall_menu dl dd a:hover { text-decoration: underline; }
+
+.mytmall_menu dl dd a.select { font-weight: bold; }
+
+.mytmall_menu dl dd.special { margin-right: 20px; padding-top: 6px; background: url("/img/mytmall_v2/mytmall_dot03.gif") repeat-x left top; }
+
+.mytmall_menu dl dd .ic_twit, .mytmall_menu dl dd .ic_fbook, .mytmall_menu dl dd .ic_clog, .mytmall_menu dl dd .ic_metoday { display: inline-block; cursor: pointer; }
+
+.mytmall_menu dl dd .ic_twit span, .mytmall_menu dl dd .ic_fbook span, .mytmall_menu dl dd .ic_clog span, .mytmall_menu dl dd .ic_metoday span { display: block; background: url("/img/mytmall_v2/mytmall_v1b.jpg") no-repeat; width: 15px; height: 14px; text-indent: -5000px; overflow: hidden; }
+
+.mytmall_menu dl dd .ic_twit span { background-position: 0 -134px; }
+
+.mytmall_menu dl dd .ic_fbook span { background-position: -22px -134px; }
+
+.mytmall_menu dl dd .ic_clog span { background-position: -43px -134px; }
+
+.mytmall_menu dl dd .ic_metoday span { background-position: -65px -134px; }
+
+table {
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid red;
+  padding: 10px;
+}
+th {
+  border: 1px solid red;
+}
+
+body > div:nth-child(3) > div.mytmall_menu {display:block; float:left;}

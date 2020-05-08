@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+#container-fulid {width:100%; height:auto; float:left;  display:block;}
+#footer_warp{width:1106px; margin:0 auto;}
+#footer{ padding:0; margin-top:30px; height:auto; display:block;}
+/*#footer { width: 1144px;  padding:0; float:left; margin-bottom: 10px;}*/
+#footer .footer_bar {width:1095px; height:24px; font-size:12px; float:left; padding:10px 0 0 10px; background:#f7f8f8; border-bottom:#cecece solid 1px;  border-top:#cecece solid 1px;}
+#footer .footer_bar ul { display:inline;}
+#footer .footer_bar ul li { display:inline; }
+#footer .footer_bar ul li:nth-child(2n) { padding:0 20px; color:#cecece;}
+#footer .footer_bar select {float:right; margin:3px;}
+
+#footer ul li:nth-child(1) {padding-right:0; }
+#footer ul li a { color: #6d6d6d; font-weight:bold;}
+#footer .pan1 { padding:0 10px 10px 30px; float:left; position:relative; color:#3e3e3e;}
+#footer .pan1 .logo { display:inline; margin-bottom:40px;}
+#footer .pan1 .footer_txt { display:inline-block; padding:20px 0 0 40px; }
+#footer .pan1 .footer_txt p { font-size:12px; margin:5px;}
+#footer .pan1 .footer_txt p:nth-child(5) { margin-top:10px; color:#838383; }
+#footer .pan1 .footer_txt p:nth-child(6) { color:#838383; }
+
+#footer .pan2 {border:1px solid blue; position:absolute; right:0; top:32px; font-size:13px;  padding:0 10px; margin:0;  font-weight:bold; margin-top:10px;}
+#footer .pan2 > div {  display:block; border-left:0px solid #d2d2d2;}
+#footer .pan2 .footer_num { padding:0 20px 0 15px;  }
+#footer .pan2 p { font-size:15px; display:none; }
+#footer .pan2 .footer_num div { display:inline-block; padding:10px; }
+#footer .pan2 .footer_num p { padding:0 0 22px 0; }
+#footer .pan2  .footer_num .footer_b { color:#0389da; display:inline-block; font-size:20px; padding-bottom:28px;}
+#footer .pan2 .footer_num img { display:block;}
+#footer .pan2 .footer_num span  {  font-size:15px;}
+#footer .pan2 .footer_serv {  padding:0 20px; }
+#footer .pan2 .footer_serv a { display:inline-block; padding:10px; }
+#footer .pan2 .footer_serv p { padding:10px; }
+
+#footer .pan2_2018 { padding:35px 0px 0px 50px; float:left;}
+#footer .pan2_2018 div {float:left;  }
+#footer .pan2_2018 table tr td {padding:3px; border:none; }
+#footer .pan2_2018 table { border-right:1px solid #afafaf;}
+#footer .pan2_2018 a {text-align:center;}
+#footer .f_icon1 {margin:15px; 0px 20px; 30px; padding-left:30px; font-size:14px;}
+#footer .f_icon1 p:hover,.f_icon2 p:hover{border-bottom:1px solid #6a6a6a;}
+#footer .f_icon2 {margin:15px; 0px 20px; 0px; font-size:14px; }

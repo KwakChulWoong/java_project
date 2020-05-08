@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/*@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+ @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); */
+
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+
+
+* {margin:0; padding:0; font-family:"NanumBarunGothic" "Nanum Gothic", dotum, sans-serif; /*word-spacing: -5px;*/ letter-spacing: -1px;} /* "Noto Sans KR",*/
+.clear {clear:both;}
+a{font-style:none; text-decoration:none; }
+img {border:0;}
+h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}
+
+html, body {width:100%; height:100%;    font-family: 'NanumBarunGothic', 'Nanum Gothic', sans-serif; } /* 'Noto Sans KR', */
+table {border-collapse: collapse;}
+th,td {border-bottom:solid 1px #eee;}
+
+.title {font-size:30px; padding:25px 0 10px 0;}
+.route {font-size:13px; color:#999; display:block;}
+.font_03 {color:#A6CE39; font-size:22px; margin: 0 0 40px 0; font-weight: bold;}
+.side_menu {width:170px; margin:0 20px 20px 0; float:left;}
+.side_menu .side_menu_title {width:170px; height:45px; background-color:#009247; border:solid 1px #009247; border-bottom:solid 3px #C2BFBC;}
+.side_menu .side_menu_title span {color:white; font-size:18px; position:relative; top:10px; left:5px;}
+.side_menu .side_menu_sub {width:172px; height:45px; border-bottom:solid 1px 00522C#C2BFBC;}
+.side_menu .side_menu_sub .on {color:#005A30; font-size:14px; font-weight:bold; position:relative; top:11px; left:5px;}
+.side_menu .side_menu_sub .off {color:#787878; font-size:14px; font-weight:bold; position:relative; top:11px; left:5px;}
+
+.title { font-size:34px; font-weight:regular; margin-top:10px; border-bottom:1px solid #e9e9e9; margin-bottom:20px; padding-bottom:25px;}
+.route {font-size:13px; color:#939393; display:block; margin-top:50px;}
+.font_03 {color:#333; font-size:22px; }
+.title_tex {font-size:14px; color:#3b3b3b; margin-bottom:50px;}
+.side_menu {width:170px; margin:0 20px 20px 0; float:left;}
+.side_menu .side_menu_title {width:180px; height:150px; background-color:#3cb149; border-bottom:4px solid #009247; margin-top:50px; margin-bottom:20px;}
+.side_menu .side_menu_title span {width:100px; height:auto; color:white; font-size:22px; font-weight:;  position:relative; top:40%; left:20%;}
+.side_menu .side_menu_sub {width:180px; height:45px;}
+.side_menu .side_menu_sub .on {color:#009247; font-size:14px; font-weight:bold; position:relative; top:11px; left:5px;}
+.side_menu .side_menu_sub .off {color:#333; font-size:14px; font-weight:bold; position:relative; top:11px; left:5px;}
+.sub_contents_title {width:870px; float:left;  padding-left:30px;}
+input[type=checkbox] {width: 25px; height: 25px; border:1px solid #333;  background:#fff; }
+#container-fulid {width:100%; height:auto; float:left;  display:block;}
+#wrap {margin:0 auto;}
+
+#header {height:116px; padding:7px 0 0px 0;  }
+#header .header_logo {width:190px; float:left; padding:10px 0 0 0;}
+#header .header_logo img{width: 100px; margin-left: 50px;}
+#header .header_list {width:948x; float:right; }
+#header .header_list ul {text-align:right;}
+#header .header_list ul a {color:#888; text-decoration:none;}
+#header .header_list .tab_0 {margin: 0 0 0 30px; float:left; height:25px;}
+#header .header_list .tab_0 img {height: auto; padding: 0; margin: 0; z-index: 0; position: absolute; top: 0;}
+#header .header_list .tab_0 img:hover {cursor: pointer;}
+#header .header_list .tab_1 {margin:0 20px 0 0; height:25px; float: right;}
+#header .header_list .tab_1 a {float:left; display:block; width:80px; text-align:center; font-size:13px;}
+#header .header_list .tab_1 img {float:left; position:relative; left:10px; top:-3px;}
+#header .header_list .tab_1 li {list-style:none;}
+#header .header_list .tab_2 {margin:28px 0 0px 0; height:50px; float:right;  }
+#header .header_list .tab_2 a {color:#000;}
+#header .header_list .tab_2 li {float:left; display:block; width:145px; text-align:center;  font-size:16px; font-weight:bold; cursor:pointer;}
+#header .header_list .tab_2 li:hover {color:#005A30;}
+#header .header_list .tab_2 li span {color:#888; font-size:14px;}
+#header .header_tab {width:100%; min-width:1144px; padding:9px 0 10px 0; background:#3f8644; font-size:14px; position:absolute; left:0; top:123px; color:#FFF;}
+#header .header_tab div {width:1144px; margin:0 auto;}
+#header .header_tab a {color:#FFF; text-decoration:none;}
+#header .header_tab span {margin:0; padding:9px 11px 10px 11px; cursor:pointer;}
+#header .header_tab span:hover {background:#a63434; color:#fff;}
+#header .header_tab .tab1 {margin:0 0 0 420px;}
+#header .header_tab .tab2 {margin:0 0 0 575px;}
+#header .header_tab .tab3 {margin:0 0 0 570px;}
+#header .header_tab .tab4 {margin:0 0 0 500px;}
+#header .header_tab .tab5 {margin:0 0 0 300px;}
+#header .header_tab .tab6 {margin:0 0 0 800px;}
+#header .header_b {width:1146px; margin: 0 auto;  }
+#header .header_con {float:left; width:112px; margin:45px 5px 20px 0;}
+
+.topnav input[type=text] {
+  float: left;
+  padding: 6px;
+  border: none;
+  margin-top: 37px;
+  margin-right: 16px;
+  font-size: 17px;
+  margin-left:500px;
+  border : 2px solid #a3ada8;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
