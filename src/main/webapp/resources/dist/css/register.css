@@ -7,7 +7,9 @@
 .member_header .location{position:absolute;right:0;top:12px;}
 .member_header .location li{float:left;margin-left:18px;font-size:15px;letter-spacing:-0.5px;color:#999;}
 .member_header .location li.on{color:#111;font-weight:bold;}
-
+ul, ol, li {
+    list-style: none;
+}
 .join_person {
     position: relative;
     z-index: 2;
@@ -15,3 +17,4 @@
     height: 400px;
     background: url(/resources/images/person.png) no-repeat 0 0;
 }
+

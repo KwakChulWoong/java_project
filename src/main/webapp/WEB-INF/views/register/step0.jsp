@@ -43,7 +43,7 @@
 							?client_id=aa1b2c4de3d7d82d21d7071bd9edf938
 							&redirect_uri=http://localhost:8080/register/kakaologin
 							&response_type=code">
-							<span class="sp_login kakao"><img id="loginClass" src="../resources/dist/images/kakao_login_btn_medium_wide.png"/>카카오계정으로 가입</span></a></li>
+							<span class="sp_login kakao"><img id="loginClass" src="../resources/images/kakao_login_btn_medium_wide.png"/></span></a></li>
 					</ul>
 				</li>
 			</ul>
