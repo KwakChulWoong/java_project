@@ -49,14 +49,14 @@ $(function(){
 	<div class="form-group row justify-content-center">
 		<label for="pass1" class="col-sm-2 col-form-label">비밀번호</label>
 		<div class="col-sm-6">	
-			<input type="password" name="password" id = "password" class="form-control" placeholder="비밀번호를 입력하세요" />
+			<input type="password" name="passwd" id = "passwd" class="form-control" placeholder="비밀번호를 입력하세요" />
 			<small id="password" class="text-info"></small>	
 		</div>
 	</div>	
 	<div class="form-group row justify-content-center">
 		<label for="pass2" class="col-sm-2 col-form-label">비밀번호 확인 </label>
 		<div class="col-sm-6">	
-			<input type="password" name="confirm_password" id = "confirm_password" class="form-control" placeholder="비밀번호를 다시 입력하세요"/>
+			<input type="password" name="passwdConfirm" id = "passwdConfirm" class="form-control" placeholder="비밀번호를 다시 입력하세요"/>
 			<small id="confirm_password" class="text-info"></small>
 		</div>	
 	</div>	

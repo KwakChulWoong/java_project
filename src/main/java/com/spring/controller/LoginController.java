@@ -8,18 +8,25 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.domain.RegisterVO;
 import com.spring.service.KakaoService;
+import com.spring.service.RegisterService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class LoginController {
 	
 	@Autowired
 	private KakaoService kakao;
-	
+	@Autowired
+	private RegisterService service;
 	
 	@GetMapping("/login")
 	public void login() {
@@ -51,8 +58,23 @@ public class LoginController {
 	}
 	
 	@PostMapping("/register/step3")
-	public void step3() {
-		
+	public String step3(@ModelAttribute("vo")RegisterVO vo) {
+		//step2.jsp 에서 회원가입정보 가져오기
+		log.info("vo" + vo);
+		//password와 confirm_password 값이 다르게
+		//입력되었다면 step2로 보내기
+		//같다면 step3으로 이동
+		if(vo.isPasswordEqualToConfirmPassword()) {
+			//회원가입
+			if(service.registMember(vo)) {
+				return "/register/step3";
+				
+			}else {
+				return "/register/step2";
+			}
+		}else {
+			return "/register/step2";
+		}
 	}
 	
 	@GetMapping("/register/kakaologin")
