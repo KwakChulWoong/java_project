@@ -27,18 +27,18 @@
                     <h3>로그인</h3>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="아이디">
+                            <input type="text" name="userid" class="form-control" placeholder="아이디">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="비밀번호">
+                            <input type="password" name="current_password" class="form-control" placeholder="비밀번호">
                         </div>
                         <!-- 카카오톡 기존에 만들어놨던거 -->
                         <!-- <p id="kakaoLogin" style="float:right;">
