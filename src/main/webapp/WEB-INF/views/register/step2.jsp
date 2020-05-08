@@ -49,15 +49,15 @@ $(function(){
 	<div class="form-group row justify-content-center">
 		<label for="pass1" class="col-sm-2 col-form-label">비밀번호</label>
 		<div class="col-sm-6">	
-			<input type="password" name="password" id = "password" class="form-control" placeholder="비밀번호를 입력하세요" />
+			<input type="password" name="passwd" id = "passwd" class="form-control" placeholder="비밀번호를 입력하세요" />
 			<small id="password" class="text-info"></small>	
 		</div>
 	</div>	
 	<div class="form-group row justify-content-center">
 		<label for="pass2" class="col-sm-2 col-form-label">비밀번호 확인 </label>
 		<div class="col-sm-6">	
-			<input type="password" name="confirm_password" id = "confirm_password" class="form-control" placeholder="비밀번호를 다시 입력하세요"/>
-			<small id="confirm_password" class="text-info"></small>
+			<input type="password" name="passwdconfirm" id = "passwdconfirm" class="form-control" placeholder="비밀번호를 다시 입력하세요"/>
+			<small id="passwdconfirm" class="text-info"></small>
 		</div>	
 	</div>	
 	<div class="form-group row justify-content-center">
@@ -65,6 +65,13 @@ $(function(){
 		<div class="col-sm-6">	
 			<input type="text" name="name" id="name" class="form-control" placeholder="이름을 입력하세요" value="${vo.name}"/>
 			<small id="name" class="text-info"></small>
+		</div>	
+	</div>
+	<div class="form-group row justify-content-center">
+		<label for = "address" class="col-sm-2 col-form-label">주소</label>
+		<div class="col-sm-6">	
+			<input type="address" name="address" id="address" class="form-control" placeholder="서울시 노원구" value="${vo.address}"/>	
+			<small id="address" class="text-info"></small>		
 		</div>	
 	</div>
 	<div class="form-group row justify-content-center">
@@ -86,6 +93,7 @@ $(function(){
 			<small id="email" class="text-info"></small>		
 		</div>	
 	</div>
+	
 	<div class="form-group text-center">		
 		<button type="submit" class="btn btn-primary">입력</button>
 	    <button type="reset" class="btn btn-secondary">취소</button>		
