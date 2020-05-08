@@ -19,4 +19,8 @@ public class MyPageController {
 	public String home() {
 		return "mypage";
 	}
+	@GetMapping("/ChangePWD")
+	public String ChangePWD() {
+		return "ChangePWD";
+	}
 }
