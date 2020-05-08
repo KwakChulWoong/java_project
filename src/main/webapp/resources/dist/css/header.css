@@ -42,7 +42,7 @@ input[type=checkbox] {width: 25px; height: 25px; border:1px solid #333;  backgro
 #container-fulid {width:100%; height:auto; float:left;  display:block;}
 #wrap {margin:0 auto;}
 
-#header {height:116px; padding:7px 0 0px 0;  }
+#header {width:1900px; height:116px; padding:7px 0 0px 0;  }
 #header .header_logo {width:190px; float:left; padding:10px 0 0 0;}
 #header .header_logo img{width: 100px; margin-left: 50px;}
 #header .header_list {width:948x; float:right; }
