@@ -5,7 +5,7 @@
 #footer_warp{width:1106px; margin:0 auto;}
 #footer{ padding:0; margin-top:30px; height:auto; display:block;}
 /*#footer { width: 1144px;  padding:0; float:left; margin-bottom: 10px;}*/
-#footer .footer_bar {width:1095px; height:24px; font-size:12px; float:left; padding:10px 0 0 10px; background:#f7f8f8; border-bottom:#cecece solid 1px;  border-top:#cecece solid 1px;}
+#footer .footer_bar {width:1095px; height:24px; font-size:12px; float:left; padding:10px 0 30px 10px; background:#f7f8f8; border-bottom:#cecece solid 1px;  border-top:#cecece solid 1px;}
 #footer .footer_bar ul { display:inline;}
 #footer .footer_bar ul li { display:inline; }
 #footer .footer_bar ul li:nth-child(2n) { padding:0 20px; color:#cecece;}
@@ -33,7 +33,7 @@
 #footer .pan2 .footer_serv a { display:inline-block; padding:10px; }
 #footer .pan2 .footer_serv p { padding:10px; }
 
-#footer .pan2_2018 { padding:35px 0px 0px 50px; float:left;}
+#footer .pan2_2018 { padding:25px 0px 0px 50px; float:left;}
 #footer .pan2_2018 div {float:left;  }
 #footer .pan2_2018 table tr td {padding:3px; border:none; }
 #footer .pan2_2018 table { border-right:1px solid #afafaf;}

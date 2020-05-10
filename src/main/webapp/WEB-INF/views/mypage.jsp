@@ -35,7 +35,7 @@
 	
 	<div id="mystyle" style="float:left; margin-left:50px;">
 		<!-- 테이블 -->
-		<table class="table table-hover" style="width:870px; margin-top:10px;">
+		<table class="table table-hover table-bordered" style="width:870px; margin-top:10px;">
 		    <caption>
 				거래 내역
 		    </caption>

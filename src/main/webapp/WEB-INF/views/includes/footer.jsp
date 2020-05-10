@@ -35,7 +35,7 @@
 
 						<!-- KB에스크로 -->
 						<a href="#" onclick="javascript:onPopKBAuthMark();return false;" style="margin-left:100px;">
-							<img class="kbimg" src="https://oimg1.kbstar.com/img/obank/img_escrow_mark.gif" border="0"/>
+							<img class="kbimg" src="https://oimg1.kbstar.com/img/obank/img_escrow_mark.gif" border="0" style="margin-top:25px;"/>
 						</a>
 						<form name="KB_AUTHMARK_FORM" method="get">
 							<input type="hidden" name="page" value="C021590"/>
@@ -48,7 +48,7 @@
 					  <table>
 						  <tr>
 							  <td style="width:70px;">대표전화</td>
-							  <td style="color:#009247;  font-size:21px; width:150px; letter-spacing:0.5px;">010-9151-9526</td>
+							  <td style="color:#009247;  font-size:21px; width:230px; letter-spacing:0.5px;">010-9151-9526</td>
 						   </tr>
 						   <tr style="color:#6a6a6a;  font-size:14px;">
 							  <td>해외</td>
@@ -70,23 +70,52 @@
          </div>
 	</div>
 </div>
-<script src="/resources/dist/js/Carousel.js"></script>
-<script src="/resources/dist/js/style.js"></script>
+<!--  <script src="/resources/dist/js/Carousel.js"></script>-->
+<!--  <script src="/resources/dist/js/style.js"></script>-->
 <script src="/resources/dist/js/jquery.js"></script>
 <script>
-  window.onload = function(){
-	  var caro = new Carousel(document.querySelector('#carousel-banner'), {
-	    CarouselMotion: 'fade',
-	    naviPosition: 'right',
-	    naviStyle: 'button',
-	    autoMove: true,
-	    autoMoveTime: 3000,
-	    carouselIndex: 0
-	  });
-	  /*setTimeout(function(){
-		  $('#f_img').attr('src','/resources/images/res_4.jpg');
-	  }, 4000);*/
-  }
+	window.onload = function(){
+		/*var caro = new Carousel(document.querySelector('#carousel-banner'), {
+			CarouselMotion: 'fade',
+			naviPosition: 'right',
+			naviStyle: 'button',
+			autoMove: true,
+			autoMoveTime: 3000,
+			carouselIndex: 0
+		});*/
+		  /*setTimeout(function(){
+			  $('#f_img').attr('src','/resources/images/res_4.jpg');
+		  }, 4000);*/
+	  	$('.tab_2 li').mouseover(function() {
+			switch (this.className) {
+			case '1':
+				$('.header_tab div').html('<span style="margin-left:375px;"><a href="#">짜장</a></span><span><a href="#">짬뽕</a></span><span><a href="#">탕수육</a></span>');
+				break;
+			case '2':
+				$('.header_tab div').html('<span style="margin-left:530px;"><a href="#">하나</a></span><span><a href="#">둘</a></span><span><a href="#">셋</a></span></span>');
+				break;
+			case '3':
+				$('.header_tab div').html('<span style="margin-left:670px;"><a href="#">봉구스</a></span><span><a href="#">밥버거</a></span><span><a href="#">봉순이</a></span></span>');
+				break;
+			case '4':
+				$('.header_tab div').html('<span style="margin-left:825px;"><a href="#">참치</a></span><span><a href="#">연어</a></span><span><a href="#">육회</a></span></span>');
+				break;
+			case '5':
+				$('.header_tab div').html('<span style="margin-left:900px;"><a href="#">나가서</a></span><span><a href="#">저녁이나</a></span><span><a href="#">먹자</a></span></span>');
+				break;
+			}
+			var header_tab = document.getElementById('header_tab');
+			if (header_tab.style.display == 'none') {
+				$('.header_tab').slideDown();
+			}
+		});
+		$('html').mouseover(function(evt) {
+			if (evt.clientY >= 250) {
+				 $('.header_tab').slideUp() //드롭다운 메뉴에서 마우스가 얼마나 밑으로 내려갔을때 다시
+				// 드롭다운이 원상복귀 되는지
+			}
+		});	
+	}
 </script>
 </body>
 </html>

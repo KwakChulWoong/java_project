@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Carousel JS</title>
+  <title>3반 김철진</title>
   <link href="/resources/dist/css/Carousel.css" rel="stylesheet">
   <link href="/resources/dist/css/header.css" rel="stylesheet">
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
@@ -19,11 +19,11 @@
 
 <style>
   #carousel-banner {
-    width: 1903px;
+    width: 1900px;
   }
 </style>
 
-<body>
+<body style="overflow-x:hidden;">
 <div class="container-fluid" style="border-bottom:2px solid #008639; height:123px;">
    <div id="wrap">
       <div id="header">

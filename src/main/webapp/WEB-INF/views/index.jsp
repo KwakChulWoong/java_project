@@ -304,4 +304,15 @@
            </div>
 	</section>
 </section>
+<script src="/resources/dist/js/Carousel.js"></script>
+<script>
+var caro = new Carousel(document.querySelector('#carousel-banner'), {
+	CarouselMotion: 'fade',
+	naviPosition: 'right',
+	naviStyle: 'button',
+	autoMove: true,
+	autoMoveTime: 3000,
+	carouselIndex: 0
+});
+</script>
 <jsp:include page="includes/footer.jsp"></jsp:include>
