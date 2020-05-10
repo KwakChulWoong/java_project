@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>환영합니다</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Google Fonts Roboto -->
@@ -46,7 +46,7 @@
               <!--Grid row-->
               <div class="row wow fadeIn">
                 <!--Grid column-->
-                <div class="col-md-12 mb-4 white-text text-center wow fadeIn">
+                <div class="col-md-12 mb-4 white-text text-center wow fadeIn" style="margin-top:300px;">
                   <h3 class="display-3 font-weight-bold white-text mb-0 pt-md-5 pt-5">환영합니다</h3>
                   <hr class="hr-light my-4 w-75">
                   <h4 class="subtext-header mt-2 mb-4">회원가입을 해서 자유롭게 이용하세요</h4>

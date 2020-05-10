@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>3반 김철진</title>
+  <title>3반 렌탈샵</title>
   <link href="/resources/dist/css/Carousel.css" rel="stylesheet">
   <link href="/resources/dist/css/header.css" rel="stylesheet">
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
