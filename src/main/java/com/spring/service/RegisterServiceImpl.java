@@ -30,4 +30,10 @@ public class RegisterServiceImpl implements RegisterService {
 		return mapper.selectById(userid);
 	}
 
+	@Override
+	public boolean leaveMember(LoginVO vo) {
+		
+		return mapper.leave(vo)>0?true:false;
+	}
+
 }

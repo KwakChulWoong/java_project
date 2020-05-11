@@ -15,7 +15,11 @@
 	
 	<!-- 중복 아이디 검사 -->
 	<select id="selectById" resultType="com.spring.domain.RegisterVO">
-		select * from member where userid=#{userid}
+		select * from members where userid=#{userid}
 	</select>
 
+	<!-- 탈퇴처리 -->
+	<delete id="leave">
+		delete from members where userid=#{userid} and passwd=#{current_password} 
+	</delete>
 </mapper>

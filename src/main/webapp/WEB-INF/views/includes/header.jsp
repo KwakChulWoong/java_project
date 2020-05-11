@@ -37,7 +37,7 @@
 				<a href="javascript:openDirectPop()">&nbsp;</a>
 				<a href="javascript:openDirectPop(true)">&nbsp;</a>
 				<ul class="tab_1">
-					<a href="#"><li>HOME</li></a>
+					<a href="/"><li>HOME</li></a>
 					<a href="#" target="_blank"><li>회사소개</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
 					<!-- 로그인 안됐을시 로그인/회원가입 보여줌 -->
 					<c:if test="${empty info}">

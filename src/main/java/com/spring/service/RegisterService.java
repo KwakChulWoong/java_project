@@ -14,4 +14,7 @@ public interface RegisterService {
 	
 	//중복아이디 검사
 	public RegisterVO dupId(String userid);
+	
+	//탈퇴처리
+	public boolean leaveMember(LoginVO vo);
 }

@@ -68,7 +68,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        등록된 계정이 없으신가요?<a href="/" style="color:#ffc001;">회원 가입</a>
+                        등록된 계정이 없으신가요?<a href="/register/step0" style="color:#ffc001;">회원 가입</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="#" style="color:#ffc001;">비밀번호를 잊으셨나요?</a>

@@ -12,4 +12,6 @@ public interface RegisterMapper {
 	
 	public RegisterVO selectById(String userid);
 	
+	public int leave(LoginVO vo);
+	
 }
