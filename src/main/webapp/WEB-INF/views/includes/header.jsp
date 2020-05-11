@@ -46,7 +46,7 @@
 					</c:if>
 					<!-- 로그인 되면 마이페이지/로그아웃 보여줌 -->
 					<c:if test="${!empty info}">
-						<a href="/mypage" target="_blank"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
+						<a href="/mypage"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
 						<a href="/logout"><li>로그아웃</li></a>
 					</c:if>
 				</ul>

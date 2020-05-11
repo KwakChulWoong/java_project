@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.AuthInfo;
@@ -91,6 +92,21 @@ public class LoginController {
         session.setAttribute("nickname", nickname);
 			
 	}
+	
+	//중복아이디 검사
+	@ResponseBody
+	@PostMapping("/checkId")
+	public String checkId(String userid) {
+		log.info("중복 아이디 검사 "+userid);
+		
+		if(service.dupId(userid)!=null) {
+			log.info("널 아님");
+			return "false";
+		}else {
+			log.info("널");
+			return "true";
+		}
+	}
 
 // -------------------------- 로그인 관련 -------------------------------------
 	
@@ -116,7 +132,7 @@ public class LoginController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		//세션 해제 후 index 페이지로 이동
-		log.info("로그아웃 요청");
+//		log.info("로그아웃 요청");
 		session.removeAttribute("info");
 		return "redirect:/";
 	}

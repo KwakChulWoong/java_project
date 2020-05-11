@@ -12,5 +12,10 @@
 	<select id="login" resultType="com.spring.domain.AuthInfo">
 		select userid,name from members where userid=#{userid} and passwd=#{current_password}
 	</select>
+	
+	<!-- 중복 아이디 검사 -->
+	<select id="selectById" resultType="com.spring.domain.RegisterVO">
+		select * from member where userid=#{userid}
+	</select>
 
 </mapper>

@@ -24,4 +24,10 @@ public class RegisterServiceImpl implements RegisterService {
 		return mapper.login(vo);
 	}
 
+	@Override
+	public RegisterVO dupId(String userid) {
+		
+		return mapper.selectById(userid);
+	}
+
 }
