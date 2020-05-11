@@ -111,4 +111,13 @@ public class LoginController {
 			return "redirect:/login";
 		}
 	}
+	
+	//로그아웃 처리
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		//세션 해제 후 index 페이지로 이동
+		log.info("로그아웃 요청");
+		session.removeAttribute("info");
+		return "redirect:/";
+	}
 }
