@@ -19,36 +19,7 @@
 		};
 
 		var map = new kakao.maps.Map(container, options);
-		$(function(){
-			$.ajax({
-				type:'post',
-				url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDQKxbTt0MrFNH85kTJXzickMD5s88UVaI',
-				contentType:'application/json;charset=utf-8',
-				data:{
-		            'considerIp': True,
-		        },
-				success:function(result){
-					my_location = JSON.parse(result);
-					console.log(my_location);
-				}
-			})		
-			$(function(){
-				<!-- 좌표 가져오기 -->
-				$.ajax({
-					type:'post',
-					url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDQKxbTt0MrFNH85kTJXzickMD5s88UVaI',
-					data:{
-			            'considerIp': 'True',
-			        },
-			        dataType : 'text',
-					success:function(result){
-						my_location = JSON.parse(result);
-						console.log(my_location);
-						console.log("lat : "+my_location.location.lat);
-						console.log("lng : "+my_location.location.lng);
-					}
-				})		
-			})		
+		
 	</script>
 </body>
 </html>
