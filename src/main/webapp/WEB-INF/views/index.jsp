@@ -14,6 +14,7 @@
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
   <link href="/resources/dist/css/item.css" rel="stylesheet">	
   <link href="/resources/dist/css/image.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <style>
@@ -304,4 +305,109 @@
            </div>
 	</section>
 </section>
+
+<div id="map" style="width:100%;height:350px;"></div>
+<p>
+    <button onclick="setCenter()">지도 중심좌표 이동시키기</button> 
+    <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button> 
+</p>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=acc20eac6d82be9fa61d85de39eacd5c"></script>
+<script>
+ let mylat = "";
+ let mylng = "";
+	
+
+
+<!-- 좌표 가져오기 -->
+$.ajax({
+	type:'post',
+	url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDQKxbTt0MrFNH85kTJXzickMD5s88UVaI',
+	data:{
+           'considerIp': 'True',
+       },
+    dataType : 'text',
+    async : false,
+	success:function(result){
+		my_location=JSON.parse(result);
+		console.log(my_location);
+		console.log("lat : "+my_location.location.lat);
+		mylat=my_location.location.lat;
+		console.log("lng : "+my_location.location.lng);
+		mylng=my_location.location.lng;
+	}
+})		
+
+/* var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    }; */
+
+//이미지 지도에 표시할 마커입니다
+//이미지 지도에 표시할 마커를 아래와 같이 배열로 넣어주면 여러개의 마커를 표시할 수 있습니다
+
+//var item_location_list = new Array();
+/* item_location_list.push({
+	 
+    position: new kakao.maps.LatLng(mylat, mylng);
+}) */
+
+var markers = [
+ {
+	 
+     position: new kakao.maps.LatLng(mylat, mylng)
+ },
+ {
+     position: new kakao.maps.LatLng(mylat, mylng),
+     text: '텍스트 표시' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+ }
+];
+
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(mylat, mylng), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+    
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+
+function setCenter() {            
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+    
+    // 지도 중심을 이동 시킵니다
+    map.setCenter(moveLatLon);
+}
+
+function panTo() {
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(33.450580, 126.574942);
+    
+    // 지도 중심을 부드럽게 이동시킵니다
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    map.panTo(moveLatLon);            
+}    
+
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+
+for (var i = 0; i < markers.length; i ++) {
+    
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+    
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: markers[i].position, // 마커를 표시할 위치
+        image : markerImage // 마커 이미지 
+    });
+}
+</script>
+
 <jsp:include page="includes/footer.jsp"></jsp:include>

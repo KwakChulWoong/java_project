@@ -20,9 +20,4 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 		return "index";
 	}
-	
-	@PostMapping("/")
-	public String Map(Locale locale, Model model) {
-		return "/Map";
-	}
 }
