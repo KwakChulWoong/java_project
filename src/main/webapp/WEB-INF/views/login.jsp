@@ -62,7 +62,7 @@
                         </div>
                         <br>
                         <div class="row align-items-center remember" style="margin-top:30px;">
-                            <input type="checkbox">Remember Me
+                            <input type="checkbox" name="useCookie">Remember Me
                         </div>
                     </form>
                 </div>
