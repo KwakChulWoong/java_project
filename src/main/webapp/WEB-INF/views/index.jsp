@@ -316,9 +316,6 @@
 <script>
  let mylat = "";
  let mylng = "";
-	
-
-
 <!-- 좌표 가져오기 -->
 $.ajax({
 	type:'post',
