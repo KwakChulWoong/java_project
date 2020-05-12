@@ -72,10 +72,15 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardVO> getList() throws Exception {
-		
-		return null;
+	public List<AttachFileDTO> getAttachlist(int bno) {
+
+		return attach.select(bno);
 	}
 
+	@Override
+	public List<BoardVO> getList() throws Exception {
+
+		return null;
+	}
 
 }

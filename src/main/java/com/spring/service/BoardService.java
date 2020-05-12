@@ -2,6 +2,8 @@ package com.spring.service;
 
 import java.util.List;
 
+
+import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 
@@ -35,4 +37,8 @@ public interface BoardService {
 
 	//첨부파일 리스트 추출
 
+}
+	public List<AttachFileDTO> getAttachlist(int bno);
+}
+	public List<AttachFileDTO> getAttachlist(int bno);
 }

@@ -117,7 +117,7 @@ public class LoginController {
 	}
 	
 	@PostMapping("/login")
-	public String loginPost(LoginVO vo,HttpSession session,Model model) {
+	public String loginPost(LoginVO vo,HttpSession session,Model model, RedirectAttributes rttr) {
 		
 		AuthInfo info = service.loginMember(vo);
 		
@@ -125,10 +125,12 @@ public class LoginController {
 			session.setAttribute("info",info);
 			return "redirect:/";
 		}else {
+			rttr.addFlashAttribute("error", "잘못된 비밀번호입니다.");
 			return "redirect:/login";
+	
 		}
-		
 	}
+
 	
 	
 	//로그아웃 처리
