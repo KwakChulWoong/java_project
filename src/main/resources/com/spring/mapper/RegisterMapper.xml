@@ -34,4 +34,8 @@
 		from members
 		where userid=#{userid}
 	</select>
+		<!--  비밀번호 변경 -->
+	<update id="changePwd">
+		update members set passwd=#{new_password} where userid=#{userid}
+	</update>
 </mapper>

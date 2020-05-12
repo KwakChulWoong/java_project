@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
+import com.spring.domain.changePwdVO;
 import com.spring.mapper.AttachMapper;
 import com.spring.mapper.BoardMapper;
+import com.spring.mapper.RegisterMapper;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -19,14 +21,17 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper mapper;
 	
 	@Autowired
+	private RegisterMapper register;
+	
+	@Autowired
 	private AttachMapper attach;
 	
 	@Override
 	public boolean register(BoardVO vo) {
-		//새글 등록
+		//�깉湲� �벑濡�
 		mapper.insert(vo);
 		
-		//첨부파일이 null이 아니면 첨부파일 등록
+		//泥⑤��뙆�씪�씠 null�씠 �븘�땲硫� 泥⑤��뙆�씪 �벑濡�
 		if(vo.getAttachList() == null ||vo.getAttachList().size() <= 0) {
 			return false;
 		}
@@ -75,5 +80,16 @@ public class BoardServiceImpl implements BoardService {
 	public List<AttachFileDTO> getAttachlist(int bno) {
 
 		return attach.select(bno);
+	}
+
+	@Override
+	public List<BoardVO> getList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean changeMember(changePwdVO change) {		
+		return register.changePwd(change)>0?true:false;
 	}
 }

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import com.spring.domain.AuthInfo;
 import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
+import com.spring.domain.changePwdVO;
 
 public interface RegisterMapper {
 
@@ -19,4 +20,6 @@ public interface RegisterMapper {
 	public int updateUser(@Param("userid")String userid, @Param("newPass") String newPass);
 	
 	public RegisterVO getUser(String userid);
+	
+	public int changePwd(changePwdVO vo);
 }

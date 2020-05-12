@@ -15,7 +15,7 @@
 	    
 	    <dl class="second">
 	        <dt><strong>비밀번호 변경</strong></dt>
-	        <dd><a href="modify/ChangePWD" >비밀번호 변경</a></dd>
+	        <dd><a href="/modify/changePwd" >비밀번호 변경</a></dd>
 	    </dl>
 	    
 	    <dl class="third">
