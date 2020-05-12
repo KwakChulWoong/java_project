@@ -305,18 +305,28 @@
            </div>
 	</section>
 </section>
-
+<body>
+<p style="margin-top:-12px">
+    <em class="link">
+        <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
+            혹시 주소 결과가 잘못 나오는 경우에는 여기에 제보해주세요.
+        </a>
+    </em>
+</p>
 <div id="map" style="width:100%;height:350px;"></div>
 <p>
-    <button onclick="setCenter()">지도 중심좌표 이동시키기</button> 
+    <button onclick="setCenter()">내 위치 좌표로 이동하기</button> 
     <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button> 
 </p>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=acc20eac6d82be9fa61d85de39eacd5c"></script>
 <script>
+
  let mylat = "";
  let mylng = "";
-<!-- 좌표 가져오기 -->
+ let otherlat = "";
+ let otherlng = "";
+<!-- 내좌표 가져오기 -->
 $.ajax({
 	type:'post',
 	url:'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDQKxbTt0MrFNH85kTJXzickMD5s88UVaI',
@@ -367,13 +377,52 @@ var markers = [
         level: 3 // 지도의 확대 레벨
     };
     
-// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+// 지도를 표시할 div와  지도 옵션으로  지도 생성
 var map = new kakao.maps.Map(mapContainer, mapOption); 
 
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
 
+//주소로 좌표를 검색합니다
+geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+
+var iwContent = '<div style="padding:5px;">표시할 정보</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	iwPosition = new kakao.maps.LatLng(mylat, mylng), //인포윈도우 표시 위치입니다
+	iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+//인포윈도우를 생성하고 지도에 표시합니다
+var infowindow = new kakao.maps.InfoWindow({
+	map: map, // 인포윈도우가 표시될 지도
+	position : iwPosition, 
+	content : iwContent,
+	removable : iwRemoveable
+});
+	
 function setCenter() {            
     // 이동할 위도 경도 위치를 생성합니다 
-    var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+    var moveLatLon = new kakao.maps.LatLng(mylat, mylng);
     
     // 지도 중심을 이동 시킵니다
     map.setCenter(moveLatLon);
@@ -381,7 +430,7 @@ function setCenter() {
 
 function panTo() {
     // 이동할 위도 경도 위치를 생성합니다 
-    var moveLatLon = new kakao.maps.LatLng(33.450580, 126.574942);
+    var moveLatLon = new kakao.maps.LatLng(33.450705, 126.570677);
     
     // 지도 중심을 부드럽게 이동시킵니다
     // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
@@ -390,21 +439,7 @@ function panTo() {
 
 var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 
-for (var i = 0; i < markers.length; i ++) {
-    
-    // 마커 이미지의 이미지 크기 입니다
-    var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        position: markers[i].position, // 마커를 표시할 위치
-        image : markerImage // 마커 이미지 
-    });
-}
+
 </script>
 
 <jsp:include page="includes/footer.jsp"></jsp:include>
