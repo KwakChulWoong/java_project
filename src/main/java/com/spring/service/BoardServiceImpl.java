@@ -76,4 +76,11 @@ public class BoardServiceImpl implements BoardService {
 
 		return attach.select(bno);
 	}
+
+	@Override
+	public List<BoardVO> getList() throws Exception {
+
+		return null;
+	}
+
 }
