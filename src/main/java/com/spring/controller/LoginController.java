@@ -130,6 +130,7 @@ public class LoginController {
 		
 	}
 	
+	
 	//로그아웃 처리
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {

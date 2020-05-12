@@ -23,5 +23,6 @@ public class BoardVO {
 	private Date updatedate;
 	private int replycnt;
 	private String userid;
-	
+	//첨부파일 목록
+	private List<AttachFileDTO> attachList;
 }

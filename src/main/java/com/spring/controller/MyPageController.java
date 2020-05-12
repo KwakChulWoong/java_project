@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.RegisterVO;
 import com.spring.service.BoardService;
 import com.spring.service.EmailService;
@@ -33,11 +35,11 @@ public class MyPageController {
 	
 	
 	@GetMapping("/mypage")
-	public void mypage(Model model) {
+	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
 		
 		try {
 			
-			model.addAttribute("list", service.getList());
+			model.addAttribute("list", service.getList(cri));
 //			model.addAttribute("pageVO", new PageVO(cri, service.totalRows(cri)));
 			
 		} catch (Exception e) {
