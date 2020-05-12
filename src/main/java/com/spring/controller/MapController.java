@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class HomeController {
+public class MapController{
 	
-	@GetMapping("/")
-	public String home(Locale locale, Model model) {
-		return "index";
+	@GetMapping("/map")
+	public void map() {
+		//return "map";
 	}
 	
 }
