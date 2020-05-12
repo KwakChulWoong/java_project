@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Carousel JS</title>
+  <title>3반 렌탈샵</title>
   <link href="/resources/dist/css/Carousel.css" rel="stylesheet">
   <link href="/resources/dist/css/header.css" rel="stylesheet">
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
@@ -19,11 +18,11 @@
 
 <style>
   #carousel-banner {
-    width: 1903px;
+    width: 1900px;
   }
 </style>
 
-<body>
+<body style="overflow-x:hidden;">
 <div class="container-fluid" style="border-bottom:2px solid #008639; height:123px;">
    <div id="wrap">
       <div id="header">
@@ -38,16 +37,17 @@
 				<a href="javascript:openDirectPop()">&nbsp;</a>
 				<a href="javascript:openDirectPop(true)">&nbsp;</a>
 				<ul class="tab_1">
-					<a href="#"><li>HOME</li></a>
+					<a href="/"><li>HOME</li></a>
 					<a href="#" target="_blank"><li>회사소개</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
 					<!-- 로그인 안됐을시 로그인/회원가입 보여줌 -->
 					<c:if test="${empty info}">
 						<a href="/login"><li>로그인</li></a>
 						<a href="/register/step0"><li>회원가입</li></a>
 					</c:if>
-					<!-- 로그인 되면 마이페이지 보여줌 -->
+					<!-- 로그인 되면 마이페이지/로그아웃 보여줌 -->
 					<c:if test="${!empty info}">
-						<a href="/mypage" target="_blank"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
+						<a href="/mypage"><li>마이페이지</li></a> <!-- target 탭 이용 시 새 창으로 띄움 -->
+						<a href="/logout"><li>로그아웃</li></a>
 					</c:if>
 				</ul>
 				<div class="clear"></div>

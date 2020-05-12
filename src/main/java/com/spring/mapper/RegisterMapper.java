@@ -10,4 +10,8 @@ public interface RegisterMapper {
 	
 	public AuthInfo login(LoginVO vo);
 	
+	public RegisterVO selectById(String userid);
+	
+	public int leave(LoginVO vo);
+	
 }

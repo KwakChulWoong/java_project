@@ -27,18 +27,18 @@
                     <h3 style="text-align:center;">회원 탈퇴</h3>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="아이디" readonly>
+                            <input type="text" name="userid" id="userid" class="form-control" placeholder="아이디" readonly value="${info.userid}">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="비밀번호" autofocus="autofocus">
+                            <input type="password" name="current_password" id="current_password" class="form-control" placeholder="비밀번호" autofocus="autofocus">
                         </div>
                         <br />
                         <br />
