@@ -37,7 +37,7 @@
 		<!--  비밀번호 변경 -->
 	<update id="changePwd">
 		update members set passwd=#{new_password} where userid=#{userid}
-	
+	</update>
 	<!-- 회원정보 수정 -->
 	<update id="updateMember">
 		update members set gender=#{gender},address=#{address},email=#{email} where userid=#{userid} and passwd=#{passwdconfirm}

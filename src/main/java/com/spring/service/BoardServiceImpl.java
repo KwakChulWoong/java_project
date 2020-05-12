@@ -80,14 +80,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public List<BoardVO> getList() throws Exception {
-
-		return null;
-	}
-
-<<<<<<< HEAD
-	@Override
-	public List<BoardVO> getList() throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -95,6 +87,10 @@ public class BoardServiceImpl implements BoardService {
 	public boolean changeMember(changePwdVO change) {		
 		return register.changePwd(change)>0?true:false;
 	}
-=======
->>>>>>> branch 'master' of https://github.com/KwakChulWoong/java_project.git
+
+@Override
+public List<AttachFileDTO> getAttachlist(int bno) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
