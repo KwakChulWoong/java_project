@@ -128,4 +128,35 @@ public class MyPageController {
 		return uuid.toString().substring(0,10);
 	}
 	
+	@GetMapping("/modify/memberEdit")
+	public void memberEdit() {
+		
+	}
+	
+	@PostMapping("/modify/memberEdit")
+	public String memberEditPost(RegisterVO vo,@SessionAttribute AuthInfo info,HttpSession session,RedirectAttributes rttr) {
+		log.info("changePwd.jsp 값 : "+vo);
+		vo.setUserid(info.getUserid());				
+		
+		//db에서 현재 아이디와 비밀번호가 일치하면
+		LoginVO login = new LoginVO();
+		login.setUserid(vo.getUserid());
+		login.setCurrent_password(vo.getPasswdconfirm());
+		
+		if(regservice.loginMember(login)!=null) {	
+			 
+			//비밀번호 변경 해주기
+			//비밀번호 변경이 성공되면
+			//세션해제하고 index 보여주기
+				if(regservice.updateMember(vo)) {
+//					session.removeAttribute("info");
+				}
+				return "redirect:/";
+			}else {
+				rttr.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
+			}
+		return "redirect:/mypage";
+		}
+	
+	
 }

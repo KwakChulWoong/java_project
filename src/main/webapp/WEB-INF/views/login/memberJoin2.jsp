@@ -70,7 +70,7 @@ $(function(){
 	<div class="form-group row justify-content-center">
 		<label for = "address" class="col-sm-2 col-form-label">주소</label>
 		<div class="col-sm-6">	
-			<input type="address" name="address" id="address" class="form-control" placeholder="서울시 노원구" value="${vo.address}"/>	
+			<input type="text" name="address" id="address" class="form-control" placeholder="서울시 노원구" value="${vo.address}"/>	
 			<small id="address" class="text-info"></small>		
 		</div>	
 	</div>

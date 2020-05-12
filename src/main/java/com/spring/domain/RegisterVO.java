@@ -16,4 +16,6 @@ public class RegisterVO {
 	public boolean isPasswordEqualToConfirmPassword() {
 		return this.passwd.equals(passwdconfirm);
 	}
+	
+	
 }

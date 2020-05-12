@@ -27,4 +27,6 @@ public interface RegisterService {
 	
 	//비밀번호 변경
 	public boolean changeMember(changePwdVO change);
+	//정보 수정
+	public boolean updateMember(RegisterVO vo);
 }

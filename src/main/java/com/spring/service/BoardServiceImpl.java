@@ -76,12 +76,15 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getTotalCount(cri);
 	}
 
-	@Override
-	public List<AttachFileDTO> getAttachlist(int bno) {
+	
 
-		return attach.select(bno);
+	@Override
+	public List<BoardVO> getList() throws Exception {
+
+		return null;
 	}
 
+<<<<<<< HEAD
 	@Override
 	public List<BoardVO> getList() throws Exception {
 		// TODO Auto-generated method stub
@@ -92,4 +95,6 @@ public class BoardServiceImpl implements BoardService {
 	public boolean changeMember(changePwdVO change) {		
 		return register.changePwd(change)>0?true:false;
 	}
+=======
+>>>>>>> branch 'master' of https://github.com/KwakChulWoong/java_project.git
 }

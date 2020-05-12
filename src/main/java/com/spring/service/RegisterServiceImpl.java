@@ -51,4 +51,10 @@ public class RegisterServiceImpl implements RegisterService {
 		return mapper.changePwd(change) >0 ? true:false;
 	}
 
+	@Override
+	public boolean updateMember(RegisterVO vo) {
+		
+		return mapper.updateMember(vo)>0?true:false;
+	}
+
 }
