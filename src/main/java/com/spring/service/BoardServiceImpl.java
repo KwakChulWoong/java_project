@@ -71,11 +71,7 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getTotalCount(cri);
 	}
 
-	@Override
-	public List<AttachFileDTO> getAttachlist(int bno) {
-
-		return attach.select(bno);
-	}
+	
 
 	@Override
 	public List<BoardVO> getList() throws Exception {

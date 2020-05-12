@@ -20,5 +20,5 @@ public interface RegisterMapper {
 	
 	public RegisterVO getUser(String userid);
 	
-	public int updateMember(String userid,String passwdconfirm);
+	public int updateMember(RegisterVO vo);
 }

@@ -25,5 +25,5 @@ public interface RegisterService {
 	public boolean updateUser(String userid, String newPass);
 	
 	//정보 수정
-	public boolean updateMember(String userid,String passwdconfirm);
+	public boolean updateMember(RegisterVO vo);
 }

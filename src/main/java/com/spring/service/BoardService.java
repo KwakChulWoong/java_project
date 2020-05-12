@@ -37,8 +37,6 @@ public interface BoardService {
 
 	//첨부파일 리스트 추출
 
-}
-	public List<AttachFileDTO> getAttachlist(int bno);
-}
-	public List<AttachFileDTO> getAttachlist(int bno);
+
+
 }
