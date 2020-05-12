@@ -34,4 +34,9 @@
 		from members
 		where userid=#{userid}
 	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMember">
+		update members set gender=#{gender},address=#{address},email=#{email} where userid=#{userid} and passwd=#{passwdconfirm}
+	</update>
 </mapper>

@@ -19,4 +19,6 @@ public interface RegisterMapper {
 	public int updateUser(@Param("userid")String userid, @Param("newPass") String newPass);
 	
 	public RegisterVO getUser(String userid);
+	
+	public int updateMember(String userid,String passwdconfirm);
 }

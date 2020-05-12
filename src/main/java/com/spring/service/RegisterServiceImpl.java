@@ -46,4 +46,10 @@ public class RegisterServiceImpl implements RegisterService {
 		return mapper.updateUser(userid, newPass)>0?true:false;
 	}
 
+	@Override
+	public boolean updateMember(String userid, String passwdconfirm) {
+		
+		return mapper.updateMember(userid,passwdconfirm)>0?true:false;
+	}
+
 }

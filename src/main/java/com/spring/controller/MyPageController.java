@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.spring.domain.Criteria;
+import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
 import com.spring.service.BoardService;
 import com.spring.service.EmailService;
@@ -81,6 +82,19 @@ public class MyPageController {
 	public String tempPass() {
 		UUID uuid=UUID.randomUUID();
 		return uuid.toString().substring(0,10);
+	}
+	
+	@GetMapping("/modify/memberEdit")
+	public void memberEdit() {
+		
+	}
+	
+	@PostMapping("/modify/memberEdit")
+	public String memberEditPost(String userid, String passwdconfirm) {
+		regservice.updateMember(userid,passwdconfirm);
+		
+		
+		return "redirect:/";
 	}
 	
 }
