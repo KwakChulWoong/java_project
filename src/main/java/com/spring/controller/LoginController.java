@@ -117,15 +117,15 @@ public class LoginController {
 	}
 	
 	@PostMapping("/login")
-	public void loginPost(LoginVO vo,HttpSession session,Model model) {
+	public String loginPost(LoginVO vo,HttpSession session,Model model) {
 		
 		AuthInfo info = service.loginMember(vo);
 		
 		if(info!=null) {
-			model.addAttribute("info",info);
-//			return "redirect:/";
-//		}else {
-//			return "redirect:/login";
+			session.setAttribute("info",info);
+			return "redirect:/";
+		}else {
+			return "redirect:/login";
 		}
 		
 	}
