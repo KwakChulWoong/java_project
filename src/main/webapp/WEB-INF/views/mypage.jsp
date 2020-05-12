@@ -24,14 +24,9 @@
 	    </dl>
 	    
 	    <dl class="fourth">
-	        <dt><strong>내가 게시한 상품</strong></dt>
-	        <dd><a href="#" >게시한 목록</a></dd>
+	        <dt><strong>제품 등록</strong></dt>
+	        <dd><a href="#" >제품 등록하기</a></dd>
 	    </dl>
-	    
-	    <dl class="fifth">
-	        <dt><strong>내가 작성한 후기</strong></dt>
-	        <dd><a href="#" >작성한 후기</a></dd>
-	    </dl>    
 	</div>
 	<!-- //서브메뉴 -->
 	
