@@ -52,11 +52,11 @@
                   <h4 class="subtext-header mt-2 mb-4">회원가입을 해서 자유롭게 이용하세요</h4>
                   <a href="https://kauth.kakao.com/oauth/authorize
 							?client_id=aa1b2c4de3d7d82d21d7071bd9edf938
-							&redirect_uri=http://localhost:8080/register/kakaologin
+							&redirect_uri=http://localhost:8080/login/kakaologin
 							&response_type=code" class="btn btn-rounded btn-outline-white">
                     <i class="fas fa-home">카카오로 회원가입</i> 
                   </a>
-                  <a href="step1" class="btn btn-rounded btn-outline-white">
+                  <a href="memberJoin1" class="btn btn-rounded btn-outline-white">
                     <i class="fas fa-home"></i> 마켓 회원가입
                   </a>
                 </div>
