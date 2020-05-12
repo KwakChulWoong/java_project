@@ -35,5 +35,15 @@ public class RegisterServiceImpl implements RegisterService {
 		
 		return mapper.leave(vo)>0?true:false;
 	}
+	
+	@Override
+	public RegisterVO getUser(String userid) {
+		return mapper.getUser(userid);
+	}
+
+	@Override
+	public boolean updateUser(String userid, String newPass) {
+		return mapper.updateUser(userid, newPass)>0?true:false;
+	}
 
 }

@@ -22,4 +22,16 @@
 	<delete id="leave">
 		delete from members where userid=#{userid} and passwd=#{current_password} 
 	</delete>
+	
+	<!-- 임시 비밀번호로 사용자의 비밀번호를 변경해 놓기 -->
+	<update id="updateUser">
+		update members set passwd=#{newPass}
+		where userid=#{userid}
+	</update>
+	
+	<select id="getUser" resultType="com.spring.domain.RegisterVO">
+		select *
+		from members
+		where userid=#{userid}
+	</select>
 </mapper>
