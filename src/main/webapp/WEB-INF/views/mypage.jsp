@@ -10,7 +10,7 @@
 	<div class="mytmall_menu" style="float:left;">
 	    <dl class="first">
 	        <dt><strong>회원정보 수정</strong></dt>
-	        <dd><a href="#" >회원정보 수정</a></dd>
+	        <dd><a href="/modify/memberEdit" >회원정보 수정</a></dd>
 	    </dl>
 	    
 	    <dl class="second">
