@@ -1,5 +1,7 @@
 package com.spring.mapper;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.spring.domain.AuthInfo;
 import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
@@ -14,4 +16,7 @@ public interface RegisterMapper {
 	
 	public int leave(LoginVO vo);
 	
+	public int updateUser(@Param("userid")String userid, @Param("newPass") String newPass);
+	
+	public RegisterVO getUser(String userid);
 }

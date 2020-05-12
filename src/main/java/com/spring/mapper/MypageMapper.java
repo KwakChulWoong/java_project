@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 
-public interface BoardMapper {
+public interface MypageMapper {
 	public int insert(BoardVO vo);
 	public List<BoardVO> getList(Criteria cri);
 	public BoardVO read(int bno);

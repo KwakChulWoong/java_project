@@ -27,7 +27,7 @@
                     <h3 style="text-align:center;">로그인</h3>
                 </div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" action=>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -68,10 +68,10 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        등록된 계정이 없으신가요?<a href="/register/step0" style="color:#ffc001;">회원 가입</a>
+                        등록된 계정이 없으신가요?<a href="/login/memberJoin0" style="color:#ffc001;">회원 가입</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#" style="color:#ffc001;">비밀번호를 잊으셨나요?</a>
+                        <a href="/find/findPwd" style="color:#ffc001;">비밀번호를 잊으셨나요?</a>
                     </div>
                 </div>
             </div>

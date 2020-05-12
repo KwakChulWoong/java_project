@@ -17,4 +17,10 @@ public interface RegisterService {
 	
 	//탈퇴처리
 	public boolean leaveMember(LoginVO vo);
+	
+	//getuser
+	public RegisterVO getUser(String userid);
+	
+	//updateuser
+	public boolean updateUser(String userid, String newPass);
 }

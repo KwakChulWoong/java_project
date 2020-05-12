@@ -3,8 +3,7 @@
 <mapper namespace="com.spring.mapper.BoardMapper">
 
 	<select id="getList" resultType="com.spring.domain.BoardVO">
-		select bno,title,regdate from board 
+		select bno,title,writer,regdate from board 
 	</select>
 
-	
 </mapper>

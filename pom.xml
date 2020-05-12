@@ -14,6 +14,12 @@
 		<org.slf4j-version>1.7.24</org.slf4j-version>
 	</properties>
 	<dependencies>
+		<!-- 비밀번호 잊어버렸을때 이메일 인증 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-email</artifactId>
+		    <version>1.5</version>
+		</dependency>
 		<!-- Json Parsing -->
 		<dependency>
 		    <groupId>com.google.code.gson</groupId>
