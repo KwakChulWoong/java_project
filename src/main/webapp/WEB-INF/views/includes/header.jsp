@@ -42,7 +42,7 @@
 					<!-- 로그인 안됐을시 로그인/회원가입 보여줌 -->
 					<c:if test="${empty info}">
 						<a href="/login"><li>로그인</li></a>
-						<a href="/register/step0"><li>회원가입</li></a>
+						<a href="/login/memberJoin0"><li>회원가입</li></a>
 					</c:if>
 					<!-- 로그인 되면 마이페이지/로그아웃 보여줌 -->
 					<c:if test="${!empty info}">

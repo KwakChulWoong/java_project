@@ -35,30 +35,30 @@ public class LoginController {
 
 // 	---------------------------- 회원가입 관련 ------------------------------
 	
-	@GetMapping("/register/step0")
+	@GetMapping("/login/memberJoin0")
 	public void step0() {
 		
 	}
 	
-	@GetMapping("/register/step1")
+	@GetMapping("/login/memberJoin1")
 	public void step1(){
 		
 	}
 	
-	@PostMapping("/register/step2")
+	@PostMapping("/login/memberJoin2")
 	public String step2(@RequestParam(value="agree",defaultValue="false")boolean agree,RedirectAttributes rttr) {
 		//step1에서 사용자의 약관동의 여부 확인 
 		
 		//약관동의가 false인경우 step1 페이지 보여주기
 		if(!agree) {
 			rttr.addFlashAttribute("check","false");
-			return "redirect:/register/step1";
+			return "redirect:/login/memberJoin1";
 		}
 		//약관동의가 true인경우 step2페이지 보여주기
-		return "/register/step2";
+		return "/login/memberJoin2";
 	}
 	
-	@PostMapping("/register/step3")
+	@PostMapping("/login/memberJoin3")
 	public String step3(@ModelAttribute("vo")RegisterVO vo) {
 		//step2.jsp 에서 회원가입정보 가져오기
 		log.info("vo" + vo);
@@ -68,17 +68,17 @@ public class LoginController {
 		if(vo.isPasswordEqualToConfirmPassword()) {
 			//회원가입
 			if(service.registMember(vo)) {
-				return "/register/step3";
+				return "/login/memberJoin3";
 				
 			}else {
-				return "/register/step2";
+				return "/login/memberJoin2";
 			}
 		}else {
-			return "/register/step2";
+			return "/login/memberJoin2";
 		}
 	}
 	
-	@GetMapping("/register/kakaologin")
+	@GetMapping("/login/kakaologin")
 	public void kakaologin(@RequestParam("code") String code,HttpSession session) {
         String access_Token = kakao.getAccessToken(code);
         System.out.println("controller access_token : " + access_Token);
@@ -117,15 +117,15 @@ public class LoginController {
 	}
 	
 	@PostMapping("/login")
-	public void loginPost(LoginVO vo,HttpSession session,Model model) {
+	public String loginPost(LoginVO vo,HttpSession session,Model model) {
 		
 		AuthInfo info = service.loginMember(vo);
 		
 		if(info!=null) {
-			model.addAttribute("info",info);
-//			return "redirect:/";
-//		}else {
-//			return "redirect:/login";
+			session.setAttribute("info",info);
+			return "redirect:/";
+		}else {
+			return "redirect:/login";
 		}
 		
 	}
