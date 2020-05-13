@@ -10,20 +10,21 @@
 	insert into item(itemno,category,title,content,rentcost,deposit,userid) 
 	values(#{itemno},#{category},#{title},#{content},#{rentcost},#{deposit},#{userid})
 </insert>
-<!-- <select id="getList" resultType="com.spring.domain.BoardVO">
+	
+	<select id="getList" resultType="com.spring.domain.ItemVO">
 	  <![CDATA[		
 		select * 
 		from(
-			select  /*+INDEX_DESC(spring_board pk_spring_board)*/
-			rownum rn,bno,title,writer,regdate,updatedate,replycnt
-			from spring_board where
+			select  /*+INDEX_DESC(item item_pk)*/
+			rownum rn,itemno,title,userid,regdate
+			from item where
 		]]>
-		<include refid="criteria"></include>			
+		 <include refid="criteria"></include>			
 	  <![CDATA[		
 		 rownum <= #{pageNum}*#{amount})
 		where rn> (#{pageNum}-1)*#{amount}	
 	  ]]>	
-	</select> -->
+	</select>
 
 <!-- 제품 목록 가져오기  -->
 <select id="selectItemList" resultType="com.spring.domain.ItemVO">
@@ -67,6 +68,26 @@
 	update spring_board set replycnt = replycnt+#{amount}
 	where bno=#{bno}
 </update>
-  동적 sql 
-    -->
+-->
+
+<!--  동적 sql  --> 
+   <sql id="criteria">
+      <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+         <foreach collection="typeArr" item='type'>
+            <trim prefix="OR">
+               <choose>
+                  <when test="type=='T'.toString()">
+                     title like '%'||#{keyword}||'%'
+                  </when>
+                  <when test="type=='C'.toString()">
+                     content like '%'||#{keyword}||'%'
+                  </when>
+                  <when test="type=='W'.toString()">
+                     writer like '%'||#{keyword}||'%'
+                  </when>
+               </choose>
+            </trim>
+         </foreach>
+      </trim>
+   </sql> 
 </mapper>

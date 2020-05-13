@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>HTML Result</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
-<body>
+<body style="margin-top:50px;">
     <div class="container body-content">
         <div class="container">
             <div class="row justify-content-start" style="padding-top:10px;">
@@ -18,7 +17,7 @@
                 <p class="text-black-50">
                               
                     <br />
-                    <h4>고가 취미 용품 p2p 렌탈 중개 사이트</h4>
+                    <h4>취미 용품 p2p 대여 중개 사이트입니다!!</h4>
                     <br />
                 </p>
             </div>
@@ -27,7 +26,7 @@
 
                 <div class="col" style="padding-top:10px;">
                     <p class="text-black-50">
-                        전반적인 디자인 담당
+                        전체적 디자인 담당
                         <br />
                     </p>
                 </div>

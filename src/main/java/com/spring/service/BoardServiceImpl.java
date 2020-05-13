@@ -45,11 +45,11 @@ public class BoardServiceImpl implements BoardService {
 //		return true;
 //	}
 	
-	@Override
-	public List<BoardVO> getList(Criteria cri) throws Exception {
-		
-		return mapper.getList(cri);
-	}
+//	@Override
+//	public List<BoardVO> getList(Criteria cri) throws Exception {
+//		
+//		return mapper.getList(cri);
+//	}
 	
 	@Override
 	public BoardVO getRow(int bno) throws Exception {

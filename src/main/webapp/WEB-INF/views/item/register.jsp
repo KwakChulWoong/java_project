@@ -47,7 +47,7 @@
                         <div class="panel-body">
                 			<form method="post" role="form">
                 				<div class="form-group">
-                           			<select name="category" style="width:300px; text-algin:center;">
+                           			<select name="category" style="width:300px; text-algin:center; border:1px solid #ccc;">
                            				<option value="카테고리">카테고리</option>
                            				<option value="캠핑">캠핑</option>
                            				<option value="골프">골프</option>

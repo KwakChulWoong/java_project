@@ -115,12 +115,6 @@ public class ItemServiceImpl implements ItemService {
 //		// 게시글 삭제
 //		return mapper.delete(bno) == 0 ? false : true;
 //	}
-
-//	@Override
-//	public List<BoardVO> getList() throws Exception {
-//		// TODO Auto-generated method stub
-//		return mapper.getList();
-//	}
 //
 //
 //	@Override
