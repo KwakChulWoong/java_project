@@ -21,4 +21,9 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping("/company")
+	public String company() {
+		return "company";
+	}
+	
 }
