@@ -42,7 +42,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                                           내가 올린 상품 리스트
-                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/board/ItemRegister'">새로운 글 작성하기</button>
+                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/item/register'">새로운 글 작성하기</button>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

@@ -76,12 +76,6 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.getTotalCount(cri);
 	}
 
-	
-
-	@Override
-	public List<BoardVO> getList() throws Exception {
-		return null;
-	}
 
 	@Override
 	public boolean changeMember(changePwdVO change) {		

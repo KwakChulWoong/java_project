@@ -6,13 +6,15 @@
 		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
 			select seq_board.nextVal from dual
 		</selectKey>
-		insert into spring_board(bno, title, content, writer)
+		insert into board(bno, title, content, writer)
 		values(#{bno}, #{title}, #{content}, #{writer}) 
 	</insert>
+	
+	<!-- 마이페이지에 내가 올린 글들 보는 것 -->
 	<select id="getList" resultType="com.spring.domain.BoardVO">
 	 <![CDATA[
 		select * from(
-			select /*+INDEX_DESC(rental board_pk)*/ bno, title, writer, regdate
+			select /*+INDEX_DESC(board pk_board)*/rownum rn, bno, title, writer, regdate
 			from board
 			where 
 			]]>
@@ -22,9 +24,9 @@
 		where rn > (#{pageNum}-1)*#{amount}
 		]]>
 	</select>
+	
 	<select id="read" resultType="com.spring.domain.BoardVO">
 		select * from board where bno=#{bno}
-	
 	</select>
 	<update id="update">
 		update board
@@ -41,7 +43,6 @@
 		where 
 		<!-- 검색 -->
 		<include refid="criteria"></include>
-		
 		bno>0
 	</select>
 	
