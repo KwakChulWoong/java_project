@@ -11,8 +11,12 @@ import com.spring.domain.ReviewVO;
 public interface ItemService {
 //	//게시글 작성
 	public boolean ItemRegister(ItemVO vo) throws Exception;
-//	//게시글 목록
-//	public List<BoardVO> getList() throws Exception;
+
+	//	아이템 리스트
+	public List<ItemVO> getList(Criteria cri) throws Exception;
+	public int totalRows(Criteria cri) throws Exception;
+	
+	
 //	public List<ReviewVO> getReviewList() throws Exception;
 //	//read 
 	public BoardVO readList(int bno) throws Exception;
@@ -21,7 +25,6 @@ public interface ItemService {
 //	//remove
 //	public boolean deleteRow(int bno) throws Exception;
 //	//게시글 전체
-//	public int totalRows() throws Exception;
 //	
 //	//첨부파일 리스트 추출
 //	public List<AttachFileDTO> getAttachList(int bno);

@@ -52,6 +52,16 @@ public class ItemServiceImpl implements ItemService {
 		
 	}
 
+	@Override
+	public List<ItemVO> getList(Criteria cri) throws Exception {		
+		return item.totalList(cri);
+	}
+
+	@Override
+	public int totalRows(Criteria cri) throws Exception {		
+		return item.totalCount(cri);
+	}
+
 //	@Transactional
 //	@Override
 //	public boolean ItemRegister(ItemVO vo) throws Exception {

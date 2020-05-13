@@ -119,7 +119,15 @@ public class ItemController {
 	}
 	
 	@GetMapping("/item/rent")
-	public String rent() {
+	public String rent(@ModelAttribute("cri")Criteria cri,Model model) {
+		log.info("대여 리스트 추출"+cri.getCategory());
+		
+		try {
+			model.addAttribute("list", service.getList(cri));
+			model.addAttribute("pageVO",new PageVO(cri, service.totalRows(cri)));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "/item/rent";
 	}
 	

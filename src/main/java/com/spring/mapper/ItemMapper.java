@@ -16,12 +16,14 @@ public interface ItemMapper {
 //	public BoardVO readList(int bno);
 //	public int update(BoardVO vo);
 //	public int delete(int bno);
-//	public int getTotalCount();
 //	public int updateReplycnt(@Param("bno")int bno,@Param("amount")int amount);
 	
 	
 	
 	//----------------------------
 	public List<ItemVO> selectItemList();
+	//8개씩 가져오기
+	public List<ItemVO> totalList(Criteria cri);
+	public int totalCount(Criteria cri);
 	
 }
