@@ -106,11 +106,10 @@ public class ItemServiceImpl implements ItemService {
 //		return mapper.delete(bno) == 0 ? false : true;
 //	}
 
-//	@Override
-//	public List<BoardVO> getList() throws Exception {
-//		// TODO Auto-generated method stub
-//		return mapper.getList();
-//	}
+	@Override
+	public List<ItemVO> getList(Criteria cri) throws Exception {
+		return item.getList(cri);
+	}
 //
 //
 //	@Override

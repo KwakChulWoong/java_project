@@ -12,7 +12,7 @@ public interface ItemService {
 //	//게시글 작성
 	public boolean ItemRegister(ItemVO vo) throws Exception;
 //	//게시글 목록
-//	public List<BoardVO> getList() throws Exception;
+	public List<ItemVO> getList(Criteria cri) throws Exception;
 //	public List<ReviewVO> getReviewList() throws Exception;
 //	//read 
 	public BoardVO readList(int bno) throws Exception;
