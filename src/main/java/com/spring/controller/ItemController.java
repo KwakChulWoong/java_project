@@ -120,7 +120,7 @@ public class ItemController {
 	
 	@GetMapping("/item/rent")
 	public String rent() {
-		return "item/rent";
+		return "/item/rent";
 	}
 	
 //	
