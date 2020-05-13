@@ -275,10 +275,10 @@
                </a>
            </article>
            <div class="card-top" id="cards-more">
-               <a class="card-link" href="/hot_articles">
+               <a class="card-link" href="/item/rent">
                    <div id="cards-more-text">
                        <img alt="+" src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/mobile/icon-add-dcfb7aac98f18d19ca4c27e9dc29c63cf73861f3b10e0a42c06163d2658d0691.svg" />
-                       <div id="more-text">인기 매물<br />더 보기</div>
+                       <div id="more-text">전체 매물<br />보러 가기</div>
                    </div>
                </a>
            </div>

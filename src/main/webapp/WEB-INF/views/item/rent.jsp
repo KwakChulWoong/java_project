@@ -23,9 +23,10 @@
   	left:200px;
   	top:200px;
   }
+  
 </style>
 <jsp:include page="../includes/header.jsp"/>
-<section id="hot-articles" style="height:100%;">   
+<section class="section1" id="hot-articles" style="height:100%;">   
        <nav id="hot-articles-navigation">
        <div class="category_fixed">
            <select name="region" id="region" onchange="changeRegion('r1', this.value)" class="hot-articles-nav-select" style="border:2px solid orange;">
@@ -72,14 +73,6 @@
                    </div>
                </a>
            </article>
-           <div class="card-top" id="cards-more">
-               <a class="card-link" href="/hot_articles">
-                   <div id="cards-more-text">
-                       <img alt="+" src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/mobile/icon-add-dcfb7aac98f18d19ca4c27e9dc29c63cf73861f3b10e0a42c06163d2658d0691.svg" />
-                       <div id="more-text">인기 매물<br />더 보기</div>
-                   </div>
-               </a>
-           </div>
    </section>
 </section>
 <jsp:include page="../includes/footer.jsp"></jsp:include>
