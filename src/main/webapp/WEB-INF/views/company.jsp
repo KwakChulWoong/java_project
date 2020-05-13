@@ -18,9 +18,8 @@
                 <p class="text-black-50">
                               
                     <br />
-                    
+                    <h4>고가 취미 용품 p2p 렌탈 중개 사이트</h4>
                     <br />
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 </p>
             </div>
             <br />
@@ -28,9 +27,8 @@
 
                 <div class="col" style="padding-top:10px;">
                     <p class="text-black-50">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        전반적인 디자인 담당
                         <br />
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
                 <div class="col" style="padding-top:10px;">
@@ -44,9 +42,8 @@
             <div class="row justify-content-middle" style="padding-top:10px;">
                 <div class="col" style="padding-top:10px;">
                     <p class="text-black-50">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    제품 관련 파트
                         <br />
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
                 <div class="col" style="padding-top:10px;">
@@ -60,9 +57,8 @@
             <div class="row justify-content-end" style="padding-top:10px;">
                 <div class="col" style="padding-top:10px;">
                     <p class="text-black-50">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    데이터베이스 파트
                         <br />
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
                 <div class="col" style="padding-top:10px;">
@@ -76,9 +72,8 @@
 			<div class="row justify-content-end" style="padding-top:10px;">
                 <div class="col" style="padding-top:10px;">
                     <p class="text-black-50">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    회원 관리 파트
                         <br />
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
                 <div class="col" style="padding-top:10px;">

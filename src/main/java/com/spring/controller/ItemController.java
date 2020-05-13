@@ -118,6 +118,11 @@ public class ItemController {
 		log.info("후기작성페이지");
 	}
 	
+	@GetMapping("/item/rent")
+	public String rent() {
+		return "item/rent";
+	}
+	
 //	
 //	//modify.jsp에서 modify버튼 클릭시 넘어오는 값 가져오기
 //	@PostMapping("/modify")
