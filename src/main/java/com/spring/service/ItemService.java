@@ -28,4 +28,7 @@ public interface ItemService {
 //	
 //	
 	
+	
+	// --------------------------------
+	public List<ItemVO> popularItem(); 
 }
