@@ -19,17 +19,15 @@
             </div>
             <div class="card-counts">
               <span>
-                관심 10
+                조회수 10
               </span>
-              ∙
-              <span>
-                채팅 26
-              </span>
+            
+ 
             </div>
           </div>
         </a>
       </article>
-      <article class="card-top">
+      <!-- <article class="card-top">
         <a class="card-link" data-event-label="79309495" href="/articles/79309495">
           <div class="card-photo">
             <img alt="전자렌지 판매합니다" src="https://dnvefa72aowie.cloudfront.net/origin/article/202004/6959e8bb15c03a8deda40ff3276916c63bcb6195d21affeea239891b7b98b59d.webp?q=82&amp;s=300x300&amp;t=crop">
@@ -203,5 +201,5 @@
             </div>
           </div>
         </a>
-      </article>
+      </article> -->
     </section>
