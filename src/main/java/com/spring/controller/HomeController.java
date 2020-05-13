@@ -34,4 +34,10 @@ public class HomeController {
 		model.addAttribute("vo", vo);
 	}
 	
+	@GetMapping("/company")
+	public String company() {
+		return "company";
+	}
+
+	
 }

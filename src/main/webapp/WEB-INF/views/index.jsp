@@ -14,6 +14,7 @@
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
   <link href="/resources/dist/css/item.css" rel="stylesheet">   
   <link href="/resources/dist/css/image.css" rel="stylesheet">
+  
 </head>
 
 <style>
@@ -21,28 +22,7 @@
     width: 1900px;
   }
 </style>
-
-<body>
-<div id="sizeplz" style="height:400px;">
-  <div class="carousel" id="carousel-banner">
-    <div class="carousel-wrapper" style="height:400px; width:1900px;">
-      <div class="carousel-item" style="height:400px; width:1900px;">
-        <img src="/resources/images/res_1.jpg">
-      </div>
-      <div class="carousel-item" style="height:400px; width:1900px;">
-        <img src="/resources/images/res_2.jpg">
-      </div>
-      <div class="carousel-item" style="height:400px; width:1900px;">
-        <img src="/resources/images/res_3.jpg">
-      </div>
-      <div class="carousel-item" style="height:400px; width:1900px;">
-        <img id="f_img" src="/resources/images/res_1.jpg">
-      </div>
-    </div>
-    <div class="navi-wrapper"></div>
-  </div>
-</div>
-
+<jsp:include page="includes/banner.jsp"/>
 <section id="hot-articles">   
        <h3 style="margin-left : 26%;">Dynamic 인기 매물</h3>
        <div class="title-line-divider"></div>
@@ -304,15 +284,4 @@
            </div>
    </section>
 </section>
-<script src="/resources/dist/js/Carousel.js"></script>
-<script>
-var caro = new Carousel(document.querySelector('#carousel-banner'), {
-   CarouselMotion: 'fade',
-   naviPosition: 'right',
-   naviStyle: 'button',
-   autoMove: true,
-   autoMoveTime: 3000,
-   carouselIndex: 0
-});
-</script>
 <jsp:include page="includes/footer.jsp"></jsp:include>
