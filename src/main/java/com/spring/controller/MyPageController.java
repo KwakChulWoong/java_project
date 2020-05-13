@@ -134,7 +134,7 @@ public class MyPageController {
 	}
 	
 	@PostMapping("/modify/memberEdit")
-	public String memberEditPost(RegisterVO vo,@SessionAttribute AuthInfo info,HttpSession session,RedirectAttributes rttr) {
+	public String memberEditPost(RegisterVO vo,@SessionAttribute AuthInfo info,HttpSession session,RedirectAttributes rttr,Model model) {
 		log.info("changePwd.jsp 값 : "+vo);
 		vo.setUserid(info.getUserid());				
 		
@@ -151,7 +151,7 @@ public class MyPageController {
 				if(regservice.updateMember(vo)) {
 //					session.removeAttribute("info");
 				}
-				return "redirect:/";
+				return "redirect:/mypage";
 			}else {
 				rttr.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
 			}

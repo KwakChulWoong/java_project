@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container" style="margin-top:40px">
-<form id="regist" method="post" action="memberEdit">	
+<form id="memberEdit" method="post" action="memberEdit">	
 	<div class="form-group row justify-content-center">
 		<label for="userid" class="col-sm-2 col-form-label">아이디</label>
 		<div class="col-sm-6">			
