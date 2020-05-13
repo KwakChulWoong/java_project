@@ -20,7 +20,6 @@ public interface BoardService {
 //	//寃뚯떆湲� �옉�꽦
 //	public boolean ItemRegister(BoardVO vo) throws Exception;
 	//寃뚯떆湲� 紐⑸줉
-	public List<BoardVO> getList() throws Exception;
 //	//read 
 //	public BoardVO readList(int bno) throws Exception;
 //	//modify
