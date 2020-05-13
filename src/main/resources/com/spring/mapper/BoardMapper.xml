@@ -14,7 +14,7 @@
 	<select id="getList" resultType="com.spring.domain.BoardVO">
 	 <![CDATA[
 		select * from(
-			select /*+INDEX_DESC(board pk_board)*/ bno, title, writer, regdate
+			select /*+INDEX_DESC(board pk_board)*/rownum rn, bno, title, writer, regdate
 			from board
 			where 
 			]]>
