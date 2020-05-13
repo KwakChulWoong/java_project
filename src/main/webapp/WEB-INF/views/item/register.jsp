@@ -20,14 +20,15 @@
     <!-- Custom Fonts -->
     <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">   
 </head>
-<style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <style>
 	.row{
 	
 		width:750px;
 		margin:auto;
 		
 	}
-</style>
+</style> -->
 <body>
 <%@include file="../includes/header.jsp" %>
             <div class="row" >
@@ -44,21 +45,20 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                			<form  method="post" role="form">
+                			<form method="post" role="form">
                 				<div class="form-group">
-                            			<select name="category" style="width:300px; text-algin:center;">
-                            				<option value="">카테고리</option>
-                            				<option value="캠핑">캠핑</option>
-                            				<option value="골프">골프</option>
-                            				<option value="낚시">낚시</option>
-                            				<option value="스노쿨링">스노쿨링</option>
-                            				<option value="기타레저">기타레저</option>
-                            				<option value="음악">음악</option>
-                            			</select>
-                            		
+                           			<select name="category" style="width:300px; text-algin:center;">
+                           				<option value="카테고리">카테고리</option>
+                           				<option value="캠핑">캠핑</option>
+                           				<option value="골프">골프</option>
+                           				<option value="낚시">낚시</option>
+                           				<option value="스노쿨링">스노쿨링</option>
+                           				<option value="기타레저">기타레저</option>
+                           				<option value="음악">음악</option>
+                           			</select>                 		
                             			
                             		                				
-                				</div> 
+                				</div>
                 				<div class="form-group">
                 					<label>제목</label>
                 					<input class="form-control" name="title">                				
@@ -67,13 +67,17 @@
                 					<label>내용</label>
                 					<textarea class="form-control" rows="3" name="content" placeholder="렌트기간과 비용설명,주의사항"></textarea>               				
                 				</div>
-                				<div class="form-group">
+                		 		<div class="form-group">
                 					<label>렌트비</label>
                 					<textarea class="form-control" rows="1" name="rentcost" placeholder="렌트가격"></textarea>               				
-                				</div>  
+                				</div>
+                				<div class="form-group">
+                					<label>보증금</label>
+                					<textarea class="form-control" rows="1" name="deposit" placeholder="보증금"></textarea>               				
+                				</div>   
                 				<div class="form-group">
                 					<label>아이디</label>
-                					<input class="form-control" name="userid" readonly="readonly" value="${vo.writer}">                				
+                					<input class="form-control" name="userid" readonly="readonly" value="${info.userid}">                 				
                 				</div>  
                 				<button type="submit" class="btn btn-default">등록</button>              			
                 				<button type="reset" class="btn btn-default">취소</button>              			
@@ -86,7 +90,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">제품 사진</div>
+			<div class="panel-heading">파일 첨부</div>
 			<div class="panel-body">
 				<div class="form-group uploadDiv">
 					<input type="file" name="uploadFile" multiple/>
@@ -98,9 +102,6 @@
 		</div>
 	</div>
 </div>   
-<div class=bigPictureWrapper> d    </div>
-<div class=bigPicture>   c  </div>
-
 <script>
 $(function(){
 	//새글 등록 폼 가져오기
@@ -117,7 +118,7 @@ $(function(){
 			str+="<input type='hidden' name='attachList["+i+"].uuid' value='"+job.data("uuid")+"'>";
 			str+="<input type='hidden' name='attachList["+i+"].uploadPath' value='"+job.data("path")+"'>";
 			str+="<input type='hidden' name='attachList["+i+"].fileName' value='"+job.data("filename")+"'>";
-			str+="<input type='hidden' name='attachList["+i+"].fileType' value='"+job.data("type")+"'>";
+			/* str+="<input type='hidden' name='attachList["+i+"].fileType' value='"+job.data("type")+"'>"; */
 		})
 		
 		formObj.append(str).submit();
@@ -181,30 +182,19 @@ $(function(){
 		let str="";
 		let uploadResult = $(".uploadResult ul");
 		
-		$(uploadResultArr).each(function(i,obj){
-			if(obj.fileType){
-				let fileCallPath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
-				let oriPath=obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName;
-				
-				oriPath = oriPath.replace(new RegExp(/\\/g),"/");
-				
-				str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
-				str+=obj.fileName+"' data-type='"+obj.fileType+"'>";
-				str+="<a href=\"javascript:showImage('"+oriPath+"')\">";
-				str+="<img src='/display?fileName="+fileCallPath+"'><div>"+obj.fileName+"</a>";
-				str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath+"' data-type='image'>";
-				str+="<i class='fa fa-times'></i></button></div>";				
-				str+="</li>";
-			}else{
-				let fileCallPath2=encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
-				str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
-				str+=obj.fileName+"' data-type='"+obj.fileType+"'>";
-				str+="<a href='/download?fileName="+fileCallPath2+"'>";
-				str+="<img src='/resources/img/attach.png'><div>"+obj.fileName+"</a>";
-				str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath2+"' data-type='file'>";
-				str+="<i class='fa fa-times'></i></button></div>";				
-				str+="</li>";
-			}
+		$(uploadResultArr).each(function(i,obj){			
+			let fileCallPath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+			let oriPath=obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName;
+			
+			oriPath = oriPath.replace(new RegExp(/\\/g),"/");
+			
+			str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
+			str+=obj.fileName+"'>";
+			str+="<a href=\"javascript:showImage('"+oriPath+"')\">";
+			str+="<img src='/display?fileName="+fileCallPath+"'><div>"+obj.fileName+"</a>";
+			str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath+"' data-type='image'>";
+			str+="<i class='fa fa-times'></i></button></div>";				
+			str+="</li>";		
 		})
 		uploadResult.append(str);
 	}
@@ -237,14 +227,14 @@ $(function(){
 		}, 1000);
 	})	
 })
-//썸네일 원본 이미지 보여주기
+	//썸네일 원본 이미지 보여주기
 function showImage(fileCallPath){
 	$(".bigPictureWrapper").css("display","flex").show();
 	
 	$(".bigPicture").html("<img src='/display?fileName="+fileCallPath+"'>")
 	                .animate({width:'100%', height:'100%'},1000);
 }
-</script>       
+</script>              
 <%@include file="../includes/footer.jsp" %>
 </body>
 </html>
