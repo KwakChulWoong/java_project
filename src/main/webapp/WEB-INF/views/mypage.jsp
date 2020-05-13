@@ -22,6 +22,11 @@
 	        <dt><strong>회원 탈퇴</strong></dt>
 	        <dd><a href="/signout/signout" >회원 탈퇴</a></dd>
 	    </dl>
+	    
+	    <dl class="fourth">
+	        <dt><strong>제품 등록</strong></dt>
+	        <dd><a href="/item/register" >제품 등록하기</a></dd>
+	    </dl>
 	</div>
 	<!-- //서브메뉴 -->
 	

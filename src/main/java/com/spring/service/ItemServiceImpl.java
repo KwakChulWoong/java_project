@@ -46,6 +46,12 @@ public class ItemServiceImpl implements ItemService {
 		return null;
 	}
 
+	@Override
+	public List<ItemVO> popularItem() {
+		return item.selectItemList();
+		
+	}
+
 //	@Transactional
 //	@Override
 //	public boolean ItemRegister(ItemVO vo) throws Exception {

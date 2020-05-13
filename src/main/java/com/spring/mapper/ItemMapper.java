@@ -18,4 +18,10 @@ public interface ItemMapper {
 //	public int delete(int bno);
 //	public int getTotalCount();
 //	public int updateReplycnt(@Param("bno")int bno,@Param("amount")int amount);
+	
+	
+	
+	//----------------------------
+	public List<ItemVO> selectItemList();
+	
 }
