@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * 
  */
@@ -45,7 +44,7 @@ window.onload = function() {
 		}
 	});	
 };
-=======
+
 /**
 드랍 다운 메뉴에 대한 js
  */
@@ -93,4 +92,4 @@ window.onload = function() {
 	});	
 };
 */
->>>>>>> refs/remotes/origin/master
+
