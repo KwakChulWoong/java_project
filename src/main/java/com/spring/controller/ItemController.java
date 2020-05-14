@@ -54,7 +54,7 @@ public class ItemController {
 		try {
 			if(service.ItemRegister(vo)) {
 				//rttr.addFlashAttribute("result", vo.getBno());
-				return "redirect:list";
+				return "redirect:/mypage";
 			}
 		} catch (Exception e) {			
 			e.printStackTrace();
