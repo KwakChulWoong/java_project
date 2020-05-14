@@ -8,6 +8,7 @@ import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 
 public interface ItemService {
 	//게시글 작성
@@ -34,4 +35,6 @@ public interface ItemService {
 //	
 
 	public List<ItemVO> popularItem(); 
+	
+	public List<TestVO> itemno();
 }

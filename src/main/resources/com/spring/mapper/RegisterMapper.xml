@@ -23,7 +23,7 @@
 		delete from members where userid=#{userid} and passwd=#{current_password} 
 	</delete>
 	
-	<!-- 임시 비밀번호로 사용자의 비밀번호를 변경해 놓기 -->
+	<!-- (비밀번호 잊었을때 이메일보내고나서) 임시 비밀번호로 사용자의 비밀번호를 변경해 놓기 -->
 	<update id="updateUser">
 		update members set passwd=#{newPass}
 		where userid=#{userid}

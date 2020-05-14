@@ -12,9 +12,10 @@ import lombok.ToString;
 public class Criteria {
 	private int pageNum;	//페이지 번호
 	private int amount;		//한 페이지당 보여줄 게시물 수
-	
+			
 	//검색과 관련된 정보 추가
-	private String category;	
+	private String type;   //검색조건
+	private String keyword;  //검색어 : TC, TCW..
 	
 	
 	public Criteria() {
@@ -25,4 +26,7 @@ public class Criteria {
 		this.amount = amount;
 	}	
 	
+	public String[] getTypeArr() {
+		return type==null?new String[] {} : type.split("");
+	}
 }

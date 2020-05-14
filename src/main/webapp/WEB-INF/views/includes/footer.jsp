@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<!-- footer 페이지 -->
 <div id="Foot">
 		<div class="footer">
 			<ul class="fm">
@@ -9,30 +10,16 @@
 			</ul>
 			<p class="addr">
 				우)01842 서울특별시 노원구 동일로 190길 43-6<br>전화번호 010-9151-9526<br>
-				COPYRIGHT 2020 BY 3반 곽철웅 김철진 김승현 노석희. ALL RIGHTS RESERVED.
+				COPYRIGHT 2020 BY 3반 곽철웅 김승현 김철진 노석희. ALL RIGHTS RESERVED.
 			</p>
 			<div style="position: absolute;float: right;top: 97px;right: 0px;"><a href="https://www.innogov.go.kr/" target="_blank"><img src="/images/common/foot_ban_r.png" alt="" width="147px"></a></div>
 			
 		</div>
-
-		<div class="m_footer">
-			<ul class="fm">
-				<li><a href="/content/board/list.asp">공지사항</a></li>
-				<li><a href="/content/guide/guide6.asp">오시는길</a></li>
-				<li><a href="http://www.royalpalace.go.kr:8080/html/eng_gbg/main/main.jsp">English</a></li>				
-				<li><a href="https://twitter.com/royalpalacego">twitter</a></li>
-				<li><a href="https://www.instagram.com/gbg_palace">instagram</a></li>
-			</ul>
-			<p class="addr">
-				COPYRIGHT 2014 BY GYEONGBOKGUNG. ALL RIGHTS RESERVED.
-			</p>
-		</div>
 	</div>
-<!--  <script src="/resources/dist/js/Carousel.js"></script>-->
-<!--  <script src="/resources/dist/js/style.js"></script>-->
 <script src="/resources/dist/js/jquery.js"></script>
 <script>
 	window.onload = function(){
+		/* 이거 안막게 되면 메인 페이지에 있는거랑 다른 페이지에서 includes로 불러온 footer랑 서로 공유하기 때문에 문제 생김 */
 		/*var caro = new Carousel(document.querySelector('#carousel-banner'), {
 			CarouselMotion: 'fade',
 			naviPosition: 'right',
@@ -44,6 +31,8 @@
 		  /*setTimeout(function(){
 			  $('#f_img').attr('src','/resources/images/res_4.jpg');
 		  }, 4000);*/
+		  
+		/* 뭐 때문인지 모르겠는데 includes로 애초에 불리했는데도 footer에도 이 드랍다운 메뉴를 넣어줘야 제대로 작동함 */
 	  	$('.tab_2 li').mouseover(function() {
 			switch (this.className) {
 			case '1':

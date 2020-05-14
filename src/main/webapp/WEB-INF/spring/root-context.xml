@@ -15,7 +15,7 @@
    <!-- HikariCP 설정 -->
       <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
       <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-      <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.135:1521:orcl"/>
+      <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.135:1521:orcl"/> <!-- 192.168.0.135 AWS 아마존 웹서버 안쓰고 승현이형 ip로 접속해서 db씀 -->
       <property name="username" value="rental"/>
       <property name="password" value="12345"/>
       

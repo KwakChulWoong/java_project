@@ -17,9 +17,9 @@ class Carousel {
     this.CarouselMotion = !options.CarouselMotion ? 'default' : options.CarouselMotion;
     this.naviPosition = !options.naviPosition ? 'bottom' : options.naviPosition;
     this.naviStyle = !options.naviStyle ? 'button' : options.naviStyle;
-    this.autoMove = !options.autoMove ? false : options.autoMove; // 알아서 전환되는거
+    this.autoMove = !options.autoMove ? false : options.autoMove; 	// 알아서 전환되는거
 																	// 주석처리하게 되면
-																	// 작동
+																	// 작동안함
     this.autoMoveTime = !options.autoMoveTime ? 3000 : options.autoMoveTime;
     this.element = element; // element
     this.carouselIndex = 0;
@@ -27,7 +27,7 @@ class Carousel {
 
     // default setting
 //    this.element.children[0].style.width = `${this.element.clientWidth * this.element.children[0].children.length}px`;
-    for (let i = 0; i < this.element.children[0].children.length-1; i++) { //이거 해야지 마지막에 아무것도 없는 화면이 안뜸
+    for (let i = 0; i < this.element.children[0].children.length-1; i++) { //이거 해야지 마지막에 아무것도 없는 화면이 안뜸 마지막 인덱스가 있는거같음
       this.element.children[0].children[i].style.width = `${this.element.clientWidth}px`;
     };
 
@@ -41,7 +41,7 @@ class Carousel {
   
   _naviMaker() {
     let naviElement = '';
-    let text = ['스노쿨링','골프채','캠핑장비','낚시대']; // 쓰고 싶은 말을 여기다가 쓰면 됨
+    let text = ['스노쿨링','골프채','캠핑장비','낚시대']; // 쓰고 싶은 말을 여기다가 쓰면 됨 리스트 생성해서 뿌리는걸로 이게 배너에 나오는 4가지의 버튼임
     if (this.naviStyle === 'arrow') {
       this.element.children[1].setAttribute('class', 'navi-arrow');
 

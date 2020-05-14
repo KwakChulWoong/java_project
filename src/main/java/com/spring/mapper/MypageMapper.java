@@ -9,7 +9,7 @@ import com.spring.domain.Criteria;
 
 public interface MypageMapper {
 	public int insert(BoardVO vo);
-	public List<BoardVO> getList(Criteria cri);
+	public List<BoardVO> getList(Criteria cri); //마이페이지 보여주는 리스트
 	public BoardVO read(int bno);
 	public int update(BoardVO vo);
 	public int remove(int bno);

@@ -19,9 +19,12 @@
   #region {
   	position:fixed;
   	border:2px solid orange;
+
   	right:50px;
   	top:150px;
-  }  
+  }
+  /* region이 스타일은 총 물품 창 들어가면 따라다니는 category 버튼 화면에 고정시키고 스타일준거 */
+>>>>>>> refs/remotes/origin/master
 </style>
 <jsp:include page="../includes/header.jsp"/>
 <link rel="stylesheet" href="/resources/vendor/bootstrap/css/bootstrap.min.css" />

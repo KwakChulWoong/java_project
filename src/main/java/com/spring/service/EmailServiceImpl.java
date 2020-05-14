@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
 	
+	//네이버 설정에 가서 POP3/SMTP 사용안함을 사용함으로 바꾸기
+	
 	//메일 서버 설정
 	String charSet="utf-8";
 	String hostSMTP="smtp.naver.com";

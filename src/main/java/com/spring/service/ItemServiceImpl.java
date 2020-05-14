@@ -12,6 +12,7 @@ import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 import com.spring.mapper.AttachMapper;
 
 import com.spring.mapper.ItemMapper;
@@ -53,6 +54,7 @@ public class ItemServiceImpl implements ItemService {
 		
 	}
 
+	//카테고리별 페이지 나누기
 	@Override
 	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception {		
 		return item.totalItemList(cri);
@@ -61,6 +63,11 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public int totalItemRows(ItemCriteria cri) throws Exception {		
 		return item.totalItemCount(cri);
+	}
+	
+	
+	public List<TestVO> itemno() {
+		return item.itemno();
 	}
 
 //	@Transactional

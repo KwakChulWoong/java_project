@@ -57,6 +57,7 @@
                                         <td>${vo.itemno}</td>
                                         <!-- 페이지 나누기 전 -->
                                         <%-- <td><a href="/board/read?bno=${vo.bno}">${vo.title }</a></td> --%>
+                                        <!-- vo.~~~들이 마이페이지에 들어오는 list 그니까 자기가 올린 글 들어오게끔 해줌 -->
                                         <td><a href="${vo.itemno}" class="move">${vo.title } </td>
                                       	<td>${vo.userid}</td>
                                         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${vo.regdate }"/> </td>

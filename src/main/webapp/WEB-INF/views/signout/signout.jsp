@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 	<title>Login Page</title>
-   
+   	
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -19,6 +19,7 @@
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="/resources/dist/css/login.css">
 </head>
+<!-- 회원탈퇴하는 페이지는 그냥 로그인페이지 css를 통으로 끌고 와서 수정한거밖에 없음 -->
 <body data-gr-c-s-loaded="true">
     <div class="container">
         <div class="d-flex justify-content-center h-100">
@@ -32,6 +33,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
+                            <!-- 회원탈퇴할때 아이디는 readonly주고 ${info.userid} 아이디 자동으로 들어오게끔 -->
                             <input type="text" name="userid" id="userid" class="form-control" placeholder="아이디" readonly value="${info.userid}">
                         </div>
                         <div class="input-group form-group">
@@ -52,7 +54,7 @@
                 </div>
                 <div class="card-footer">
                 	<div class="d-flex justify-content-center">
-                        <a href="#" style="color:#ffc001;">안녕히 가세요.</a>
+                        <a href="/" style="color:#ffc001;">안녕히 가세요.</a>
                     </div>
                 </div>
             </div>
