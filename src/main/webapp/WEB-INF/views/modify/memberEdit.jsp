@@ -22,12 +22,13 @@ $(function(){
 <link rel="stylesheet" href="/resources/dist/css/register.css" />  
 </head>
 <body>
-<div class="container" style="margin-top:40px">
-<form id="memberEdit" method="post" action="memberEdit">	
+<div class="container" style="max-width:50%;">
+<form id="memberEdit" method="post" action="memberEdit" style="padding-top:250px;">	
+  	<div class="edit-header" style="font-size:40px;color:white; margin-left:155px; margin-bottom:50px;">회원정보 변경</div>
 	<div class="form-group row justify-content-center">
-		<label for="userid" class="col-sm-2 col-form-label" style="color:white; margin-top:250px;">아이디</label>
+		<label for="userid" class="col-sm-2 col-form-label" style="color:white;">아이디</label>
 		<div class="col-sm-6">			
-			<input type="text" name="userid" id="userid" class="form-control" style="margin-top:250px;" placeholder="아이디를 입력하세요" value="${info.userid}" readonly/>
+			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요" value="${info.userid}" readonly/>
 			 <small id="userid" class="text-info"></small>	
 		</div>
 	</div>	
@@ -74,7 +75,7 @@ $(function(){
 	
 	<div class="form-group text-center">		
 		<button type="submit" class="btn btn-primary">입력</button>
-	    <button type="reset" class="btn btn-secondary">취소</button>		
+	    <button type="reset" class="btn btn-secondary" style="background-color:white;"><a href="/mypage">취소</a></button>		
 	</div>		
 </form>
 </div>
