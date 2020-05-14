@@ -85,13 +85,21 @@ public class LoginController {
 		
         HashMap<String, Object> userInfo = kakao.getUserInfo(access_Token);
         System.out.println("login Controller : " + userInfo);
-        String nickname = (String) userInfo.get("nickname");
+        String userid = (String) userInfo.get("userid");
+        String name = (String) userInfo.get("nickname");
+        
+        AuthInfo info = new AuthInfo();
+        info.setName(name);
+        info.setUserid(userid);
+        
+        
         if (userInfo.get("email") != null) {
             session.setAttribute("userId", userInfo.get("email"));
             session.setAttribute("access_Token", access_Token);
         }
-        session.setAttribute("nickname", nickname);
-			
+        session.setAttribute("info",info);
+        
+		
 	}
 	
 	//중복아이디 검사
@@ -121,10 +129,11 @@ public class LoginController {
 		
 		AuthInfo info = service.loginMember(vo);
 		
-		if(info!=null) {
+		if(info!=null) {//여기가 로그인 성공임
 			session.setAttribute("info",info);
+			rttr.addFlashAttribute("success", "환영합니다!");
 			return "redirect:/";
-		}else {
+		}else {//로그인 실패
 			rttr.addFlashAttribute("error", "잘못된 비밀번호입니다.");
 			return "redirect:/login";
 	

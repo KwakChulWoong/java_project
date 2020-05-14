@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login Page</title>
+	<title>환영합니다</title>
    
 	<!--Bootsrap 4 CDN-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -23,10 +23,10 @@
 	<script type="text/javascript"> 
 	var message = '${error}';
 	if(message!==''){
-		alert(message); 
-		
+		alert(message); 		
 	}
 	</script>
+
 </head>
 <body data-gr-c-s-loaded="true">
     <div class="container">

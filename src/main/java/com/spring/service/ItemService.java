@@ -4,19 +4,28 @@ import java.util.List;
 
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
+import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
-import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 
 public interface ItemService {
-//	//게시글 작성
+	//게시글 작성
 	public boolean ItemRegister(ItemVO vo) throws Exception;
 
+	
 	//	아이템 리스트
-	public List<ItemVO> getList(ItemCriteria cri) throws Exception;
-	public int totalRows(ItemCriteria cri) throws Exception;
+	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception;
+	public int totalItemRows(ItemCriteria cri) throws Exception;
+
+
+	//itemno 해당 디테일 페이지
+	public ItemVO detail(int itemno) throws Exception;
 	
-	
+
+	public List<ItemVO> getList(Criteria cri) throws Exception;
+
+
 //	public List<ReviewVO> getReviewList() throws Exception;
 //	//read 
 	public BoardVO readList(int bno) throws Exception;
@@ -30,8 +39,15 @@ public interface ItemService {
 //	public List<AttachFileDTO> getAttachList(int bno);
 //	
 //	
+
+	public AttachFileDTO get_detail_img(AttachFileDTO dto) throws Exception;
 	
-	
-	// --------------------------------
 	public List<ItemVO> popularItem(); 
+	
+	public List<TestVO> itemno();
+	
+	
+	//페이지 나누기 총게시물
+	public int mypagetotalRows(Criteria cri) throws Exception;
 }
+

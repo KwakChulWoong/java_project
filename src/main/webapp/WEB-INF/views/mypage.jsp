@@ -5,7 +5,7 @@
 <link href="/resources/dist/css/mypage.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-<div style="height: 80%;">
+<div style="height: 100%;">
 <!-- 서브 메뉴 -->
 	<div class="mytmall_menu" style="float:left;">
 	    <dl class="first">
@@ -22,11 +22,6 @@
 	        <dt><strong>회원 탈퇴</strong></dt>
 	        <dd><a href="/signout/signout" >회원 탈퇴</a></dd>
 	    </dl>
-	    
-	    <dl class="fourth">
-	        <dt><strong>제품 등록</strong></dt>
-	        <dd><a href="/item/register" >제품 등록하기</a></dd>
-	    </dl>
 	</div>
 	<!-- //서브메뉴 -->
 	
@@ -42,7 +37,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                                           내가 올린 상품 리스트
-                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/item/register'">새로운 글 작성하기</button>
+                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/item/register'" style="background-color:orange; border-color:green;">새로운 글 작성하기</button>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -53,17 +48,20 @@
                                         <th>제 목</th>
                                         <th>작성자</th>
                                         <th>작성일</th>
+                                        <th>조회수</th>
                                     </tr>									
                                 </thead>
 								<!-- 게시판 리스트 반복문 -->
 								<c:forEach items="${list }" var="vo">
 									<tr>
-                                        <td>${vo.bno }</td>
+                                        <td>${vo.itemno}</td>
                                         <!-- 페이지 나누기 전 -->
                                         <%-- <td><a href="/board/read?bno=${vo.bno}">${vo.title }</a></td> --%>
-                                        <td><a href="${vo.bno}" class="move">${vo.title } </a><strong>[${vo.replycnt }]</strong></td>
-                                        <td>${vo.writer }</td>
+                                        <!-- vo.~~~들이 마이페이지에 들어오는 list 그니까 자기가 올린 글 들어오게끔 해줌 -->
+                                        <td><a href="/item/detail?itmeno=${vo.itemno}" class="move">${vo.title }</a></td>
+                                      	<td>${vo.userid}</td>
                                         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${vo.regdate }"/> </td>
+                                        <td>${vo.readcount }</td>
                                     </tr>		
 								</c:forEach>
                             </table>
@@ -105,12 +103,9 @@
                             			<li class="paginate_button previous"><a href="${pageVO.startPage-1 }">Previous</a></li>
                             		</c:if>
                             		
-                            		<c:forEach  begin="${pageVO.startPage }" end="${pageVO.endPage }" var="idx">
-                            			
-                            			<li class="paginate_button ${cri.pageNum==idx?'active':'' }"><a href="${idx}">${idx}</a></li>
-                            			
-                            		</c:forEach>
-                            		
+                            		<c:forEach  begin="${pageVO.startPage }" end="${pageVO.endPage }" var="idx">                            			
+                            			<li class="paginate_button ${cri.pageNum==idx?'active':''}"><a href="${idx}">${idx}</a></li>                            			
+                            		</c:forEach>                            		
                             		<c:if test="${pageVO.next }">
                             			<li class="paginate_button next"><a href="${pageVO.endPage+1 }">Next</a></li>
                             		</c:if>
@@ -146,7 +141,7 @@
 </div>
 <jsp:include page="includes/footer.jsp"></jsp:include>
 <!-- 페이지 나누기 정보를 가지고 있는 폼 -->
-<form action="/board/list" id="actionForm">
+<form action="/mypage" id="actionForm">
 	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
 	<input type="hidden" name="amount" value="${cri.amount }" />
 	<input type="hidden" name="type" value="${cri.type }" />
@@ -169,7 +164,7 @@
 	//사용자가 게시물 수를 클릭하면
 	//actionForm의 amount의 정보를 변경하여 보내기
 	//$("#amount option[value='${cri.amount}']").attr("selected","selected")
-	$("#amount").change(function(e){
+	$(".form-control").change(function(e){
 		//사용자가 선택한 게시물 수 가져오기
 		let amount = $(this).val()
 		
@@ -183,8 +178,8 @@
 		e.preventDefault();
 		
 		//bno를 포함해서
-		actionForm.append("<input type='hidden' name='bno' value='"+$(this).attr('href')+"' />")
-		actionForm.attr("action","/board/read");
+		actionForm.append("<input type='hidden' name='itemno' value='"+$(this).attr('href')+"'>")
+		actionForm.attr("action","/item/detail");
 		//actionoForm 보내기
 		actionForm.submit();
 	})
@@ -193,7 +188,7 @@
 	
 	
 	
-	$("#searchForm button").click(function() {
+	$(".btn-default").click(function() {
 		let searchForm = $("#searchForm");
 		//type과 keyword 하나라도 입력이 안된 경우
 		//사용자에게 메세지 띄워주기
@@ -209,9 +204,9 @@
 		
 		//버튼을 눌렀을 때 무조건 페이지 번호는 1로 세팅
 		searchForm.find("input[name='pageNum']").val("1");	
+		searchForm.submit();
 		
 		
-		$("#searchForm").submit();
 		
 	})
 	
@@ -224,7 +219,7 @@
 	let result = "${result}";
 	checkModal(result);
 	
-	history.replaceState({}, null, null);
+	history.replaceState({},null,null);
 	
 	
 	function checkModal(result){
@@ -233,11 +228,18 @@
 		}
 		if(parseInt(result)>0){
 			$(".modal-body").html("게시글 "+parseInt(result)+" 번이 등록되었습니다.")
-		}else{
+		}
+		else{
 			$(".modal-body").html(result);
 		}
 		$("#myModal").modal("show");
 	}
 	
 	
+</script>
+<script type="text/javascript"> 
+var message = '${error}';
+if(message!==''){
+	alert(message); 		
+}
 </script>

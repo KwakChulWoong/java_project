@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-       
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>      
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>총 물품</title>
+	<title>전체 매물</title>
 	<link href="/resources/dist/css/header.css" rel="stylesheet">
 	<link href="/resources/dist/css/footer.css" rel="stylesheet">
 	<link href="/resources/dist/css/item.css" rel="stylesheet">
@@ -21,10 +19,11 @@
   #region {
   	position:fixed;
   	border:2px solid orange;
-  	left:100px;
-  	top:200px;
+
+  	right:50px;
+  	top:150px;
   }
-  
+  /* region이 스타일은 총 물품 창 들어가면 따라다니는 category 버튼 화면에 고정시키고 스타일준거 */
 </style>
 <jsp:include page="../includes/header.jsp"/>
 <link rel="stylesheet" href="/resources/vendor/bootstrap/css/bootstrap.min.css" />
@@ -42,22 +41,23 @@
        </select>
 
    </nav>
-       <h3 style="margin-left :26%; margin-top:10px">Dynamic 인기 매물</h3>
-       
+       <h3 style="margin-left :300px; margin-top:10px">전체 매물</h3>       
+	   <div class="title-line-divider" style="width:1200px; margin-left:300px;"></div>
        <style>       	
        	.content div{
        		float:left;
        		margin:0 auto;
        	}
-       	.content div .item{
-       		width:280px;
+       	.content .item{
+       		width:250px;
        		margin-right:15px;
        		margin-bottom:10px;
-       	}
-       	
-       	.content div img{
+       		margin : 5px;
+       		box-sizing: border-box;
+       	}       	
+       	.content .item img{
        		display:block;
-       		width:280px;
+       		width:250px;
        	} 
        </style> 
    <div class="container">      
@@ -76,16 +76,18 @@
 			       		
 			       		$(".card-img-top").attr("src","display?fileName="+path);		       		
 			       </script>	 
-			  </c:forEach>			  					  
+			  			  					  
 			    <div class="item">
+			    <a href="/item/detail?itemno=${vo.itemno }">
 			      <img class="card-img-top" alt="렌탈 이미지">
 				  <div class="">
 				    <h5>${vo.title}</h5>
 				    <p>${vo.rentcost}</p>
 				    <p>${vo.readcount}</p>
 				  </div>
+				  </a>
 			    </div>
-			 	
+			 	</c:forEach>
 		   </c:forEach>
 	   </div>
 </div>
@@ -124,7 +126,7 @@
 	}
 	$(".paginate_button a").click(function(e){
 		e.preventDefault();		
-		
+		form.find("input[name='category']").val('${cri.category}');
 		form.find("input[name='pageNum']").val($(this).attr("href"));
 		form.submit();		
 	})

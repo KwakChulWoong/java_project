@@ -19,12 +19,13 @@ public class SignOutController {
 	@Autowired
 	private RegisterService service;
 	
-	
+	//회원탈퇴 페이지로 이동
 	@GetMapping("/signout/signout")
 	public String home(Locale locale, Model model) {
 		return "/signout/signout";
 	}
 	
+	//회원탈퇴되면 메인화면 아니면 다시 회원탈퇴 페이지로 있게끔
 	@PostMapping("/signout/signout")
 	public String leavePost(LoginVO vo,HttpSession session) {
 	

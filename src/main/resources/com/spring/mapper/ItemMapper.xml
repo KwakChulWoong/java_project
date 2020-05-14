@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mapper.ItemMapper">
@@ -82,4 +83,149 @@
 </update>
   동적 sql 
     -->
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.ItemMapper">
+
+<insert id="insertItemRegister">
+	<selectKey keyProperty="itemno" order="BEFORE" resultType="int">
+		select item_seq.nextVal from dual
+	</selectKey>
+	insert into item(itemno,category,title,content,rentcost,deposit,userid) 
+	values(#{itemno},#{category},#{title},#{content},#{rentcost},#{deposit},#{userid})
+</insert>
+	
+	<!-- 마이페이지에 본인이 올렸던 게시글들 db에 있는거 가져오는 거 -->
+	<select id="getList" resultType="com.spring.domain.ItemVO">
+	  <![CDATA[		
+		select * 
+		from(
+			select  /*+INDEX_DESC(item SYS_C0011566)*/
+			rownum rn,itemno,title,userid,regdate
+			from item where
+		]]>
+		 <include refid="criteria"></include>			
+	  <![CDATA[		
+		 rownum <= #{pageNum}*#{amount})
+		where rn> (#{pageNum}-1)*#{amount}	
+	  ]]>	
+	</select>
+
+<!-- 제품 목록 가져오기  -->
+<select id="selectItemList" resultType="com.spring.domain.ItemVO">
+	select * from item order by readcount desc
+</select>
+
+<!--  제품목록 카테고리에 의거해서 가져오기 -->
+<select id="totalItemList" resultMap="itemMap">
+<![CDATA[    
+    select *
+	from (select itemno,category,title,rentcost,content,readcount,userid from 
+	(select rownum rn,itemno,category,title,rentcost,content,readcount,userid
+    	  from (select * from item where category like '%'||#{category}||'%' order by readcount desc)
+    	  where rownum <= #{pageNum}*#{amount})where rn> (#{pageNum}-1)*#{amount}) item
+	left outer join attach on item.itemno = attach.itemno order by item.readcount desc
+    ]]>
+</select>
+<select id="totalItemCount" resultType="int">
+	select count(*)
+	from (select * from item where category like '%'||#{category}||'%') item
+	left outer join attach on item.itemno = attach.itemno	
+</select>
+
+<!-- resultMap 데이터베이스 결과데이터를 객체에 로드하는 방법 -->
+	<resultMap type="com.spring.domain.ItemVO" id="itemMap">
+		<id property="itemno" column="itemno"/>
+		<result property="itemno" column="itemno"/>
+		<result property="category" column="category"/>
+		<result property="title" column="title"/>		
+		<result property="rentcost" column="rentcost"/>
+		<result property="content" column="content"/>		
+		<result property="readcount" column="readcount"/>
+		<result property="userid" column="userid"/>
+		<collection property="attachList" resultMap="attachMap"></collection>
+	</resultMap>
+	
+	<resultMap type="com.spring.domain.AttachFileDTO" id="attachMap">
+		<result property="uuid" column="uuid"/>
+		<result property="uploadPath" column="uploadPath"/>
+		<result property="fileName" column="fileName"/>
+		<result property="itemno" column="itemno"/>
+	</resultMap>
+
+<!-- 테스트 -->
+<select id="itemno" resultType="com.spring.domain.TestVO">
+	select * from item,attach where item.itemno=attach.itemno order by readcount desc
+</select>
+
+<select id="detail" resultMap="itemMap">
+	select * from (
+	select item.itemno, item.category, item.title, item.content, item.deposit, item.rentcost, item.regdate, item.readcount , members.userid, members.address  from item join members
+	on item.userid = members.userid
+	where item.itemno=#{itemno}) a
+	left outer join attach on a.itemno = attach.itemno
+</select>
+
+<select id="get_detail_img" resultType="com.spring.domain.AttachFileDTO">
+select * from attach where uuid=#{uuid} and filename=#{fileName}
+
+</select>
+
+
+
+<!-- 페이지 나누기를 위한 전체 게시물 수 구하기 -->
+	<select id="mypageTotalCount" resultType="int">
+		select count(*) from item where 
+		<!-- 검색 -->
+		<include refid="criteria"></include>
+		itemno>0
+	</select>
+
+
+<!-- 
+<select id="getReviewList" resultType="com.spring.domain.ReviewVO">
+	select * from review
+</select>
+
+<update id="update">
+	update spring_board set title=#{title},  content=#{content} where bno=#{bno}
+</update>
+<delete id="delete">
+	delete from spring_board where bno=#{bno}
+</delete>
+페이지 나누기를 위한 전체 게시물 수 구하기
+<select id="getTotalCount" resultType="int">
+	select count(*)
+      from spring_board
+      where bno>0
+</select>
+댓글 수 수정
+<update id="updateReplycnt">
+	update spring_board set replycnt = replycnt+#{amount}
+	where bno=#{bno}
+</update>
+-->
+
+<!--  동적 sql  --> 
+   <sql id="criteria">
+      <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+         <foreach collection="typeArr" item='type'>
+            <trim prefix="OR">
+               <choose>
+                  <when test="type=='T'.toString()">
+                     title like '%'||#{keyword}||'%'
+                  </when>
+                  <when test="type=='C'.toString()">
+                     content like '%'||#{keyword}||'%'
+                  </when>
+                  <when test="type=='W'.toString()">
+                     writer like '%'||#{keyword}||'%'
+                  </when>
+               </choose>
+            </trim>
+         </foreach>
+      </trim>
+   </sql> 
+>>>>>>> refs/remotes/origin/master
 </mapper>

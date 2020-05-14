@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
-import com.spring.domain.ItemCriteria;
+import com.spring.domain.Criteria;
 import com.spring.domain.changePwdVO;
 import com.spring.mapper.AttachMapper;
 import com.spring.mapper.BoardMapper;
@@ -45,11 +45,11 @@ public class BoardServiceImpl implements BoardService {
 //		return true;
 //	}
 	
-	@Override
-	public List<BoardVO> getList(ItemCriteria cri) throws Exception {
-		
-		return mapper.getList(cri);
-	}
+//	@Override
+//	public List<BoardVO> getList(Criteria cri) throws Exception {
+//		
+//		return mapper.getList(cri);
+//	}
 	
 	@Override
 	public BoardVO getRow(int bno) throws Exception {
@@ -71,7 +71,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public int totalRows(ItemCriteria cri) {
+	public int totalRows(Criteria cri) {
 	
 		return mapper.getTotalCount(cri);
 	}
@@ -94,3 +94,4 @@ public boolean register(BoardVO vo) throws Exception {
 	return false;
 }
 }
+>>>>>>> refs/remotes/origin/master

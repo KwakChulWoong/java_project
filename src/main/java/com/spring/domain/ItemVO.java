@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
+
 @Data
 public class ItemVO {
 	private int itemno;
@@ -16,4 +17,7 @@ public class ItemVO {
 	private String userid;
 	private int readcount;
 	private List<AttachFileDTO> attachList;
+	
+	private String address;	
 }
+

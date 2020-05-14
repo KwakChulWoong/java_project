@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mapper.ReviwAttachMapper">
+	<!-- 첨부파일 조회/삽입/삭제/수정 -->
+	<insert id="insert"><!-- 컬럼 전체 삽입 -->
+		insert into reviewattach(uuid,uploadPath,fileName,reviewno)
+		values(#{uuid},#{uploadPath},#{fileName},#{reviewno})		
+	</insert>
+	
+<!-- 	<delete id="delete">uuid 값 일치
+		delete from spring_attach where uuid=#{uuid}
+	</delete>
+	<select id="select" resultType="com.spring.domain.AttachFileDTO">
+		select * from spring_attach where bno=#{bno}
+	</select>bno값 일치 
+	
+	<delete id="deleteAll">
+		delete from spring_attach where bno=#{bno}
+	</delete>
+	<select id="getOldFiles" resultType="com.spring.domain.AttachFileDTO">어제 날짜의 첨부파일 목록 가져오기
+		select * from spring_attach
+		where uploadPath = to_char(sysdate-1,'yyyy\mm\dd')
+	</select> -->
+</mapper>
