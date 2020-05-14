@@ -76,7 +76,7 @@
 			       		
 			       		$(".card-img-top").attr("src","display?fileName="+path);		       		
 			       </script>	 
-			  </c:forEach>			  					  
+			  			  					  
 			    <div class="item">
 			    <a href="/item/detail?itemno=${vo.itemno }">
 			      <img class="card-img-top" alt="렌탈 이미지">
@@ -87,7 +87,7 @@
 				  </div>
 				  </a>
 			    </div>
-			 	
+			 	</c:forEach>
 		   </c:forEach>
 	   </div>
 </div>

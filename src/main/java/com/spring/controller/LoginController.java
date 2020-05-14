@@ -129,10 +129,11 @@ public class LoginController {
 		
 		AuthInfo info = service.loginMember(vo);
 		
-		if(info!=null) {
+		if(info!=null) {//여기가 로그인 성공임
 			session.setAttribute("info",info);
+			rttr.addFlashAttribute("success", "환영합니다!");
 			return "redirect:/";
-		}else {
+		}else {//로그인 실패
 			rttr.addFlashAttribute("error", "잘못된 비밀번호입니다.");
 			return "redirect:/login";
 	

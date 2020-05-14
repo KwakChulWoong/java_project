@@ -91,5 +91,10 @@
      </a>
  </div>
    
-
+<script type="text/javascript"> 
+var message = '${success}';
+if(message!==''){
+	alert(message); 		
+}
+</script>
 <jsp:include page="includes/footer.jsp"></jsp:include>
