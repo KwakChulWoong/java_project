@@ -2,7 +2,6 @@ package com.spring.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -77,7 +76,4 @@ public class HomeController {
 	public String notice() {
 		return "notice";
 	}
-
-	
->>>>>>> refs/remotes/origin/master
 }

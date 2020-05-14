@@ -94,4 +94,3 @@ public boolean register(BoardVO vo) throws Exception {
 	return false;
 }
 }
->>>>>>> refs/remotes/origin/master
