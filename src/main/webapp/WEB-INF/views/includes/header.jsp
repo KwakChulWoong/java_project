@@ -54,7 +54,7 @@
 				<div class="clear"></div>
 					<ul style="margin-top:15px;" class="tab_2">
 	     				<li class="1" style="width:150px;font-weight: normal;" onclick="top.location.href='/item/rent';">대여<br><span>rent</span></li>
-	     				<li class="2" style="width:150px;font-weight: normal;" onclick="top.location.href='/';">공지사항<br><span>notice</span></li>
+	     				<li class="2" style="width:150px;font-weight: normal;" onclick="top.location.href='/notice';">공지사항<br><span>notice</span></li>
 					</ul>
 				</div>
 			</div>

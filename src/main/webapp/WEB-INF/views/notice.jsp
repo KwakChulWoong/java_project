@@ -5,6 +5,5 @@
 <link href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <div style="height: 100%;">
 
-<h3>안녕하세요</h3>
-
+<h1>안녕하세요 취빌사입니다</h1>
 <jsp:include page="includes/footer.jsp"></jsp:include>
