@@ -54,6 +54,4 @@ function openCity(evt, cityName) {
               alert("리뷰조회실패");
            }
         })
-
 }
->>>>>>> refs/remotes/origin/master
