@@ -1,12 +1,12 @@
 package com.spring.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import lombok.Data;
+
 @Data
-public class ItemVO {
+public class TestVO {
+
 	private int itemno;
 	private String title;
 	private String category;	
@@ -16,9 +16,10 @@ public class ItemVO {
 	private Date regdate;
 	private String userid;
 	private int readcount;
-	private List<AttachFileDTO> attachList;
 	
-	
+	private String uuid;
+	private String uploadPath;
+	private String fileName;
 	
 	
 }

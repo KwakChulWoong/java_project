@@ -8,6 +8,7 @@ import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 
 public interface ItemMapper {
 	public int insertItemRegister(ItemVO vo);
@@ -23,5 +24,7 @@ public interface ItemMapper {
 	
 	//----------------------------
 	public List<ItemVO> selectItemList();
+	
+	public List<TestVO> itemno();
 	
 }

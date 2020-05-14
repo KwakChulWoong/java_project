@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.spring.domain.ItemVO;
+import com.spring.domain.TestVO;
 import com.spring.service.ItemService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +29,15 @@ public class HomeController {
 	
 	@GetMapping("/login/test01")
 	public void PoppularItem(Model model) {
-		List<ItemVO> vo = new ArrayList<ItemVO>();
-		vo=service.popularItem();
+		List<TestVO> vo = new ArrayList<TestVO>();
+		vo=service.itemno();
+		
+		
+//		for(int i=0;i<100;i++) {
+//			vo.replaceAll("\\","//");
+//		}
+			
+			
 		log.info("vo" + vo);
 		model.addAttribute("vo", vo);
 	}

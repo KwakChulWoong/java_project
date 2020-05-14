@@ -30,7 +30,10 @@
 	select * from item order by readcount desc
 </select>
 
-
+<!-- 테스트 -->
+<select id="itemno" resultType="com.spring.domain.TestVO">
+	select * from item,attach where item.itemno=attach.itemno order by readcount desc
+</select>
 
 <!-- 
 <select id="getReviewList" resultType="com.spring.domain.ReviewVO">
