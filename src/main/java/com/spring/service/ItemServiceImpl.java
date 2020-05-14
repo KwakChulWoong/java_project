@@ -70,6 +70,18 @@ public class ItemServiceImpl implements ItemService {
 		return item.itemno();
 	}
 
+	@Override
+	public ItemVO detail(int itemno) throws Exception {
+		
+		return item.detail(itemno);
+	}
+
+	@Override
+	public AttachFileDTO get_detail_img(AttachFileDTO dto) throws Exception {
+
+		return item.get_detail_img(dto);
+	}
+
 //	@Transactional
 //	@Override
 //	public boolean ItemRegister(ItemVO vo) throws Exception {

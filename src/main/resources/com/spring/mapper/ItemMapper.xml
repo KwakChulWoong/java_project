@@ -73,6 +73,18 @@
 	select * from item,attach where item.itemno=attach.itemno order by readcount desc
 </select>
 
+<select id="detail" resultMap="itemMap">
+	select * from (
+	select item.itemno, item.category, item.title, item.content, item.deposit, item.rentcost, item.regdate, item.readcount , members.userid, members.address  from item join members
+	on item.userid = members.userid
+	where item.itemno=#{itemno}) a
+	left outer join attach on a.itemno = attach.itemno
+</select>
+
+<select id="get_detail_img" resultType="com.spring.domain.AttachFileDTO">
+select * from attach where uuid=#{uuid} and filename=#{fileName}
+
+</select>
 
 <!-- 
 <select id="getReviewList" resultType="com.spring.domain.ReviewVO">

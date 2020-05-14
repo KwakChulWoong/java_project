@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
@@ -100,15 +101,17 @@ public class ItemController {
 	
 	
 	@GetMapping("/detail")
-	public void listGet(Model model){		
-		log.info("리뷰 목록 보여주기 ");
+	public void listGet(int itemno ,Model model){		
+		log.info("리뷰 목록 보여주기 "+itemno);
 		try {			
-//			model.addAttribute("list", service.getReviewList());
-//			model.addAttribute("pageVO",new PageVO(cri, service.totalRows()));
+			ItemVO vo = service.detail(itemno);
+			model.addAttribute("vo",vo);
+			log.info("vo : "+vo);
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
 	}
+	
 	@GetMapping("/ReviewRegister")
 	public void revReg(BoardVO vo) {
 		log.info("리뷰작성페이지");
@@ -161,6 +164,35 @@ public class ItemController {
 		} catch (IOException e) {			
 			e.printStackTrace();
 		}
+		return result;
+	}
+	
+	@GetMapping("/display_detail")
+	@ResponseBody
+	public ResponseEntity<byte[]> getFile_detail(AttachFileDTO dto){
+		log.info("이미지 요청 "+dto);
+		AttachFileDTO file_dto=null;
+		ResponseEntity<byte[]> result=null;
+		try {
+			file_dto = service.get_detail_img(dto);
+			File f = new File("d:\\rental\\"+file_dto.getUploadPath()+"\\"+file_dto.getUuid()+"_"+file_dto.getFileName());
+			
+			
+			
+			HttpHeaders header = new HttpHeaders();
+			
+			try {
+				header.add("Content-Type", Files.probeContentType(f.toPath()));
+				log.info("이미지 "+f.toPath());
+				result = new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
+			} catch (IOException e) {			
+				e.printStackTrace();
+			}
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+		
+		
 		return result;
 	}
 	

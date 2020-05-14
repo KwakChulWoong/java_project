@@ -18,6 +18,7 @@ public class ItemVO {
 	private int readcount;
 	private List<AttachFileDTO> attachList;
 	
+	private String address;
 	
 	
 	

@@ -19,7 +19,9 @@ public interface ItemService {
 	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception;
 	public int totalItemRows(ItemCriteria cri) throws Exception;
 
-
+	//itemno 해당 디테일 페이지
+	public ItemVO detail(int itemno) throws Exception;
+	
 //	public List<ReviewVO> getReviewList() throws Exception;
 //	//read 
 	public BoardVO readList(int bno) throws Exception;
@@ -34,6 +36,8 @@ public interface ItemService {
 //	
 //	
 
+	public AttachFileDTO get_detail_img(AttachFileDTO dto) throws Exception;
+	
 	public List<ItemVO> popularItem(); 
 	
 	public List<TestVO> itemno();
