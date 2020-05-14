@@ -27,7 +27,9 @@ import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemPageVO;
 import com.spring.domain.ItemVO;
 import com.spring.domain.PageVO;
+import com.spring.domain.ReviewVO;
 import com.spring.service.ItemService;
+import com.spring.service.ReviewService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,6 +40,8 @@ public class ItemController {
 	
 	@Autowired
 	private ItemService service;
+	@Autowired
+	private ReviewService review;
 	
 	@GetMapping("/register")
 	public void itemGet(){		
@@ -60,7 +64,7 @@ public class ItemController {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		return "redirect:/register";
+		return "redirect:/mypage";
 	}
 //	
 //	@GetMapping({"/read","/modify"})
@@ -111,15 +115,23 @@ public class ItemController {
 			e.printStackTrace();
 		}
 	}
-	
-	@GetMapping("/ReviewRegister")
-	public void revReg(BoardVO vo) {
-		log.info("리뷰작성페이지");
+	@ResponseBody
+	@PostMapping("/detail/getreviewphoto")
+	public ResponseEntity<List<ReviewVO>> itemDetail(int itemno,Model model){
+		log.info("상품상세페이지에 리뷰");
+		List<ReviewVO> list=null;
+		
+		try {
+			list=review.getReview(itemno);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+		return new ResponseEntity<List<ReviewVO>>(list,HttpStatus.OK);
+		
 	}
-	@GetMapping("/QuestionRegister")
-	public void queReg(BoardVO vo) {
-		log.info("후기작성페이지");
-	}
+
 	
 	@GetMapping("/item/rent")
 	public String rent(@ModelAttribute("cri")ItemCriteria cri,Model model) {

@@ -41,6 +41,7 @@
                 					<label>아이디</label>
                 					<input class="form-control" name="userid" readonly="readonly" value='${info.userid}'>                				
                 				</div>  
+                				<input type="hidden" name="itemno" value='<%=request.getParameter("itemno")%>' />
                 				<button type="submit" class="btn btn-default">등록</button>              			
                 				<button type="reset" class="btn btn-default">취소</button>              			
                 			</form>
