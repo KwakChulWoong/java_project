@@ -103,12 +103,9 @@
                             			<li class="paginate_button previous"><a href="${pageVO.startPage-1 }">Previous</a></li>
                             		</c:if>
                             		
-                            		<c:forEach  begin="${pageVO.startPage }" end="${pageVO.endPage }" var="idx">
-                            			
-                            			<li class="paginate_button ${cri.pageNum==idx?'active':'' }"><a href="${idx}">${idx}</a></li>
-                            			
-                            		</c:forEach>
-                            		
+                            		<c:forEach  begin="${pageVO.startPage }" end="${pageVO.endPage }" var="idx">                            			
+                            			<li class="paginate_button ${cri.pageNum==idx?'active':''}"><a href="${idx}">${idx}</a></li>                            			
+                            		</c:forEach>                            		
                             		<c:if test="${pageVO.next }">
                             			<li class="paginate_button next"><a href="${pageVO.endPage+1 }">Next</a></li>
                             		</c:if>
@@ -144,7 +141,7 @@
 </div>
 <jsp:include page="includes/footer.jsp"></jsp:include>
 <!-- 페이지 나누기 정보를 가지고 있는 폼 -->
-<form action="/board/list" id="actionForm">
+<form action="/mypage" id="actionForm">
 	<input type="hidden" name="pageNum" value="${cri.pageNum }" />
 	<input type="hidden" name="amount" value="${cri.amount }" />
 	<input type="hidden" name="type" value="${cri.type }" />

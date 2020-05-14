@@ -15,7 +15,7 @@
 	  <![CDATA[		
 		select * 
 		from(
-			select  /*+INDEX_DESC(item item_pk)*/
+			select  /*+INDEX_DESC(item SYS_C0011566)*/
 			rownum rn,itemno,title,userid,regdate
 			from item where
 		]]>
