@@ -53,13 +53,13 @@ public class ItemController {
 		
 		try {
 			if(service.ItemRegister(vo)) {
-				//rttr.addFlashAttribute("result", vo.getBno());
+				rttr.addFlashAttribute("result", vo.getItemno());
 				return "redirect:/mypage";
 			}
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		return "redirect:/mypage";
+		return "redirect:/register";
 	}
 //	
 //	@GetMapping({"/read","/modify"})

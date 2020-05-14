@@ -93,7 +93,7 @@
 			<div class="panel-heading">파일 첨부</div>
 			<div class="panel-body">
 				<div class="form-group uploadDiv">
-					<input type="file" name="uploadFile" multiple/>
+					<input type="file" name="uploadFile" multiple/><label for="">ddd</label>
 				</div>
 				<div class="uploadResult">
 					<ul></ul>

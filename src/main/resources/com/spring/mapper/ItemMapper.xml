@@ -73,6 +73,14 @@
 	select * from item,attach where item.itemno=attach.itemno order by readcount desc
 </select>
 
+<!-- 페이지 나누기를 위한 전체 게시물 수 구하기 -->
+	<select id="mypageTotalCount" resultType="int">
+		select count(*) from item where 
+		<!-- 검색 -->
+		<include refid="criteria"></include>
+		itemno>0
+	</select>
+
 
 <!-- 
 <select id="getReviewList" resultType="com.spring.domain.ReviewVO">

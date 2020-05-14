@@ -75,6 +75,12 @@ public class ItemServiceImpl implements ItemService {
 		return item.getList(cri);
 	}
 
+	@Override
+	public int mypagetotalRows(Criteria cri) throws Exception {
+		return item.mypageTotalCount(cri);
+		
+	}
+
 //	@Transactional
 //	@Override
 //	public boolean ItemRegister(ItemVO vo) throws Exception {

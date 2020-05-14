@@ -3,12 +3,23 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- 인기상품 보여지는곳 -->
 	<c:forEach items="${vo}" var="vo">
+    <script>
+    	var uuid = '${vo.uuid}';		      	
+		var uploadPath = '${vo.uploadPath}'; 	       		
+		var fileName = '${vo.fileName}';
+    	
+    	
+    	var path=encodeURIComponent(uploadPath+"/_"+uuid+"_"+fileName);
+    	console.log(path);
+    </script>
+    
     <div style="margin:0 auto; width: 750px;""><p><br>---------------------------------------------------------------------------------------------------------------------------------------------------</p></div>
     <section class="cards-wrap" style="margin:0 auto; width: 750px;">
       <article class="card-top">
         <a class="card-link" data-event-label="79349776" href="/articles/79349776">
           <div class="card-photo">
-            <img alt="철제 케비넷" src="/display">
+            <img alt="철제 케비넷" src="/disply?fileName=">
+            
           </div>
           <div class="card-desc">
             <h2 class="card-title">철제 케비넷</h2>
@@ -28,6 +39,7 @@
           </div>
         </a>
       </article>
+      
       <!-- <article class="card-top">
         <a class="card-link" data-event-label="79309495" href="/articles/79309495">
           <div class="card-photo">

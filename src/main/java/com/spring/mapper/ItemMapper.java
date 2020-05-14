@@ -31,4 +31,7 @@ public interface ItemMapper {
 	
 	public List<TestVO> itemno();
 	
+	//페이지 나누기 관련 총게시물
+	public int mypageTotalCount(Criteria cri);
+	
 }

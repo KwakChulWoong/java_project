@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -16,7 +17,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.AuthInfo;
 import com.spring.domain.Criteria;
+import com.spring.domain.ItemVO;
 import com.spring.domain.LoginVO;
+import com.spring.domain.PageVO;
 import com.spring.domain.RegisterVO;
 import com.spring.domain.changePwdVO;
 import com.spring.service.BoardService;
@@ -50,9 +53,9 @@ public class MyPageController {
 	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
 		
 		try {
-			
-			model.addAttribute("list", itemservice.getList(cri));
-//			model.addAttribute("pageVO", new PageVO(cri, service.totalRows(cri)));
+			List<ItemVO> list = itemservice.getList(cri);
+			model.addAttribute("list", list);
+			model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
