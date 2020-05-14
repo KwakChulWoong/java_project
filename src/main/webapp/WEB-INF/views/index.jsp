@@ -21,7 +21,7 @@
     width: 1900px;
   }
 </style>
-<jsp:include page="includes/banner.jsp"/>
+<jsp:include page="includes/banner.jsp"/> 
 <section id="hot-articles" style="padding: 50px 0 10px;">   
        <h2 style="margin-left : 26%; font-size:30px;">인기 매물</h2>
        <div class="title-line-divider" style="width:1050px;"></div>
@@ -46,39 +46,56 @@
 	} */
 	</style>
 
- <div class="box_wrap">
- 
- <c:forEach var="vo" items="${list}">    
- 	<c:forEach var="image" items="${vo.attachList}">
-         <script>		       	
-			var uuid = '${image.uuid}';		      	
-			var uploadPath = '${image.uploadPath}'; 	       		
-			var fileName = '${image.fileName}';		       
-	
-			var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);  
-			console.log(path);
-			
-			$(".card_top").attr("src","/item/display?fileName="+path);		       		
-		</script>
-	</c:forEach>
+<div class="box_wrap">
+ <c:forEach var="vo" items="${list}">	
 	<%-- 컨텐츠 반복 시작 --%>	
+	</script>
    	<div class="item" style="width:250px;height:300px;border: 1px solid; border-radius:15px">
-     <a href="/item/detail?itemno=${vo.itemno }">
+     <a href="/item/detail?itemno=${vo.itemno}">
      <img alt="대여물품" src=""  class="card_top" style="width:248px;height:150px; border-radius:15px 15px 0px 0px;"/>
      <div class="item_content">
-       <h2 style="font-size:17px">${vo.title}</h2>
-       <p class="content">${vo.content}</p>
-       <div class="item-price">대여비 : ${vo.rentcost}</div>
-       <div class="item-counts">
-           <span>관심 ${vo.readcount}</span>           
-           <span>등록자 ${vo.userid}</span>           
-       </div>
+	       <h2 style="font-size:17px">${vo.title}</h2>
+	       <p class="content">${vo.content}</p>
+	       <div class="item-price">대여비 : ${vo.rentcost}</div>
+	       <div class="item-counts">
+	           <span>관심 ${vo.readcount}</span>           
+	           <span>등록자 ${vo.userid}</span>           
+	       </div>
     </div>
-    	</a>
-    </div>
-    	
-	</c:forEach>
+    </a>
+    </div>    	
+   </c:forEach>
 </div>
+
+<script>
+	let attachList = new Array();
+</script>
+
+<c:forEach var="vo" items="${list}">
+<c:forEach var="image" items="${vo.attachList}">
+	<script>
+		var uuid = '${image.uuid}';		      	
+		var uploadPath = '${image.uploadPath}'; 	       		
+		var fileName = '${image.fileName}';		       
+	
+		var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);
+	</script>
+</c:forEach>
+<script>
+	attachList.push(path);
+</script>
+</c:forEach>
+<script>
+$(function(){
+	//이미지 부분만 따로 설정하기	
+	var idx=0;
+	$(".box_wrap").find('img').each(function(){
+		$(this).attr('src',"/item/display?fileName="+attachList[idx]);
+		console.log($(this).attr('src'));
+		idx++;
+	});
+})
+</script>
 <%-- 반복 되는 곳 종료 --%>      
  <div class="card-top" id="cards-more" style="margin:0 auto;width:10rem;margin-top:10px">
      <a class="card-link" href="/item/rent">
@@ -95,5 +112,4 @@ if(message!==''){
 	alert(message); 		
 }
 </script>
->>>>>>> refs/remotes/origin/master
 <jsp:include page="includes/footer.jsp"></jsp:include>
