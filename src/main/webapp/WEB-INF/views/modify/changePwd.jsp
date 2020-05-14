@@ -23,11 +23,11 @@ $(function(){
 <link rel="stylesheet" href="/resources/vendor/bootstrap/css/bootstrap.min.css">
 <style>
 	body{
-		margin-top:250px;
+		margin-top:50px;
 	}
 </style>
 </head>
-<body style="margin-left:600px;">
+<body style="margin-left:700px;">
 <div class="card border-success mb-3 mx-auto" style="max-width: 25rem;">
   <div class="card-header" style="font-size:40px; width:1000px;">비밀번호 변경</div>
   <div class="card-body">
