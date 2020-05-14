@@ -13,7 +13,7 @@
 <%@include file="../includes/header.jsp" %>
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Question Board</h1>
+                    <h1 class="page-header">후기 작성</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>            

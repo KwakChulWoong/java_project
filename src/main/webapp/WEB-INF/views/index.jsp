@@ -58,8 +58,10 @@
 			var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);  
 			console.log(path);
 			
-			$(".card_top").attr("src","/item/display?fileName="+path);		       		
+			$(".card_top").attr("src","/item/display?fileName="+path);	
+			
 		</script>
+		
 	</c:forEach>
 	<%-- 컨텐츠 반복 시작 --%>	
    	<div class="item" style="width:250px;height:300px;border: 1px solid; border-radius:15px">
