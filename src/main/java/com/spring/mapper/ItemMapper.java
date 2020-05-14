@@ -38,4 +38,7 @@ public interface ItemMapper {
 	
 	public AttachFileDTO get_detail_img(AttachFileDTO dto);
 	
+	//페이지 나누기 관련 총게시물
+	public int mypageTotalCount(Criteria cri);
+	
 }

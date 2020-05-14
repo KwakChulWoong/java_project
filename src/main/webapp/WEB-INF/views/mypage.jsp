@@ -58,7 +58,7 @@
                                         <!-- 페이지 나누기 전 -->
                                         <%-- <td><a href="/board/read?bno=${vo.bno}">${vo.title }</a></td> --%>
                                         <!-- vo.~~~들이 마이페이지에 들어오는 list 그니까 자기가 올린 글 들어오게끔 해줌 -->
-                                        <td><a href="${vo.itemno}" class="move">${vo.title } </td>
+                                        <td><a href="/item/detail?itmeno=${vo.itemno}" class="move">${vo.title }</a></td>
                                       	<td>${vo.userid}</td>
                                         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${vo.regdate }"/> </td>
                                         <td>${vo.readcount }</td>
@@ -167,7 +167,7 @@
 	//사용자가 게시물 수를 클릭하면
 	//actionForm의 amount의 정보를 변경하여 보내기
 	//$("#amount option[value='${cri.amount}']").attr("selected","selected")
-	$("#amount").change(function(e){
+	$(".form-control").change(function(e){
 		//사용자가 선택한 게시물 수 가져오기
 		let amount = $(this).val()
 		
@@ -181,8 +181,8 @@
 		e.preventDefault();
 		
 		//bno를 포함해서
-		actionForm.append("<input type='hidden' name='bno' value='"+$(this).attr('href')+"' />")
-		actionForm.attr("action","/board/read");
+		actionForm.append("<input type='hidden' name='itemno' value='"+$(this).attr('href')+"'>")
+		actionForm.attr("action","/item/detail");
 		//actionoForm 보내기
 		actionForm.submit();
 	})
@@ -191,7 +191,7 @@
 	
 	
 	
-	$("#searchForm button").click(function() {
+	$(".btn-default").click(function() {
 		let searchForm = $("#searchForm");
 		//type과 keyword 하나라도 입력이 안된 경우
 		//사용자에게 메세지 띄워주기
@@ -207,9 +207,9 @@
 		
 		//버튼을 눌렀을 때 무조건 페이지 번호는 1로 세팅
 		searchForm.find("input[name='pageNum']").val("1");	
+		searchForm.submit();
 		
 		
-		$("#searchForm").submit();
 		
 	})
 	

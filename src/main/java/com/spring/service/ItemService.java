@@ -46,4 +46,8 @@ public interface ItemService {
 	public List<ItemVO> popularItem(); 
 	
 	public List<TestVO> itemno();
+	
+	
+	//페이지 나누기 총게시물
+	public int mypagetotalRows(Criteria cri) throws Exception;
 }
