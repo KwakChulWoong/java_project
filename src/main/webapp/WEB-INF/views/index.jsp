@@ -23,30 +23,8 @@
 </style>
 <jsp:include page="includes/banner.jsp"/>
 <section id="hot-articles" style="padding: 50px 0 10px;">   
-       <h3 style="margin-left : 26%;">인기 매물</h3>
-       <div class="title-line-divider"></div>
-       <nav id="hot-articles-navigation">
-           <select name="region" id="region" onchange="changeRegion('r1', this.value)" class="hot-articles-nav-select" style="border:2px solid orange;">
-               <option value="">지역을 선택하세요</option>
-               <option value="서울특별시">서울특별시</option>
-               <option value="부산광역시">부산광역시</option>
-               <option value="대구광역시">대구광역시</option>
-               <option value="인천광역시">인천광역시</option>
-               <option value="광주광역시">광주광역시</option>
-               <option value="대전광역시">대전광역시</option>
-               <option value="울산광역시">울산광역시</option>
-               <option value="세종특별자치시">세종특별자치시</option>
-               <option value="경기도">경기도</option>
-               <option value="강원도">강원도</option>
-               <option value="충청북도">충청북도</option>
-               <option value="충청남도">충청남도</option>
-               <option value="전라북도">전라북도</option>
-               <option value="전라남도">전라남도</option>
-               <option value="경상북도">경상북도</option>
-               <option value="경상남도">경상남도</option>
-               <option value="제주특별자치도">제주특별자치도</option>
-           </select>
-       </nav>
+       <h2 style="margin-left : 26%; font-size:30px;">인기 매물</h2>
+       <div class="title-line-divider" style="width:1050px;"></div>
 </section>
     
  <a class="card-link" data-event-label="79349776" href="/board/ItemDetail.jsp">dddddddddddddd</a>

@@ -1,7 +1,7 @@
 /**
 드랍 다운 메뉴에 대한 js
  */
-window.onload = function() {
+/*window.onload = function() {
 	$('.tab_2 li')
 			.mouseover(
 					function() {
@@ -44,3 +44,4 @@ window.onload = function() {
 		}
 	});	
 };
+*/

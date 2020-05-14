@@ -42,7 +42,7 @@
        </select>
 
    </nav>
-       <h3 style="margin-left :5%; margin-top:10px">Dynamic 인기 매물</h3>       
+       <h3 style="margin-left :5%; margin-top:10px">전체 매물</h3>       
        <style>       	
        	.content div{
        		float:left;

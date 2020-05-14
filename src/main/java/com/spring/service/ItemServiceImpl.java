@@ -71,6 +71,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
+
 	public ItemVO detail(int itemno) throws Exception {
 		
 		return item.detail(itemno);
@@ -80,6 +81,11 @@ public class ItemServiceImpl implements ItemService {
 	public AttachFileDTO get_detail_img(AttachFileDTO dto) throws Exception {
 
 		return item.get_detail_img(dto);
+	}
+	@Override
+	public List<ItemVO> getList(Criteria cri) throws Exception {
+		return item.getList(cri);
+
 	}
 
 //	@Transactional

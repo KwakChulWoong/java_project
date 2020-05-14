@@ -11,7 +11,6 @@
   <link href="/resources/dist/css/Carousel.css" rel="stylesheet">
   <link href="/resources/dist/css/header.css" rel="stylesheet">
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
-  <link href="/resources/dist/css/item.css" rel="stylesheet">	
   <link href="/resources/dist/css/image.css" rel="stylesheet">
   <link href="/resources/dist/css/mypage.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -55,14 +54,8 @@
 				<div class="clear"></div>
 					<ul style="margin-top:15px;" class="tab_2">
 	     				<li class="1" style="width:150px;font-weight: normal;" onclick="top.location.href='/item/rent';">대여<br><span>rent</span></li>
-	     				<li class="2" style="width:150px;font-weight: normal;" onclick="top.location.href='/';">후기<br><span>review</span></li>
-	     				<li class="3" style="width:150px;font-weight: normal;" onclick="top.location.href='/';">공지사항<br><span>notice</span></li>
+	     				<li class="2" style="width:150px;font-weight: normal;" onclick="top.location.href='/';">공지사항<br><span>notice</span></li>
 					</ul>
-				</div>
-			</div>
-			<!-- z-index 쓴 이유는 저거 안쓰면 배너랑 css가 겹쳐졌던걸로 기억하는데 저걸 줘야지 완벽하게 덮어씌워진다? -->
-			<div class="header_tab" id="header_tab" style="display:none; z-index:6;">
-				<div>
 				</div>
 			</div>
 		</div>
