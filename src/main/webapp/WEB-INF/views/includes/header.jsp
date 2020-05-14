@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>3반 렌탈샵</title>
+  <title>취미를 빌려주는 사람들</title>
   <link href="/resources/dist/css/Carousel.css" rel="stylesheet">
   <link href="/resources/dist/css/header.css" rel="stylesheet">
   <link href="/resources/dist/css/footer.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 </style>
 
 <body style="overflow-x:hidden;"> <!-- 화면 축소했을때 가로방향 스크롤바? 화면 옆으로 보이게끔해주는거 hidden 옵션 줘서 숨겼음 css상 이거 없애는게 원활하게 되서 없앰 -->
-<div class="container-fluid" style="border-bottom:2px solid #008639; height:123px;"> <!-- 드랍다운메뉴에 보이는 초록색 경계선 -->
+<div class="container-fluid" style="border-bottom:1px solid #008639; height:123px;"> <!-- 드랍다운메뉴에 보이는 초록색 경계선 -->
    <div id="wrap">
       <div id="header">
 		<div class="header">

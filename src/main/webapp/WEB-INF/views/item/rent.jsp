@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>총 물품</title>
+	<title>전체 매물</title>
 	<link href="/resources/dist/css/header.css" rel="stylesheet">
 	<link href="/resources/dist/css/footer.css" rel="stylesheet">
 	<link href="/resources/dist/css/item.css" rel="stylesheet">
@@ -24,7 +24,6 @@
   	top:150px;
   }
   /* region이 스타일은 총 물품 창 들어가면 따라다니는 category 버튼 화면에 고정시키고 스타일준거 */
->>>>>>> refs/remotes/origin/master
 </style>
 <jsp:include page="../includes/header.jsp"/>
 <link rel="stylesheet" href="/resources/vendor/bootstrap/css/bootstrap.min.css" />
@@ -42,7 +41,8 @@
        </select>
 
    </nav>
-       <h3 style="margin-left :5%; margin-top:10px">전체 매물</h3>       
+       <h3 style="margin-left :300px; margin-top:10px">전체 매물</h3>       
+	   <div class="title-line-divider" style="width:1200px; margin-left:300px;"></div>
        <style>       	
        	.content div{
        		float:left;

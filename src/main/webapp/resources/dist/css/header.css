@@ -78,7 +78,7 @@ input[type=checkbox] {width: 25px; height: 25px; border:1px solid #333;  backgro
   margin-right: 16px;
   font-size: 17px;
   margin-left:500px;
-  border : 2px solid #a3ada8;
+  border : 2px solid green;
 }
 
 @media screen and (max-width: 600px) {
