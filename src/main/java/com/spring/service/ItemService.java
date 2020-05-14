@@ -18,7 +18,7 @@ public interface ItemService {
 	//	아이템 리스트
 	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception;
 	public int totalItemRows(ItemCriteria cri) throws Exception;
-
+	public List<ItemVO> getList(Criteria cri) throws Exception;
 
 //	public List<ReviewVO> getReviewList() throws Exception;
 //	//read 

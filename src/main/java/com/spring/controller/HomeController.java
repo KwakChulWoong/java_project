@@ -71,6 +71,12 @@ public class HomeController {
 	public String company() {
 		return "company";
 	}
+	
+	//공지 사항 페이지로 연결
+	@GetMapping("/notice")
+	public String notice() {
+		return "notice";
+	}
 
 	
 }

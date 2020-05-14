@@ -70,6 +70,11 @@ public class ItemServiceImpl implements ItemService {
 		return item.itemno();
 	}
 
+	@Override
+	public List<ItemVO> getList(Criteria cri) throws Exception {
+		return item.getList(cri);
+	}
+
 //	@Transactional
 //	@Override
 //	public boolean ItemRegister(ItemVO vo) throws Exception {

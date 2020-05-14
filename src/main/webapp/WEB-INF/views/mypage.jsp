@@ -5,7 +5,7 @@
 <link href="/resources/dist/css/mypage.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-<div style="height: 80%;">
+<div style="height: 100%;">
 <!-- 서브 메뉴 -->
 	<div class="mytmall_menu" style="float:left;">
 	    <dl class="first">

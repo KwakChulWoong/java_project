@@ -34,7 +34,7 @@
                     <label>곽철웅</label>
                 </div>
                 <div class="col" style="padding-top:10px;">
-                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="/resources/dist/images/Kwak.jpg" />
+                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/images/Kwak.jpg" />
                 </div>
             </div>
             <br />
@@ -49,7 +49,7 @@
                     <label>김승현</label>
                 </div>
                 <div class="col" style="padding-top:10px;">
-                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="https://sketch2code.azurewebsites.net/Content/img/fake_img.svg" />
+                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/images/hyeon.jpg" />
                 </div>
             </div>
             <br />
@@ -64,7 +64,7 @@
                     <label>김철진</label>
                 </div>
                 <div class="col" style="padding-top:10px;">
-                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/dist/images/ChulJin.jpg" />
+                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/images/ChulJin.jpg" />
                 </div>
             </div>
 			<br />
@@ -79,7 +79,7 @@
                     <label>노석희</label>
                 </div>
                 <div class="col" style="padding-top:10px;">
-                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/dist/images/No.jpg" />
+                    <img alt="Image html" width="90%" height="90%" style="max-height:500px;max-width:500px;" src="resources/images/No.jpg" />
                 </div>
             </div>
         </div>
