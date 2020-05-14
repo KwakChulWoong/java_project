@@ -78,12 +78,14 @@
 			       </script>	 
 			  </c:forEach>			  					  
 			    <div class="item">
+			    <a href="/item/detail?itemno=${vo.itemno }">
 			      <img class="card-img-top" alt="렌탈 이미지">
 				  <div class="">
 				    <h5>${vo.title}</h5>
 				    <p>${vo.rentcost}</p>
 				    <p>${vo.readcount}</p>
 				  </div>
+				  </a>
 			    </div>
 			 	
 		   </c:forEach>
