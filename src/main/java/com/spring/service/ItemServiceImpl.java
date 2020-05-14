@@ -11,6 +11,7 @@ import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 import com.spring.mapper.AttachMapper;
 
 import com.spring.mapper.ItemMapper;
@@ -49,6 +50,12 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public List<ItemVO> popularItem() {
 		return item.selectItemList();
+		
+	}
+
+	@Override
+	public List<TestVO> itemno() {
+		return item.itemno();
 		
 	}
 
