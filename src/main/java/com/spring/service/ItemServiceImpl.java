@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
 import com.spring.mapper.AttachMapper;
@@ -53,13 +54,13 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public List<ItemVO> getList(Criteria cri) throws Exception {		
-		return item.totalList(cri);
+	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception {		
+		return item.totalItemList(cri);
 	}
 
 	@Override
-	public int totalRows(Criteria cri) throws Exception {		
-		return item.totalCount(cri);
+	public int totalItemRows(ItemCriteria cri) throws Exception {		
+		return item.totalItemCount(cri);
 	}
 
 //	@Transactional

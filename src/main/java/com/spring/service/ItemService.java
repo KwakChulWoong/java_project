@@ -5,6 +5,7 @@ import java.util.List;
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
 
@@ -12,10 +13,10 @@ public interface ItemService {
 	//게시글 작성
 	public boolean ItemRegister(ItemVO vo) throws Exception;
 
-
+	
 	//	아이템 리스트
-	public List<ItemVO> getList(Criteria cri) throws Exception;
-	public int totalRows(Criteria cri) throws Exception;
+	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception;
+	public int totalItemRows(ItemCriteria cri) throws Exception;
 
 
 //	public List<ReviewVO> getReviewList() throws Exception;

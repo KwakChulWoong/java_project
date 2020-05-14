@@ -50,7 +50,7 @@ public class MyPageController {
 		
 		try {
 			
-			model.addAttribute("list", itemservice.getList(cri));
+//			model.addAttribute("list", itemservice.getList(cri));
 //			model.addAttribute("pageVO", new PageVO(cri, service.totalRows(cri)));
 			
 		} catch (Exception e) {
