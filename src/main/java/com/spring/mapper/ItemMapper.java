@@ -12,7 +12,8 @@ import com.spring.domain.TestVO;
 
 public interface ItemMapper {
 	public int insertItemRegister(ItemVO vo);
-	public List<BoardVO> getList();
+	public List<ItemVO> getList(Criteria cri);
+	
 	public List<ReviewVO> getReviewList();
 //	public BoardVO readList(int bno);
 //	public int update(BoardVO vo);

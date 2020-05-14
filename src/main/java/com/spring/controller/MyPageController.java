@@ -21,6 +21,7 @@ import com.spring.domain.RegisterVO;
 import com.spring.domain.changePwdVO;
 import com.spring.service.BoardService;
 import com.spring.service.EmailService;
+import com.spring.service.ItemService;
 import com.spring.service.RegisterService;
 
 import lombok.extern.java.Log;
@@ -35,6 +36,9 @@ public class MyPageController {
 	private BoardService service;
 	
 	@Autowired
+	private ItemService itemservice;
+	
+	@Autowired
 	private RegisterService regservice;
 	
 	@Autowired
@@ -46,7 +50,7 @@ public class MyPageController {
 		
 		try {
 			
-//			model.addAttribute("list", service.getList(cri));
+			model.addAttribute("list", itemservice.getList(cri));
 //			model.addAttribute("pageVO", new PageVO(cri, service.totalRows(cri)));
 			
 		} catch (Exception e) {

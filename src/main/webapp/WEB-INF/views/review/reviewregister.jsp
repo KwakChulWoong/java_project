@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="/resources/dist/css/mycss.css" />
     <title>리류등록</title>
+    <link rel="stylesheet" href="/resources/dist/css/mycss.css" />
     <!-- Bootstrap Core CSS -->
     <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
@@ -12,6 +13,7 @@
     <!-- Custom Fonts -->
     <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">   
 <%@include file="../includes/header.jsp" %>
+            <body>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Review Board</h1>
@@ -37,7 +39,7 @@
                 				</div> 
                 				<div class="form-group">
                 					<label>아이디</label>
-                					<input class="form-control" name="writer" readonly="readonly" value='${info.userid}'>                				
+                					<input class="form-control" name="userid" readonly="readonly" value='${info.userid}'>                				
                 				</div>  
                 				<button type="submit" class="btn btn-default">등록</button>              			
                 				<button type="reset" class="btn btn-default">취소</button>              			
@@ -53,7 +55,7 @@
 			<div class="panel-heading">파일 첨부</div>
 			<div class="panel-body">
 				<div class="form-group uploadDiv">
-					<input type="file" name="uploadFile" multiple/>
+					<input type="file" name="uploadeFile" multiple/>
 				</div>
 				<div class="uploadResult">
 					<ul></ul>
@@ -78,7 +80,7 @@ $(function(){
 			str+="<input type='hidden' name='attachList["+i+"].uuid' value='"+job.data("uuid")+"'>";
 			str+="<input type='hidden' name='attachList["+i+"].uploadPath' value='"+job.data("path")+"'>";
 			str+="<input type='hidden' name='attachList["+i+"].fileName' value='"+job.data("filename")+"'>";
-			str+="<input type='hidden' name='attachList["+i+"].fileType' value='"+job.data("type")+"'>";
+			/* str+="<input type='hidden' name='attachList["+i+"].fileType' value='"+job.data("type")+"'>"; */
 		})
 		
 		formObj.append(str).submit();
@@ -108,7 +110,7 @@ $(function(){
 		}
 		
 		$.ajax({
-			url : '/uploadAjax',
+			url : '/reviewAjax',
 			processData : false,
 			contentType : false,
 			data : formData,
@@ -142,30 +144,19 @@ $(function(){
 		let str="";
 		let uploadResult = $(".uploadResult ul");
 		
-		$(uploadResultArr).each(function(i,obj){
-			if(obj.fileType){
-				let fileCallPath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
-				let oriPath=obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName;
-				
-				oriPath = oriPath.replace(new RegExp(/\\/g),"/");
-				
-				str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
-				str+=obj.fileName+"' data-type='"+obj.fileType+"'>";
-				str+="<a href=\"javascript:showImage('"+oriPath+"')\">";
-				str+="<img src='/display?fileName="+fileCallPath+"'><div>"+obj.fileName+"</a>";
-				str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath+"' data-type='image'>";
-				str+="<i class='fa fa-times'></i></button></div>";				
-				str+="</li>";
-			}else{
-				let fileCallPath2=encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName);
-				str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
-				str+=obj.fileName+"' data-type='"+obj.fileType+"'>";
-				str+="<a href='/download?fileName="+fileCallPath2+"'>";
-				str+="<img src='/resources/img/attach.png'><div>"+obj.fileName+"</a>";
-				str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath2+"' data-type='file'>";
-				str+="<i class='fa fa-times'></i></button></div>";				
-				str+="</li>";
-			}
+		$(uploadResultArr).each(function(i,obj){			
+			let fileCallPath=encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"_"+obj.fileName);
+			let oriPath=obj.uploadPath+"/"+obj.uuid+"_"+obj.fileName;
+			
+			oriPath = oriPath.replace(new RegExp(/\\/g),"/");
+			
+			str+="<li data-path='"+obj.uploadPath+"' data-uuid='"+obj.uuid+"' data-filename='";
+			str+=obj.fileName+"'>";
+			str+="<a href=\"javascript:showImage('"+oriPath+"')\">";
+			str+="<img src='/displayreview?fileName="+fileCallPath+"'><div>"+obj.fileName+"</a>";
+			str+=" <button type='button' class='btn btn-warning btn-circle btn-sm' data-file='"+fileCallPath+"' data-type='image'>";
+			str+="<i class='fa fa-times'></i></button></div>";				
+			str+="</li>";		
 		})
 		uploadResult.append(str);
 	}
@@ -177,7 +168,7 @@ $(function(){
 		
 		let targetLi = $(this).closest("li");
 		$.ajax({
-			url:'/deleteFile',
+			url:'/deletereview',
 			dataType:'text',
 			data:{
 				fileName:targetFile,
@@ -198,16 +189,15 @@ $(function(){
 		}, 1000);
 	})	
 })
-//썸네일 원본 이미지 보여주기
+	//썸네일 원본 이미지 보여주기
 function showImage(fileCallPath){
 	$(".bigPictureWrapper").css("display","flex").show();
 	
-	$(".bigPicture").html("<img src='/display?fileName="+fileCallPath+"'>")
+	$(".bigPicture").html("<img src='/displayreview?fileName="+fileCallPath+"'>")
 	                .animate({width:'100%', height:'100%'},1000);
 }
-</script>       
-<%@include file="../includes/footer.jsp" %>  
-
+</script>              
+</body>
 
 
 

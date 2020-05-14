@@ -22,11 +22,6 @@
 	        <dt><strong>회원 탈퇴</strong></dt>
 	        <dd><a href="/signout/signout" >회원 탈퇴</a></dd>
 	    </dl>
-	    
-	    <dl class="fourth">
-	        <dt><strong>제품 등록</strong></dt>
-	        <dd><a href="/item/register" >제품 등록하기</a></dd>
-	    </dl>
 	</div>
 	<!-- //서브메뉴 -->
 	
@@ -42,7 +37,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                                           내가 올린 상품 리스트
-                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/item/register'">새로운 글 작성하기</button>
+                            <button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/item/register'" style="background-color:orange; border-color:green;">새로운 글 작성하기</button>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -53,17 +48,19 @@
                                         <th>제 목</th>
                                         <th>작성자</th>
                                         <th>작성일</th>
+                                        <th>조회수</th>
                                     </tr>									
                                 </thead>
 								<!-- 게시판 리스트 반복문 -->
 								<c:forEach items="${list }" var="vo">
 									<tr>
-                                        <td>${vo.bno }</td>
+                                        <td>${vo.itemno}</td>
                                         <!-- 페이지 나누기 전 -->
                                         <%-- <td><a href="/board/read?bno=${vo.bno}">${vo.title }</a></td> --%>
-                                        <td><a href="${vo.bno}" class="move">${vo.title } </a><strong>[${vo.replycnt }]</strong></td>
-                                        <td>${vo.writer }</td>
+                                        <td><a href="${vo.itemno}" class="move">${vo.title } </td>
+                                      	<td>${vo.userid}</td>
                                         <td><fmt:formatDate pattern="yyyy-MM-dd" value="${vo.regdate }"/> </td>
+                                        <td>${vo.readcount }</td>
                                     </tr>		
 								</c:forEach>
                             </table>

@@ -40,7 +40,7 @@
            </select>
 	   </div>
        </nav>
-       <h3 style="margin-left : 26%;">Dynamic 인기 매물</h3>
+       <h3 style="margin-left : 26%;">인기 매물</h3>
        <div class="title-line-divider"></div>
        <section class="cards-wrap">
            <article class="card-top">

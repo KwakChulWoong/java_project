@@ -11,7 +11,7 @@ import com.spring.domain.changePwdVO;
 
 public interface BoardService {
 	public boolean register(BoardVO vo) throws Exception;
-	public List<BoardVO> getList(Criteria cri) throws Exception;
+//	public List<BoardVO> getList(Criteria cri) throws Exception;
 	public BoardVO getRow(int bno) throws Exception;
 	public boolean updateRow(BoardVO vo) throws Exception;
 	public boolean deleteRow(int bno) throws Exception;
