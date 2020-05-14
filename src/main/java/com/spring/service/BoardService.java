@@ -5,17 +5,17 @@ import java.util.List;
 import com.spring.domain.AttachFileDTO;
 
 import com.spring.domain.BoardVO;
-import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.changePwdVO;
 
 
 public interface BoardService {
 	public boolean register(BoardVO vo) throws Exception;
-	public List<BoardVO> getList(Criteria cri) throws Exception;
+	public List<BoardVO> getList(ItemCriteria cri) throws Exception;
 	public BoardVO getRow(int bno) throws Exception;
 	public boolean updateRow(BoardVO vo) throws Exception;
 	public boolean deleteRow(int bno) throws Exception;
-	public int totalRows(Criteria cri) throws Exception;
+	public int totalRows(ItemCriteria cri) throws Exception;
 	
 //	//寃뚯떆湲� �옉�꽦
 //	public boolean ItemRegister(BoardVO vo) throws Exception;

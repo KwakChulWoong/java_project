@@ -14,6 +14,7 @@
   <link href="/resources/dist/css/item.css" rel="stylesheet">	
   <link href="/resources/dist/css/image.css" rel="stylesheet">
   <link href="/resources/dist/css/mypage.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <style>

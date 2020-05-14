@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.AuthInfo;
-import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
 import com.spring.domain.changePwdVO;
@@ -42,7 +42,7 @@ public class MyPageController {
 	
 	
 	@GetMapping("/mypage")
-	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
+	public void mypage(Model model, @ModelAttribute("cri") ItemCriteria cri) {
 		
 		try {
 			

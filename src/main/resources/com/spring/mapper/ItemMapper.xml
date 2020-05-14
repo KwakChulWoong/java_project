@@ -10,27 +10,53 @@
 	insert into item(itemno,category,title,content,rentcost,deposit,userid) 
 	values(#{itemno},#{category},#{title},#{content},#{rentcost},#{deposit},#{userid})
 </insert>
-<!-- <select id="getList" resultType="com.spring.domain.BoardVO">
-	  <![CDATA[		
-		select * 
-		from(
-			select  /*+INDEX_DESC(spring_board pk_spring_board)*/
-			rownum rn,bno,title,writer,regdate,updatedate,replycnt
-			from spring_board where
-		]]>
-		<include refid="criteria"></include>			
-	  <![CDATA[		
-		 rownum <= #{pageNum}*#{amount})
-		where rn> (#{pageNum}-1)*#{amount}	
-	  ]]>	
-	</select> -->
 
 <!-- 제품 목록 가져오기  -->
 <select id="selectItemList" resultType="com.spring.domain.ItemVO">
 	select * from item order by readcount desc
 </select>
 
+<!--  제품목록 카테고리에 의거해서 가져오기 -->
+<select id="totalList" resultMap="itemMap">
+<![CDATA[    
+    select *
+	from (select * from (select rownum rn,itemno, category,title,rentcost
+    	  from (select * from item where category like '%'||#{category}||'%' order by readcount desc)
+    	  where rownum <= #{pageNum}*#{amount})where rn> (#{pageNum}-1)*#{amount}) item
+	left outer join attach on item.itemno = attach.itemno order by item.itemno desc
+    ]]>
+</select>
+<select id="totalCount" resultType="int">
+	select count(*)
+	from (select * from item where category like '%'||#{category}||'%') item
+	left outer join attach on item.itemno = attach.itemno	
+</select>
 
+<!-- resultMap 데이터베이스 결과데이터를 객체에 로드하는 방법 -->
+	<resultMap type="com.spring.domain.ItemVO" id="itemMap">
+		<id property="itemno" column="itemno"/>
+		<result property="itemno" column="itemno"/>
+		<result property="title" column="title"/>
+		<result property="category" column="content"/>
+		<result property="deposit" column="deposit"/>
+		<result property="rentcost" column="rentcost"/>
+		<result property="regdate" column="regdate"/>
+		<result property="userid" column="userid"/>
+		<result property="readcount" column="readcount"/>
+		<collection property="attachList" resultMap="attachMap"></collection>
+	</resultMap>
+	
+	<resultMap type="com.spring.domain.AttachFileDTO" id="attachMap">
+		<result property="uuid" column="uuid"/>
+		<result property="uploadPath" column="uploadPath"/>
+		<result property="fileName" column="fileName"/>
+		<result property="itemno" column="itemno"/>
+	</resultMap>
+	
+	<!-- <select id="read" resultMap="attachMap">
+		
+	</select>
+ -->
 
 <!-- 
 <select id="getReviewList" resultType="com.spring.domain.ReviewVO">
@@ -55,23 +81,5 @@
 	where bno=#{bno}
 </update>
   동적 sql 
-   <sql id="criteria">
-      <trim prefix="(" suffix=") AND" prefixOverrides="OR">
-         <foreach collection="typeArr" item='type'>
-            <trim prefix="OR">
-               <choose>
-                  <when test="type=='T'.toString()">
-                     title like '%'||#{keyword}||'%'
-                  </when>
-                  <when test="type=='C'.toString()">
-                     content like '%'||#{keyword}||'%'
-                  </when>
-                  <when test="type=='W'.toString()">
-                     writer like '%'||#{keyword}||'%'
-                  </when>
-               </choose>
-            </trim>
-         </foreach>
-      </trim>
-   </sql> -->
+    -->
 </mapper>

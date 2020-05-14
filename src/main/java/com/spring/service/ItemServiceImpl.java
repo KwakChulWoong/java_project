@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
-import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
 import com.spring.mapper.AttachMapper;
@@ -50,6 +50,16 @@ public class ItemServiceImpl implements ItemService {
 	public List<ItemVO> popularItem() {
 		return item.selectItemList();
 		
+	}
+
+	@Override
+	public List<ItemVO> getList(ItemCriteria cri) throws Exception {		
+		return item.totalList(cri);
+	}
+
+	@Override
+	public int totalRows(ItemCriteria cri) throws Exception {		
+		return item.totalCount(cri);
 	}
 
 //	@Transactional
