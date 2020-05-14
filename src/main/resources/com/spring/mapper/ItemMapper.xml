@@ -6,11 +6,11 @@
 	<selectKey keyProperty="itemno" order="BEFORE" resultType="int">
 		select item_seq.nextVal from dual
 	</selectKey>
-		 
 	insert into item(itemno,category,title,content,rentcost,deposit,userid) 
 	values(#{itemno},#{category},#{title},#{content},#{rentcost},#{deposit},#{userid})
 </insert>
 	
+	<!-- 마이페이지에 본인이 올렸던 게시글들 db에 있는거 가져오는 거 -->
 	<select id="getList" resultType="com.spring.domain.ItemVO">
 	  <![CDATA[		
 		select * 

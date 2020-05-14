@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비밀번호 찾기</title>
 </head>
+<!-- 비밀번호 잊어버렸을때 임시 비밀번호 보내주는 페이지 -->
 <body>
 	<h3>임시 비밀번호 발급</h3>
 	<form method="post" id="find">

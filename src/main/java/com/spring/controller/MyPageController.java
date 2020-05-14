@@ -45,6 +45,7 @@ public class MyPageController {
 	private EmailService email;
 	
 	
+	//mypage로 이동
 	@GetMapping("/mypage")
 	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
 		

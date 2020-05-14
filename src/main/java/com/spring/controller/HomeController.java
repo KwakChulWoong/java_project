@@ -34,6 +34,7 @@ public class HomeController {
 		model.addAttribute("vo", vo);
 	}
 	
+	//회사소개으로 창 연결
 	@GetMapping("/company")
 	public String company() {
 		return "company";

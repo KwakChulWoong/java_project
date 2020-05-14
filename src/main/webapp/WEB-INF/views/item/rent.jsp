@@ -17,13 +17,14 @@
     width: 1900px;
   }
   
+  
   #region {
   	position:fixed;
   	border:2px solid orange;
   	left:200px;
   	top:200px;
   }
-  
+  /* region이 스타일은 총 물품 창 들어가면 따라다니는 category 버튼 화면에 고정시키고 스타일준거 */
 </style>
 <jsp:include page="../includes/header.jsp"/>
 <section class="section1" id="hot-articles" style="height:100%;">   

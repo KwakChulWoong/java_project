@@ -30,5 +30,5 @@ public class Criteria {
 		return type==null?new String[] {} : type.split("");
 	}
 	
-	
+	//페이지 나누기vo
 }

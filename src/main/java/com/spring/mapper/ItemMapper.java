@@ -11,7 +11,7 @@ import com.spring.domain.ReviewVO;
 
 public interface ItemMapper {
 	public int insertItemRegister(ItemVO vo);
-	public List<ItemVO> getList(Criteria cri);
+	public List<ItemVO> getList(Criteria cri); //마이페이지 보여주는 리스트
 	
 	public List<ReviewVO> getReviewList();
 //	public BoardVO readList(int bno);
