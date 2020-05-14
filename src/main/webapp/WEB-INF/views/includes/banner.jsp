@@ -13,6 +13,7 @@
     width: 1900px;
   }
 </style>
+<!-- 이 바디들은 배너에 버튼누르면 전환되는 화면들 -->
 <body>
 <div id="sizeplz" style="height:400px;">
   <div class="carousel" id="carousel-banner">
@@ -34,6 +35,7 @@
   </div>
 </div>
 <script src="/resources/dist/js/Carousel.js"></script>
+<!-- 밑에 스크립트는 배너에 있는 버튼들 액션 도와주는 javascript -->
 <script>
 var caro = new Carousel(document.querySelector('#carousel-banner'), {
    CarouselMotion: 'fade',

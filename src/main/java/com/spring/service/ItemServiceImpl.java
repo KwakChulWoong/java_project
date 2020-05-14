@@ -9,8 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.ReviewVO;
+import com.spring.domain.TestVO;
 import com.spring.mapper.AttachMapper;
 
 import com.spring.mapper.ItemMapper;
@@ -50,6 +52,22 @@ public class ItemServiceImpl implements ItemService {
 	public List<ItemVO> popularItem() {
 		return item.selectItemList();
 		
+	}
+
+	//카테고리별 페이지 나누기
+	@Override
+	public List<ItemVO> getItemList(ItemCriteria cri) throws Exception {		
+		return item.totalItemList(cri);
+	}
+
+	@Override
+	public int totalItemRows(ItemCriteria cri) throws Exception {		
+		return item.totalItemCount(cri);
+	}
+	
+	
+	public List<TestVO> itemno() {
+		return item.itemno();
 	}
 
 //	@Transactional
@@ -105,11 +123,6 @@ public class ItemServiceImpl implements ItemService {
 //		// 게시글 삭제
 //		return mapper.delete(bno) == 0 ? false : true;
 //	}
-
-	@Override
-	public List<ItemVO> getList(Criteria cri) throws Exception {
-		return item.getList(cri);
-	}
 //
 //
 //	@Override

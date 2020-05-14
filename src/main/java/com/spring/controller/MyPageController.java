@@ -45,12 +45,13 @@ public class MyPageController {
 	private EmailService email;
 	
 	
+	//mypage로 이동
 	@GetMapping("/mypage")
 	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
 		
 		try {
 			
-			model.addAttribute("list", itemservice.getList(cri));
+//			model.addAttribute("list", itemservice.getList(cri));
 //			model.addAttribute("pageVO", new PageVO(cri, service.totalRows(cri)));
 			
 		} catch (Exception e) {

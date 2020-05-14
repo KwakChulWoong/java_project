@@ -8,7 +8,7 @@
       <article class="card-top">
         <a class="card-link" data-event-label="79349776" href="/articles/79349776">
           <div class="card-photo">
-            <img alt="철제 케비넷" src="https://dnvefa72aowie.cloudfront.net/origin/article/202004/45d54176373319865a7cacb8841143bf0b0980a034e73a4ffac0e9856730f058.webp?q=82&amp;s=300x300&amp;t=crop">
+            <img alt="철제 케비넷" src="/display">
           </div>
           <div class="card-desc">
             <h2 class="card-title">철제 케비넷</h2>

@@ -1,31 +1,31 @@
 package com.spring.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
-import javax.activation.MimetypesFileTypeMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
+import com.spring.domain.ItemCriteria;
+import com.spring.domain.ItemPageVO;
 import com.spring.domain.ItemVO;
 import com.spring.domain.PageVO;
-import com.spring.service.BoardService;
 import com.spring.service.ItemService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -119,8 +119,49 @@ public class ItemController {
 	}
 	
 	@GetMapping("/item/rent")
-	public String rent() {
+	public String rent(@ModelAttribute("cri")ItemCriteria cri,Model model) {
+		log.info("대여 리스트 추출"+cri.getCategory());
+		
+		try {
+			
+			List<ItemVO> list=service.getItemList(cri);			
+			model.addAttribute("list",list);
+			
+			for(ItemVO vo:list) {
+				vo.getAttachList().forEach(action ->{
+					if(action!=null)
+						action.setUploadPath(action.getUploadPath().replaceAll("\\\\", "/"));
+				});
+				log.info("----"+vo);
+			}
+			model.addAttribute("pageVO",new ItemPageVO(cri, service.totalItemRows(cri)));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "/item/rent";
+	}
+	
+	
+	//이미지
+	@GetMapping("/display")
+	@ResponseBody
+	public ResponseEntity<byte[]> getFile(String fileName){
+		log.info("이미지 요청 "+fileName);
+		
+		File f = new File("d:\\rental\\"+fileName);
+		
+		ResponseEntity<byte[]> result=null;
+		
+		HttpHeaders header = new HttpHeaders();
+		
+		try {
+			header.add("Content-Type", Files.probeContentType(f.toPath()));
+			log.info("이미지 "+f.toPath());
+			result = new ResponseEntity<byte[]>(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
+		} catch (IOException e) {			
+			e.printStackTrace();
+		}
+		return result;
 	}
 	
 //	

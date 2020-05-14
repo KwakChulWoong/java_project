@@ -9,24 +9,21 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Criteria {
+public class ItemCriteria {
 	private int pageNum;	//페이지 번호
 	private int amount;		//한 페이지당 보여줄 게시물 수
-			
+	
 	//검색과 관련된 정보 추가
-	private String type;   //검색조건
-	private String keyword;  //검색어 : TC, TCW..
+	private String category;	
 	
 	
-	public Criteria() {
+	public ItemCriteria() {
 		this(1,8);
+		this.category = "";
 	}
-	public Criteria(int pageNum, int amount) {
+	public ItemCriteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 	}	
 	
-	public String[] getTypeArr() {
-		return type==null?new String[] {} : type.split("");
-	}
 }

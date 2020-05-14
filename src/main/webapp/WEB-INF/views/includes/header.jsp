@@ -14,6 +14,7 @@
   <link href="/resources/dist/css/item.css" rel="stylesheet">	
   <link href="/resources/dist/css/image.css" rel="stylesheet">
   <link href="/resources/dist/css/mypage.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <style>
@@ -22,12 +23,13 @@
   }
 </style>
 
-<body style="overflow-x:hidden;">
-<div class="container-fluid" style="border-bottom:2px solid #008639; height:123px;">
+<body style="overflow-x:hidden;"> <!-- 화면 축소했을때 가로방향 스크롤바? 화면 옆으로 보이게끔해주는거 hidden 옵션 줘서 숨겼음 css상 이거 없애는게 원활하게 되서 없앰 -->
+<div class="container-fluid" style="border-bottom:2px solid #008639; height:123px;"> <!-- 드랍다운메뉴에 보이는 초록색 경계선 -->
    <div id="wrap">
       <div id="header">
 		<div class="header">
 			<div class="header_logo">
+				<!-- 이미지는 수업시간에 했던 freelogodesign에서 이미지 주소 가져옴 범고래 사진 -->
         		<a href="/"><img src="https://www.freelogodesign.org/file/app/client/thumb/b96d660e-7e9d-4444-ab00-13f845928cbb_200x200.png?1588734315713"></a>
 			</div>
 			<div class="topnav">
@@ -58,6 +60,7 @@
 					</ul>
 				</div>
 			</div>
+			<!-- z-index 쓴 이유는 저거 안쓰면 배너랑 css가 겹쳐졌던걸로 기억하는데 저걸 줘야지 완벽하게 덮어씌워진다? -->
 			<div class="header_tab" id="header_tab" style="display:none; z-index:6;">
 				<div>
 				</div>
