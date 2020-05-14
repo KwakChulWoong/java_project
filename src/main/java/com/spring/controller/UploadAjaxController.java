@@ -126,27 +126,27 @@ public class UploadAjaxController {
 	
 	
 	
-	//썸네일 이미지
-	@GetMapping("/display")
-	@ResponseBody
-	public ResponseEntity<byte[]> getFile(String fileName){
-		log.info("썸네일 요청");
-		
-		File f = new File("d:\\rental\\"+fileName);
-		
-		ResponseEntity<byte[]> result=null;
-		
-		HttpHeaders header = new HttpHeaders();
-		
-		try {
-			header.add("Content-Type", Files.probeContentType(f.toPath()));
-			result = new ResponseEntity<byte[]>
-			(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
-		} catch (IOException e) {			
-			e.printStackTrace();
-		}
-		return result;
-	}
+//	//썸네일 이미지
+//	@GetMapping("/display")
+//	@ResponseBody
+//	public ResponseEntity<byte[]> getFile(String fileName){
+//		log.info("썸네일 요청");
+//		
+//		File f = new File("d:\\rental\\"+fileName);
+//		
+//		ResponseEntity<byte[]> result=null;
+//		
+//		HttpHeaders header = new HttpHeaders();
+//		
+//		try {
+//			header.add("Content-Type", Files.probeContentType(f.toPath()));
+//			result = new ResponseEntity<byte[]>
+//			(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
+//		} catch (IOException e) {			
+//			e.printStackTrace();
+//		}
+//		return result;
+//	}
 	
 	//첨부파일 다운로드
 	@GetMapping("/download")
