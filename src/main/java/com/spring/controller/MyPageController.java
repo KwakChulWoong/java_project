@@ -94,6 +94,7 @@ public class MyPageController {
          //비밀번호 변경 성공하면 세션 해제하고 인덱스 페이지로 이동
          if(vo.newPasswordEqualsConfirm()) {
             if(service.changeMember(vo)) {
+               rttr.addFlashAttribute("success", "회원정보가 성공적으로 바꼈습니다");
                session.removeAttribute("info");            
             }
             return "redirect:/";
@@ -157,9 +158,10 @@ public class MyPageController {
          //비밀번호 변경이 성공되면
          //세션해제하고 index 보여주기
          if(regservice.updateMember(vo)) {
-//            session.removeAttribute("info");
+            rttr.addFlashAttribute("success", "회원정보가 성공적으로 변경되었습니다.");
+            session.removeAttribute("info");
          }
-         return "redirect:/mypage";
+         return "redirect:/";
       }else {
          rttr.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
       }
