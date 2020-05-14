@@ -27,7 +27,7 @@
        <div class="title-line-divider" style="width:1050px;"></div>
 </section>
     
- <a class="card-link" data-event-label="79349776" href="/board/ItemDetail.jsp">dddddddddddddd</a>
+
  
 	<style>
 	.box_wrap{
@@ -62,9 +62,9 @@
 		</script>
 	</c:forEach>
 	<%-- 컨텐츠 반복 시작 --%>	
-   	<div class="item" style="width:250px;height:300px;border: 1px solid;">
+   	<div class="item" style="width:250px;height:300px;border: 1px solid; border-radius:15px">
      <a href="/item/detail?itemno=${vo.itemno }">
-     <img alt="대여물품" src=""  class="card_top" style="width:248px;height:150px;"/>
+     <img alt="대여물품" src=""  class="card_top" style="width:248px;height:150px; border-radius:15px 15px 0px 0px;"/>
      <div class="item_content">
        <h2 style="font-size:17px">${vo.title}</h2>
        <p class="content">${vo.content}</p>
