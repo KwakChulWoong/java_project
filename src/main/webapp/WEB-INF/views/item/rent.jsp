@@ -58,44 +58,54 @@
        	.content .item img{
        		display:block;
        		width:250px;
+       		height:300px;
        	} 
        </style> 
    <div class="container">      
        <div class="content clearfix">
-	       <c:forEach var="vo" items="${list}">
-	       	 
-       	  	 <c:forEach var="image" items="${vo.attachList}">      	  	 
-       	  	 
-		       	  <script>		       	
-			       		var uuid = '${image.uuid}';		      	
-			       		var uploadPath = '${image.uploadPath}'; 	       		
-			       		var fileName = '${image.fileName}';		       
-			       
-			       		var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);  
-			       		console.log(path);
-			       		
-			       		$(".card-img-top").attr("src","display?fileName="+path);		       		
-			       </script>	 
-			  			  					  
+	       <c:forEach var="vo" items="${list}">		  			  					  
 			    <div class="item">
-			    <a href="/item/detail?itemno=${vo.itemno }">
-			      <img class="card-img-top" alt="렌탈 이미지">
-				  <div class="">
-				    <h5>${vo.title}</h5>
-				    <p>${vo.rentcost}</p>
-				    <p>${vo.readcount}</p>
-				  </div>
-				  </a>
+			    <a href="/item/detail?itemno=${vo.itemno}">
+			      <img class="card-img-top" alt="렌탈 이미지">				 
+				  <h5>${vo.title}</h5>
+				  <p>${vo.rentcost}</p>
+				  <p>${vo.readcount}</p>
+				</a>
 			    </div>
-			 	</c:forEach>
-		   </c:forEach>
+			 	</c:forEach>		  
 	   </div>
 </div>
 </section>
 
+<script>
+	let attachList = new Array();
+</script>
 
-
-
+<c:forEach var="vo" items="${list}">
+<c:forEach var="image" items="${vo.attachList}">
+	<script>
+		var uuid = '${image.uuid}';		      	
+		var uploadPath = '${image.uploadPath}'; 	       		
+		var fileName = '${image.fileName}';		       
+	
+		var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);
+	</script>
+</c:forEach>
+<script>
+	attachList.push(path);
+</script>
+</c:forEach>
+<script>
+$(function(){
+	//이미지 부분만 따로 설정하기	
+	var idx=0;
+	$(".content").find('img').each(function(){
+		$(this).attr('src',"display?fileName="+attachList[idx]);
+		console.log($(this).attr('src'));
+		idx++;
+	});
+})
+</script>
 
 <!-- start Pagination -->
 <div class="text-center">
