@@ -60,7 +60,7 @@ public class ItemController {
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		return "redirect:/register";
+		return "redirect:/item/register";
 	}
 //	
 //	@GetMapping({"/read","/modify"})
