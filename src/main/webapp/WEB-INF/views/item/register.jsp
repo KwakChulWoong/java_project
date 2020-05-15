@@ -31,7 +31,7 @@
 </style> -->
 <body>
 <%@include file="../includes/header.jsp" %>
-            <div class="row" >
+            <div class="row" style="margin:auto; width:750px;">
                 <div class="col-lg-12">
                     <h1 class="page-header">렌트제품 등록</h1>
                 </div>
@@ -39,6 +39,7 @@
             </div>            
             <div class="row" >
                 <div class="col-lg-12">
+                <div style="width:750px; margin:auto;">
                 	<div class="panel panel-default">
                         <div class="panel-heading">
                            		제품 등록 
@@ -79,15 +80,16 @@
                 					<label>아이디</label>
                 					<input class="form-control" name="userid" readonly="readonly" value="${info.userid}">                 				
                 				</div>  
-                				<button type="submit" class="btn btn-default">등록</button>              			
-                				<button type="reset" class="btn btn-default">취소</button>              			
+                				<button type="submit" class="btn btn-default" style="background-color:a6d0a6;">등록</button>              			
+                				<button type="reset" class="btn btn-default">취소</button>                  			
                 			</form>
                 		</div>
                 	</div>
                 </div>
+                </div>
             </div> 
 <!-- 첨부파일 -->
-<div class="row">
+<div class="row" style="margin:auto; width:780px;">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">파일 첨부</div>

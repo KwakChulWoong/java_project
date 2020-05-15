@@ -15,12 +15,13 @@
 <%@include file="../includes/header.jsp" %>
             <body>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" style="margin:0 25%;">
                     <h1 class="page-header">Review Board</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>            
             <div class="row">
+            	<div style="width:50%; margin:auto;">
                 <div class="col-lg-12">
                 	<div class="panel panel-default">
                         <div class="panel-heading">
@@ -42,17 +43,20 @@
                 					<input class="form-control" name="userid" readonly="readonly" value='${info.userid}'>                				
                 				</div>  
                 				<input type="hidden" name="itemno" value='<%=request.getParameter("itemno")%>' />
-                				<button type="submit" class="btn btn-default">등록</button>              			
+                				<button type="submit" class="btn btn-default" style="background-color:a6d0a6;">등록</button>              			
                 				<button type="reset" class="btn btn-default">취소</button>              			
                 			</form>
                 		</div>
                 	</div>
                 </div>
+                </div>
             </div> 
 <!-- 첨부파일 -->
 <div class="row">
 	<div class="col-lg-12">
+	<div style="width:50%; margin:auto;">
 		<div class="panel panel-default">
+
 			<div class="panel-heading">파일 첨부</div>
 			<div class="panel-body">
 				<div class="form-group uploadDiv">
@@ -63,6 +67,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>   
 <script>
