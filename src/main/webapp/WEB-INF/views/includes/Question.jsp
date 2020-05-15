@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -144,7 +144,7 @@
         <div><button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/review/reviewregister?itemno=${vo.itemno}'">리뷰 작성</button></div>
         <div><button id='regBtn' type='button' class='btn btn-xs pull-right btn-success' onclick="location.href='/review/questionregister?itemno=${vo.itemno}'">후기 작성</button></div>
         <script src="/resources/dist/js/w3.js"></script>
-=======
+<%-- =======
 <<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -439,4 +439,4 @@
         <script src="/resources/dist/js/w3.js"></script>
 >>>>>>> refs/remotes/origin/master
 >>>>>>> branch 'master' of https://github.com/KwakChulWoong/java_project.git
-</div>
+</div> --%>
