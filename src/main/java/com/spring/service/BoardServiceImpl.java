@@ -77,10 +77,12 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 
-	@Override
-	public boolean changeMember(changePwdVO change) {		
-		return register.changePwd(change)>0?true:false;
-	}
+//	@Override
+//	public boolean changeMember(changePwdVO change) {		
+//		change.setNew_password(MemberSha256.encrypt(change.getNew_password()));
+//		change.setConfirm_password(MemberSha256.encrypt(change.getConfirm_password()));
+//		return register.changePwd(change)>0?true:false;
+//	}
 
 @Override
 public List<AttachFileDTO> getAttachlist(int bno) {

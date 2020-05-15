@@ -25,6 +25,7 @@ import com.spring.domain.changePwdVO;
 import com.spring.service.BoardService;
 import com.spring.service.EmailService;
 import com.spring.service.ItemService;
+import com.spring.service.MemberSha256;
 import com.spring.service.RegisterService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +50,7 @@ public class MyPageController {
 	
 	//mypage로 이동
 	@GetMapping("/mypage")
-	public void mypage(Model model, @ModelAttribute("cri") Criteria cri,HttpSession session) {
+	public void mypage(Model model, @ModelAttribute("cri")Criteria cri,HttpSession session) {
 		log.info("mypage 요청");
 		log.info("info"+session.getAttribute("info"));
 		try {
@@ -81,7 +82,7 @@ public class MyPageController {
 	//비밀번호 변경 내용 가져오기
 	@PostMapping("/modify/changePwd")       // 세션 속성에 있는 info 를 가져옴
 	public String changePwdPost(@SessionAttribute("info") AuthInfo info, changePwdVO vo,HttpSession session, RedirectAttributes rttr) {
-
+		
 		//changePwd.jsp에서 내용가져오기
 		log.info("비밀번호 변경창 불러오기"+vo);
 
@@ -92,13 +93,21 @@ public class MyPageController {
 		//db에서 현재 아이디와 비밀번호가 일치하면
 		LoginVO login = new LoginVO();
 		login.setUserid(vo.getUserid());
-		login.setCurrent_password(vo.getCurrent_password());
+		String crypwd = MemberSha256.encrypt(vo.getCurrent_password());
+		
+		login.setCurrent_password(crypwd);
+		log.info("비밀번호1");
 		
 		if(regservice.loginMember(login)!=null) {
 			//비밀번호 변경해주기
 			//비밀번호 변경 성공하면 세션 해제하고 인덱스 페이지로 이동
+			log.info("비밀번호2");
 			if(vo.newPasswordEqualsConfirm()) {
-				if(service.changeMember(vo)) {
+				vo.setNew_password(MemberSha256.encrypt(vo.getNew_password()));
+				vo.setConfirm_password(MemberSha256.encrypt(vo.getConfirm_password()));
+				if(regservice.changeMember(vo)) {
+					
+					
 					rttr.addFlashAttribute("success", "회원정보가 성공적으로 바꼈습니다");
 					session.removeAttribute("info");				
 				}
@@ -151,22 +160,21 @@ public class MyPageController {
 	public String memberEditPost(RegisterVO vo,@SessionAttribute AuthInfo info,HttpSession session,RedirectAttributes rttr,Model model) {
 		
 		vo.setUserid(info.getUserid());				
-		
+		log.info("회원수정1");
 		//db에서 현재 아이디와 비밀번호가 일치하면
 		LoginVO login = new LoginVO();
 		login.setUserid(vo.getUserid());
-		login.setCurrent_password(vo.getPasswdconfirm());
-		
+		log.info("회원수정 vo"+vo);
+		String encry = MemberSha256.encrypt(vo.getPasswdconfirm());
+		login.setCurrent_password(encry);
+		log.info("회원수정2");
 		if(regservice.loginMember(login)!=null) {
-				
-			//비밀번호 변경 해주기
-			//비밀번호 변경이 성공되면
-			//세션해제하고 index 보여주기
+
 			if(regservice.updateMember(vo)) {
 				rttr.addFlashAttribute("success", "회원정보가 성공적으로 변경되었습니다.");
 				session.removeAttribute("info");				
 			}
-			return "redirect:/mypage";
+			return "redirect:/";
 		}else {
 			rttr.addFlashAttribute("error", "비밀번호가 일치하지 않습니다.");
 		}
