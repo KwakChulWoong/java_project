@@ -27,7 +27,7 @@
        <div class="title-line-divider" style="width:1050px;"></div>
 </section>
     
- <a class="card-link" data-event-label="79349776" href="/board/ItemDetail.jsp">dddddddddddddd</a>
+ <a class="card-link" data-event-label="79349776" href="/board/ItemDetail.jsp"></a>
  
 	<style>
 	.box_wrap{
@@ -46,23 +46,43 @@
 	} */
 	</style>
 
- <div class="box_wrap">
- 
+	<%-- 컨텐츠 보여주는 영역--%>		
+ 	<div class="box_wrap">   			
+   		
+   	</div>
+ <script>
+ 	let str="";	  
+ </script>
  <c:forEach var="vo" items="${list}">    
  	<c:forEach var="image" items="${vo.attachList}">
          <script>		       	
-			var uuid = '${image.uuid}';		      	
+			var uuid = '${image.uuid}';			
 			var uploadPath = '${image.uploadPath}'; 	       		
-			var fileName = '${image.fileName}';		       
-	
+			var fileName = '${image.fileName}';	  
+			
+			
 			var path= encodeURIComponent(uploadPath+"/"+uuid+"_"+fileName);  
 			console.log(path);
-			
-			$(".card_top").attr("src","/item/display?fileName="+path);		       		
 		</script>
-	</c:forEach>
-	<%-- 컨텐츠 반복 시작 --%>	
-   	<div class="item" style="width:250px;height:300px;border: 1px solid;">
+	</c:forEach>	
+		<script>	
+			str+="<div class=\"item\" style=\"width:250px;height:300px;border: 1px solid;\">"
+			str+="<a href='/item/detail?itemno=${vo.itemno}>";
+			str+="<img alt='대여물품' src=\"/item/display?fileName=\" "+path+" class='card_top' style='width:248px;height:150px;'/><div class=\"item_content\">";			
+		    str+="<h2 style=\"font-size:17px\">${vo.title}</h2>";
+		    str+="<p class=\"content\">${vo.content}</p>";
+		    str+="<div class=\"item-price\">대여비 : ${vo.rentcost}</div>";
+		    str+="<div class=\"item-counts\"><span>관심 ${vo.readcount}</span><span>등록자 ${vo.userid}</span></div>";           
+		    str+="</a></div>";
+			
+			/* $(".card_top").attr("src","/item/display?fileName="+path);	 */	     
+			
+		</script>			
+	</c:forEach>  	
+   	<script>
+   	$(".box_wrap").append(str); 
+   	</script>
+   	<%--
      <a href="/item/detail?itemno=${vo.itemno }">
      <img alt="대여물품" src=""  class="card_top" style="width:248px;height:150px;"/>
      <div class="item_content">
@@ -76,9 +96,7 @@
     </div>
     	</a>
     </div>
-    	
-	</c:forEach>
-</div>
+--%>
 <%-- 반복 되는 곳 종료 --%>      
  <div class="card-top" id="cards-more" style="margin:0 auto;width:10rem;margin-top:10px">
      <a class="card-link" href="/item/rent">
@@ -88,6 +106,8 @@
          </div>
      </a>
  </div>
-   
+<script>
+
+</script>   
 
 <jsp:include page="includes/footer.jsp"></jsp:include>
