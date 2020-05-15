@@ -19,6 +19,7 @@ import com.spring.domain.AuthInfo;
 import com.spring.domain.LoginVO;
 import com.spring.domain.RegisterVO;
 import com.spring.service.KakaoService;
+import com.spring.service.MemberSha256;
 import com.spring.service.RegisterService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -62,12 +63,23 @@ public class LoginController {
 	public String step3(@ModelAttribute("vo")RegisterVO vo) {
 		//step2.jsp 에서 회원가입정보 가져오기
 		log.info("vo" + vo);
+		log.info("pwd"+vo.getPasswd());
+		
 		//password와 confirm_password 값이 다르게
 		//입력되었다면 step2로 보내기
 		//같다면 step3으로 이동
 		if(vo.isPasswordEqualToConfirmPassword()) {
 			//회원가입
+			
+			//암호화
+			String encryPassword = MemberSha256.encrypt(vo.getPasswd());
+			vo.setPasswd(encryPassword);
+			vo.setPasswdconfirm(vo.getPasswd());
+			log.info("encrypasswd"+vo.getPasswdconfirm());			
+
 			if(service.registMember(vo)) {
+				
+				
 				return "/login/memberJoin3";
 				
 			}else {
@@ -102,6 +114,16 @@ public class LoginController {
 		
 	}
 	
+	@GetMapping("/login/kakaologout")
+	public String kakaologout(HttpSession session) {
+	    kakao.kakaoLogout((String)session.getAttribute("access_Token"));
+	    session.removeAttribute("access_Token");
+	    session.removeAttribute("userId");
+	    session.removeAttribute("info");
+	    return "index";
+	}
+
+	
 	//중복아이디 검사
 	@ResponseBody
 	@PostMapping("/checkId")
@@ -127,10 +149,13 @@ public class LoginController {
 	@PostMapping("/login")
 	public String loginPost(LoginVO vo,HttpSession session,Model model, RedirectAttributes rttr) {
 		
+		String crypwd = MemberSha256.encrypt(vo.getCurrent_password());
+		vo.setCurrent_password(crypwd);
 		AuthInfo info = service.loginMember(vo);
 		
 		if(info!=null) {
 			session.setAttribute("info",info);
+			model.addAttribute("info", info);
 			return "redirect:/";
 		}else {
 			rttr.addFlashAttribute("error", "잘못된 비밀번호입니다.");

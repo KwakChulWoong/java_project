@@ -50,11 +50,17 @@ public class MyPageController {
 	
 	//mypage로 이동
 	@GetMapping("/mypage")
-	public void mypage(Model model, @ModelAttribute("cri") Criteria cri) {
-		
+	public void mypage(Model model, @ModelAttribute("cri") Criteria cri,HttpSession session) {
+		log.info("mypage 요청");
+		log.info("info"+session.getAttribute("info"));
 		try {
-			List<ItemVO> list = itemservice.getList(cri);
+			AuthInfo info = (AuthInfo) session.getAttribute("info");
+			log.info("2번째 info"+info);
+			
+			List<ItemVO> list = itemservice.getList(cri,info.getUserid());
+			log.info("3번쨰");
 			model.addAttribute("list", list);
+			log.info("3번쨰");
 			model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
 			
 		} catch (Exception e) {

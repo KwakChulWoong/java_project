@@ -14,7 +14,7 @@ import com.spring.domain.TestVO;
 
 public interface ItemMapper {
 	public int insertItemRegister(ItemVO vo);
-	public List<ItemVO> getList(Criteria cri); //마이페이지 보여주는 리스트
+	public List<ItemVO> getList(@Param("cri") Criteria cri,@Param("userid") String userid); //마이페이지 보여주는 리스트
 	
 	public List<ReviewVO> getReviewList();
 	

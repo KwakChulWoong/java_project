@@ -17,12 +17,10 @@
 		from(
 			select  /*+INDEX_DESC(item SYS_C0011566)*/
 			rownum rn,itemno,title,userid,regdate
-			from item where
-		]]>
-		 <include refid="criteria"></include>			
-	  <![CDATA[		
-		 rownum <= #{pageNum}*#{amount})
-		where rn> (#{pageNum}-1)*#{amount}	
+			from item where 
+				
+		 rownum <= #{cri.pageNum}*#{cri.amount} and userid=#{userid})
+		where rn> (#{cri.pageNum}-1)*#{cri.amount}	
 	  ]]>	
 	</select>
 
