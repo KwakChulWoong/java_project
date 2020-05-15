@@ -11,13 +11,13 @@ public class EmailServiceImpl implements EmailService {
 	//메일 서버 설정
 	String charSet="utf-8";
 	String hostSMTP="smtp.naver.com";
-	String hostUser="socratechnic";
-	String hostPass="cjfdndqjvm0401-";
+	String hostUser="dreaming91";
+	String hostPass="no2510";
 	
 	
 	//보내는 사람
 	String subject="";
-	String sendUser="socratechnic@naver.com";
+	String sendUser="dreaming91@naver.com";
 	
 	@Override
 	public void sendEmail(String newPass,String userEmail,String name) {

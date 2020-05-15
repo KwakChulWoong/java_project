@@ -21,7 +21,7 @@
     width: 1900px;
   }
 </style>
-<%-- <jsp:include page="includes/banner.jsp"/>  --%>
+<jsp:include page="includes/banner.jsp"/>
 <section id="hot-articles" style="padding: 50px 0 10px;">   
        <h2 style="margin-left : 26%; font-size:30px;">인기 매물</h2>
        <div class="title-line-divider" style="width:1050px;"></div>
