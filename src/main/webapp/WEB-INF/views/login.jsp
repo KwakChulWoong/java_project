@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>      
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,10 +23,10 @@
 	<script type="text/javascript"> 
 	var message = '${error}';
 	if(message!==''){
-		alert(message); 
-		
+		alert(message); 		
 	}
 	</script>
+
 </head>
 <body data-gr-c-s-loaded="true">
     <div class="container">

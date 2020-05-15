@@ -1,10 +1,10 @@
 package com.spring.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
+
 @Data
 public class ItemVO {
 	private int itemno;
@@ -18,8 +18,6 @@ public class ItemVO {
 	private int readcount;
 	private List<AttachFileDTO> attachList;
 	
-	private String address;
-	
-	
-	
+	private String address;	
 }
+

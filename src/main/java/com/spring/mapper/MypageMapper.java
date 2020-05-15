@@ -16,3 +16,4 @@ public interface MypageMapper {
 	public int getTotalCount(Criteria cri);
 	public int updateReplycnt(@Param("bno") int bno, @Param("amount") int amount);
 }
+

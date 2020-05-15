@@ -10,6 +10,6 @@ import com.spring.domain.ReviewVO;
 
 public interface ReviewMapper {
 	public int insertReview(ReviewVO vo);
-
+	public List<ReviewVO> getReview(int itemno);
 
 }

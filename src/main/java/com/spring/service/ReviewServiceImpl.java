@@ -24,16 +24,20 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	
 	public boolean ItemReviewRegister(ReviewVO vo) throws Exception {
-		review.insertReview(vo);
+			review.insertReview(vo);
 		//첨부파일이 null이 아니면 첨부파일 등록
-				if(vo.getAttachList()==null || vo.getAttachList().size()<=0) {
-					return false;
-				}
+			if(vo.getAttachList()==null || vo.getAttachList().size()<=0) {
+				return false;
+			}
 				vo.getAttachList().forEach(attach1 ->{
 					attach1.setReviewno(vo.getReviewno());
 					attach.insert(attach1);
 				});
 				return true;
+	}
+	@Override
+	public List<ReviewVO> getReview(int itemno) throws Exception {
+		return review.getReview(itemno);
 	}
 
 

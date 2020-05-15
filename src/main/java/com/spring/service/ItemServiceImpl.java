@@ -4,17 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
-import com.spring.domain.ReviewVO;
 import com.spring.domain.TestVO;
 import com.spring.mapper.AttachMapper;
-
 import com.spring.mapper.ItemMapper;
 
 @Service
@@ -176,3 +173,4 @@ public class ItemServiceImpl implements ItemService {
 //	}
 
 }
+

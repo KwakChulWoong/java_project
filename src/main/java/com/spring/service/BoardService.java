@@ -3,7 +3,6 @@ package com.spring.service;
 import java.util.List;
 
 import com.spring.domain.AttachFileDTO;
-
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.changePwdVO;
@@ -36,6 +35,4 @@ public interface BoardService {
 	//泥⑤��뙆�씪 由ъ뒪�듃 異붿텧
 	public List<AttachFileDTO> getAttachlist(int bno);
 	public boolean changeMember(changePwdVO change);
-
-	
 }

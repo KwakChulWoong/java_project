@@ -9,8 +9,12 @@
 	
 		 
 	insert into review(itemno,reviewno,title,content,userid) 
-	values(2,#{reviewno},#{title},#{content},#{userid})
+	values(#{itemno},#{reviewno},#{title},#{content},#{userid})
 </insert>
+<select id="getReview" resultType="com.spring.domain.ReviewVO">
+
+	select * from review where itemno=#{itemno}
+</select>
 <!-- <select id="getList" resultType="com.spring.domain.BoardVO">
 	  <![CDATA[		
 		select * 

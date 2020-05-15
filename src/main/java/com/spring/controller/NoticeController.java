@@ -20,40 +20,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.spring.domain.ReviewVO;
-import com.spring.service.ReviewService;
+import com.spring.domain.AttachFileDTO;
+import com.spring.domain.BoardVO;
+import com.spring.domain.Criteria;
+import com.spring.domain.PageVO;
+import com.spring.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
-@RequestMapping("/review/*")
-public class ReviewController {
+@RequestMapping("/notice/*")
+public class NoticeController {
 	
 	@Autowired
-	private ReviewService service;
+	private BoardService service;	
 	
-	@GetMapping("/reviewregister")
-	public void reviewRead() {
-		log.info("리뷰작성");
-	}
-	@PostMapping("/reviewregister")
-	public String itemPost(ReviewVO vo,RedirectAttributes rttr){		
-		log.info("리뷰 등록하기 "+vo);
-		
-		if(vo.getAttachList()!=null) {
-			vo.getAttachList().forEach(attach -> log.info(""+attach));
-		}	
-		
-		try {
-			service.ItemReviewRegister(vo);
+	@GetMapping("/list")
+	public void listGet(@ModelAttribute("cri") Criteria cri,Model model){		
+		log.info("게시글 목록 보여주기 "+cri);
+		try {			
+			//model.addAttribute("list", service.listAll(cri));
+			//model.addAttribute("pageVO",new PageVO(cri, service.totalRows(cri)));
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		
-		rttr.addAttribute("itemno", vo.getItemno());
-		return "redirect:/item/detail";
-	}
+	}	
 }
 
 
