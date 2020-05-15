@@ -25,7 +25,10 @@
 <section id="hot-articles" style="padding: 50px 0 10px;">   
        <h2 style="margin-left : 26%; font-size:30px;">인기 매물</h2>
        <div class="title-line-divider" style="width:1050px;"></div>
-</section> 
+</section>
+    
+ <a class="card-link" data-event-label="79349776" href="/board/ItemDetail.jsp"></a>
+
 	<style>
 	.box_wrap{
 		width:1024px; 
@@ -42,11 +45,8 @@
 		border: 1px solid;
 	} */
 	</style>
-
 <div class="box_wrap">
  <c:forEach var="vo" items="${list}">	
-	<%-- 컨텐츠 반복 시작 --%>	
-	</script>
    	<div class="item" style="width:250px;height:300px;border: 1px solid; border-radius:15px">
      <a href="/item/detail?itemno=${vo.itemno}">
      <img alt="대여물품" src=""  class="card_top" style="width:248px;height:150px; border-radius:15px 15px 0px 0px;"/>
@@ -59,9 +59,9 @@
 	           <span>등록자 ${vo.userid}</span>           
 	       </div>
     </div>
-    </a>
-    </div>    	
-   </c:forEach>
+    	</a>
+    </div>
+  </c:forEach>
 </div>
 
 <script>
@@ -93,6 +93,7 @@ $(function(){
 	});
 })
 </script>
+
 <%-- 반복 되는 곳 종료 --%>      
  <div class="card-top" id="cards-more" style="margin:0 auto;width:10rem;margin-top:10px">
      <a class="card-link" href="/item/rent">
