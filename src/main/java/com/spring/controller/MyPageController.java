@@ -25,6 +25,7 @@ import com.spring.domain.changePwdVO;
 import com.spring.service.BoardService;
 import com.spring.service.EmailService;
 import com.spring.service.ItemService;
+import com.spring.service.MemberSha256;
 import com.spring.service.RegisterService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -114,21 +115,26 @@ public class MyPageController {
 	}
 	@PostMapping("/find/findPwd")
 	public void findPassword(String userid) {
-		log.info("鍮꾨�踰덊샇 李얘린"+userid);
+		log.info("비밀번호 찾기 "+userid);
 		
 		RegisterVO vo=regservice.getUser(userid);
 		if (vo!=null) {
-			//�엫�떆 鍮꾨�踰덊샇 諛쒓툒
+			
 			String newPass=tempPass();
-			//�엫�떆 鍮꾨�踰덊샇濡� 鍮꾨�踰덊샇 蹂�寃�
-			if (regservice.updateUser(userid, newPass)) {
-				//�씠硫붿씪濡� �쟾�넚�빐二쇨린
+			
+			/*	
+				암호화 하기				
+			*/
+			String crypwd = MemberSha256.encrypt(newPass);	
+			
+			
+			if (regservice.updateUser(userid, crypwd)) {
+				
 				email.sendEmail(newPass, vo.getEmail(), vo.getName());
-				//�썝�븯�뒗 怨녹쑝濡� �씠�룞
+				
 			}
 		}else {
-			//�궗�슜�옄媛� �븘�씠�뵒瑜� �옒紐� �엯�젰�븯�뿬 �씠硫붿씪 �쟾�넚�쓣 �븷 �닔 �뾾�뒗 寃쎌슦
-			//媛��빞�븷 怨�
+			
 		}
 	}
 	
