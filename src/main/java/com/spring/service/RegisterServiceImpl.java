@@ -48,12 +48,14 @@ public class RegisterServiceImpl implements RegisterService {
 	}
 	@Override
 	public boolean changeMember(changePwdVO change) {
+//		change.setNew_password(MemberSha256.encrypt(change.getNew_password()));
+//		change.setConfirm_password(MemberSha256.encrypt(change.getConfirm_password()));		
 		return mapper.changePwd(change) >0 ? true:false;
 	}
 
 	@Override
 	public boolean updateMember(RegisterVO vo) {
-		
+		vo.setPasswdconfirm(MemberSha256.encrypt(vo.getPasswdconfirm()));
 		return mapper.updateMember(vo)>0?true:false;
 	}
 

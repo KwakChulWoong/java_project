@@ -1,13 +1,16 @@
 package com.spring.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @ToString
 @Setter
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class PageVO {
 	//페이지 나누기와 관련된 정보를 담고 있는 객체
 	private int startPage;
@@ -17,9 +20,9 @@ public class PageVO {
 	//전체 게시물 수
 	private int total;
 	//현재 페이지 번호, 피이지당 보여줄 게시물 수 객체
-	private ItemCriteria cri;
+	private Criteria cri;
 	
-	public PageVO(ItemCriteria cri, int total) {
+	public PageVO(Criteria cri, int total) {
 		this.total=total;
 		this.cri = cri;
 		

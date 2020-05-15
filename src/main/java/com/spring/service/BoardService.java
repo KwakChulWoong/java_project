@@ -34,5 +34,5 @@ public interface BoardService {
 //	
 	//泥⑤��뙆�씪 由ъ뒪�듃 異붿텧
 	public List<AttachFileDTO> getAttachlist(int bno);
-	public boolean changeMember(changePwdVO change);
+//	public boolean changeMember(changePwdVO change);
 }
