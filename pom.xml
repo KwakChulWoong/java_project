@@ -14,6 +14,17 @@
 		<org.slf4j-version>1.7.24</org.slf4j-version>
 	</properties>
 	<dependencies>
+		
+		<!-- 비밀번호 암호화 -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.10</version>
+		</dependency>
+		
+	
+	
+	
 		<!-- 비밀번호 잊어버렸을때 이메일 인증 -->
 		<dependency>
 		    <groupId>org.apache.commons</groupId>

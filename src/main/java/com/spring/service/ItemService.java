@@ -23,7 +23,7 @@ public interface ItemService {
 	public ItemVO detail(int itemno) throws Exception;
 	
 
-	public List<ItemVO> getList(Criteria cri) throws Exception;
+	public List<ItemVO> getList(Criteria cri,String userid) throws Exception;
 
 
 //	public List<ReviewVO> getReviewList() throws Exception;
