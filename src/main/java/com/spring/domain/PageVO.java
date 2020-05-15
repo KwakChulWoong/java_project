@@ -17,9 +17,9 @@ public class PageVO {
 	//전체 게시물 수
 	private int total;
 	//현재 페이지 번호, 피이지당 보여줄 게시물 수 객체
-	private Criteria cri;
+	private ItemCriteria cri;
 	
-	public PageVO(Criteria cri, int total) {
+	public PageVO(ItemCriteria cri, int total) {
 		this.total=total;
 		this.cri = cri;
 		

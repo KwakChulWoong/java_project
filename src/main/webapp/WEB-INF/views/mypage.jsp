@@ -237,3 +237,9 @@
 	
 	
 </script>
+<script type="text/javascript"> 
+var message = '${error}';
+if(message!==''){
+	alert(message); 		
+}
+</script>

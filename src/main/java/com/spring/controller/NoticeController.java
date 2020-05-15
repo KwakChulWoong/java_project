@@ -41,7 +41,7 @@ public class NoticeController {
 		log.info("게시글 목록 보여주기 "+cri);
 		try {			
 			//model.addAttribute("list", service.listAll(cri));
-			model.addAttribute("pageVO",new PageVO(cri, service.totalRows(cri)));
+			//model.addAttribute("pageVO",new PageVO(cri, service.totalRows(cri)));
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}

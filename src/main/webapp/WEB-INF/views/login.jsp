@@ -23,10 +23,10 @@
 	<script type="text/javascript"> 
 	var message = '${error}';
 	if(message!==''){
-		alert(message); 
-		
+		alert(message); 		
 	}
 	</script>
+
 </head>
 <body data-gr-c-s-loaded="true">
     <div class="container">

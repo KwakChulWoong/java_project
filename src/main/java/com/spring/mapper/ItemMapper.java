@@ -2,10 +2,7 @@ package com.spring.mapper;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.spring.domain.AttachFileDTO;
-import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
@@ -42,3 +39,4 @@ public interface ItemMapper {
 	public int mypageTotalCount(Criteria cri);
 	
 }
+

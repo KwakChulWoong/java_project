@@ -1,14 +1,11 @@
 package com.spring.controller;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -26,7 +23,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -126,27 +122,27 @@ public class UploadAjaxController {
 	
 	
 	
-	//썸네일 이미지
-	@GetMapping("/display")
-	@ResponseBody
-	public ResponseEntity<byte[]> getFile(String fileName){
-		log.info("썸네일 요청");
-		
-		File f = new File("d:\\rental\\"+fileName);
-		
-		ResponseEntity<byte[]> result=null;
-		
-		HttpHeaders header = new HttpHeaders();
-		
-		try {
-			header.add("Content-Type", Files.probeContentType(f.toPath()));
-			result = new ResponseEntity<byte[]>
-			(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
-		} catch (IOException e) {			
-			e.printStackTrace();
-		}
-		return result;
-	}
+//	//썸네일 이미지
+//	@GetMapping("/display")
+//	@ResponseBody
+//	public ResponseEntity<byte[]> getFile(String fileName){
+//		log.info("썸네일 요청");
+//		
+//		File f = new File("d:\\rental\\"+fileName);
+//		
+//		ResponseEntity<byte[]> result=null;
+//		
+//		HttpHeaders header = new HttpHeaders();
+//		
+//		try {
+//			header.add("Content-Type", Files.probeContentType(f.toPath()));
+//			result = new ResponseEntity<byte[]>
+//			(FileCopyUtils.copyToByteArray(f),header,HttpStatus.OK);
+//		} catch (IOException e) {			
+//			e.printStackTrace();
+//		}
+//		return result;
+//	}
 	
 	//첨부파일 다운로드
 	@GetMapping("/download")
@@ -184,10 +180,7 @@ public class UploadAjaxController {
 		headers.add("Content-Disposition", "attachment;filename="+downloadName);
 		
 		return new ResponseEntity<Resource>(resource,headers,HttpStatus.OK);
-	}
-	
-	
-	
+	}	
 	
 	
 	
@@ -214,14 +207,4 @@ public class UploadAjaxController {
 		return str.replace("-", File.separator);
 	}
 }
-
-
-
-
-
-
-
-
-
-
 

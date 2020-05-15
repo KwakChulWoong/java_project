@@ -46,14 +46,13 @@ public class ReviewController {
 		}	
 		
 		try {
-			if(service.ItemReviewRegister(vo)) {
-				//rttr.addFlashAttribute("result", vo.getBno());
-				return "redirect:list";
-			}
+			service.ItemReviewRegister(vo);
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}
-		return "redirect:/detail";
+		
+		rttr.addAttribute("itemno", vo.getItemno());
+		return "redirect:/item/detail";
 	}
 }
 
