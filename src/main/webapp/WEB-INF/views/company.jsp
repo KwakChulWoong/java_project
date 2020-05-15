@@ -96,3 +96,4 @@
 </body>
 </html>
 <jsp:include page="includes/footer.jsp"></jsp:include>
+>>>>>>> refs/remotes/origin/master

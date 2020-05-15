@@ -26,7 +26,6 @@ import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemPageVO;
 import com.spring.domain.ItemVO;
-import com.spring.domain.PageVO;
 import com.spring.domain.ReviewVO;
 import com.spring.service.ItemService;
 import com.spring.service.ReviewService;
@@ -205,115 +204,9 @@ public class ItemController {
 			}
 		} catch (Exception e1) {
 			e1.printStackTrace();
-		}
-		
+		}	
 		
 		return result;
 	}
-	
-//	
-//	//modify.jsp에서 modify버튼 클릭시 넘어오는 값 가져오기
-//	@PostMapping("/modify")
-//	public String modify(BoardVO vo,Criteria cri,RedirectAttributes rttr) {
-//		log.info("내용 수정..."+vo);
-//		log.info("내용 수정..."+cri);
-//		
-//		if(vo.getAttachList()!=null) {
-//			for(AttachFileDTO dto:vo.getAttachList()) {
-//				log.info(dto+"");
-//			}
-//		}		
-//		
-//		
-//		try {
-//			if(service.updateRow(vo)) {
-//				log.info("수정성공");
-//				rttr.addFlashAttribute("result", "수정 성공");
-//				
-//				rttr.addAttribute("pageNum", cri.getPageNum());
-//				rttr.addAttribute("amount", cri.getAmount());
-//				rttr.addAttribute("type", cri.getType());
-//				rttr.addAttribute("keyword", cri.getKeyword());
-//				return "redirect:list";
-//			}else {
-//				log.info("수정실패");
-//			}
-//		} catch (Exception e) {			
-//			e.printStackTrace();
-//		}
-//		return "redirect:modify";
-//	}
-//	
-//	
-//	//  /board/remove 처리
-//	@PostMapping("/remove")
-//	public String removePost(@RequestParam("bno")int bno,Criteria cri,RedirectAttributes rttr) {
-//		log.info("remove " + bno);
-//		log.info("remove " + cri);
-//		
-//		//게시물 삭제시 첨부파일 삭제하기(폴더에서)
-//		//bno에 해당하는 첨부물 목록 알아내기
-//		List<AttachFileDTO> attachList=service.getAttachList(bno);		
-//		
-//		//삭제처리 후 리스트 보여주기
-//		try {
-//			if(service.deleteRow(bno)) {
-//				
-//				deleteFiles(attachList);				
-//				
-//				//세션에 값을 담는 상태
-//				rttr.addFlashAttribute("result", "삭제 성공");
-//				
-//				//URL에 따라감
-//				rttr.addAttribute("pageNum", cri.getPageNum());
-//				rttr.addAttribute("amount", cri.getAmount());
-//				rttr.addAttribute("type", cri.getType());
-//				rttr.addAttribute("keyword", cri.getKeyword());
-//				return "redirect:list";
-//			}
-//		} catch (Exception e) {			
-//			e.printStackTrace();
-//		}
-//		return "redirect:modify";
-//	}
-//	
-//	private void deleteFiles(List<AttachFileDTO> attachList) {
-//		log.info("첨부물 삭제");
-//		if(attachList == null || attachList.size() <= 0) {
-//			return;
-//		}
-//		
-//		for(AttachFileDTO vo : attachList) {
-//			Path path = Paths.get("d:\\upload\\",vo.getUploadPath()+"\\"+vo.getUuid()+"_"+vo.getFileName());
-//		
-//			try {
-//				//일반파일, 이미지 원본 파일 삭제
-//				Files.deleteIfExists(path);
-//				
-////				if(Files.probeContentType(path).startsWith("image")) {
-////					Path thumb=Paths.get("d:\\upload\\",vo.getUploadPath()+"\\s_"+vo.getUuid()+"_"+vo.getFileName());
-////					Files.delete(thumb);
-////				}
-//				
-//				MimetypesFileTypeMap m = new MimetypesFileTypeMap();
-//				m.addMimeTypes("image png jpg jpeg gif");	
-//				if(m.getContentType(path.toFile()).contains("image")) {
-//					Path thumb=Paths.get("d:\\upload\\",vo.getUploadPath()
-//							+"\\s_"+vo.getUuid()+"_"+vo.getFileName());
-//					Files.delete(thumb);
-//				}
-//				
-//			} catch (IOException e) {				
-//				e.printStackTrace();
-//			}			
-//		}
-//	}	
 }
-
-
-
-
-
-
-
 

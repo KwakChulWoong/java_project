@@ -7,7 +7,6 @@ import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;
 import com.spring.domain.ItemVO;
-import com.spring.domain.ReviewVO;
 import com.spring.domain.TestVO;
 
 public interface ItemService {
@@ -51,3 +50,4 @@ public interface ItemService {
 	//페이지 나누기 총게시물
 	public int mypagetotalRows(Criteria cri) throws Exception;
 }
+

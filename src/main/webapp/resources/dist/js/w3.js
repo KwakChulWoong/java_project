@@ -1,6 +1,3 @@
-/**
- * 
- */
 function openCity(evt, cityName) {
         var i, x, tablinks;
         x = document.getElementsByClassName("city");
@@ -57,5 +54,4 @@ function openCity(evt, cityName) {
               alert("리뷰조회실패");
            }
         })
-
 }

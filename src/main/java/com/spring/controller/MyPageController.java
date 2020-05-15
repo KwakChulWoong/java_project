@@ -19,7 +19,6 @@ import com.spring.domain.AuthInfo;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemVO;
 import com.spring.domain.LoginVO;
-import com.spring.domain.PageVO;
 import com.spring.domain.RegisterVO;
 import com.spring.domain.changePwdVO;
 import com.spring.service.BoardService;
@@ -27,7 +26,6 @@ import com.spring.service.EmailService;
 import com.spring.service.ItemService;
 import com.spring.service.RegisterService;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -55,7 +53,7 @@ public class MyPageController {
       try {
          List<ItemVO> list = itemservice.getList(cri);
          model.addAttribute("list", list);
-         model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
+        // model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
          
       } catch (Exception e) {
          e.printStackTrace();
@@ -76,6 +74,7 @@ public class MyPageController {
    //비밀번호 변경 내용 가져오기
    @PostMapping("/modify/changePwd")       // 세션 속성에 있는 info 를 가져옴
    public String changePwdPost(@SessionAttribute("info") AuthInfo info, changePwdVO vo,HttpSession session, RedirectAttributes rttr) {
+
 
       //changePwd.jsp에서 내용가져오기
       log.info("비밀번호 변경창 불러오기"+vo);
