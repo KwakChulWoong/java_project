@@ -80,8 +80,8 @@ public class ItemServiceImpl implements ItemService {
 		return item.get_detail_img(dto);
 	}
 	@Override
-	public List<ItemVO> getList(Criteria cri) throws Exception {
-		return item.getList(cri);
+	public List<ItemVO> getList(Criteria cri,String userid) throws Exception {
+		return item.getList(cri,userid);
 
 	}
 
