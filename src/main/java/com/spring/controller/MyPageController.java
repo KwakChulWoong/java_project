@@ -164,19 +164,19 @@ public class MyPageController {
 	@PostMapping("/modify/memberEdit")
 	public String memberEditPost(RegisterVO vo,@SessionAttribute AuthInfo info,HttpSession session,RedirectAttributes rttr,Model model) {
 		
+		log.info("회원수정 vo"+vo);
 		//vo.setUserid(info.getUserid());				
-		log.info("회원수정1");
-		//db에서 현재 아이디와 비밀번호가 일치하면
+		
+		//현재 비밀번호 암호화 후 비교하기
 		
 		LoginVO login = new LoginVO();
-		login.setUserid(vo.getUserid());
-		
-		
-		log.info("회원수정 vo"+vo);
+		login.setUserid(vo.getUserid());		
 		String encry = MemberSha256.encrypt(vo.getPasswdconfirm());
 		login.setCurrent_password(encry);
 		
-		log.info("회원수정2");
+		//바꾸는 비밀번호 암호화 하기-서비스에서 함
+		//vo.setPasswdconfirm(MemberSha256.encrypt(vo.getPasswdconfirm()));
+	
 		if(regservice.loginMember(login)!=null) {
 
 			if(regservice.updateMember(vo)) {
