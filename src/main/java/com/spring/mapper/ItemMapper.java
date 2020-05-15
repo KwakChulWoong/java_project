@@ -2,6 +2,8 @@ package com.spring.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.spring.domain.AttachFileDTO;
 import com.spring.domain.Criteria;
 import com.spring.domain.ItemCriteria;

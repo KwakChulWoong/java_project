@@ -60,7 +60,7 @@ public class MyPageController {
 			log.info("3번쨰");
 			model.addAttribute("list", list);
 			log.info("3번쨰");
-			model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
+			//model.addAttribute("pageVO", new PageVO(cri, itemservice.mypagetotalRows(cri)));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
