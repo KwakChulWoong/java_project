@@ -240,16 +240,3 @@ function showImage(fileCallPath){
 <%@include file="../includes/footer.jsp" %>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> refs/remotes/origin/master
-     
