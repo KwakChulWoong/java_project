@@ -42,35 +42,35 @@ $(function(){
 	<div class="form-group row justify-content-center">
 		<label for="userid" class="col-sm-2 col-form-label">아이디</label>
 		<div class="col-sm-6">			
-			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요" value="${vo.userid}"/>
+			<input type="text" name="userid" id="userid" class="form-control" placeholder="아이디를 입력하세요" value="${vo.userid}" required/>
 			 <small id="userid" class="text-info"></small>	
 		</div>
 	</div>
 	<div class="form-group row justify-content-center">
 		<label for="pass1" class="col-sm-2 col-form-label">비밀번호</label>
 		<div class="col-sm-6">	
-			<input type="password" name="passwd" id = "passwd" class="form-control" placeholder="비밀번호를 입력하세요" />
+			<input type="password" name="passwd" id = "passwd" class="form-control" placeholder="비밀번호를 입력하세요" required/>
 			<small id="password" class="text-info"></small>	
 		</div>
 	</div>	
 	<div class="form-group row justify-content-center">
 		<label for="pass2" class="col-sm-2 col-form-label">비밀번호 확인 </label>
 		<div class="col-sm-6">	
-			<input type="password" name="passwdconfirm" id = "passwdconfirm" class="form-control" placeholder="비밀번호를 다시 입력하세요"/>
+			<input type="password" name="passwdconfirm" id = "passwdconfirm" class="form-control" placeholder="비밀번호를 다시 입력하세요" required/>
 			<small id="passwdconfirm" class="text-info"></small>
 		</div>	
 	</div>	
 	<div class="form-group row justify-content-center">
 		<label for="name" class="col-sm-2 col-form-label">이름 </label>
 		<div class="col-sm-6">	
-			<input type="text" name="name" id="name" class="form-control" placeholder="이름을 입력하세요" value="${vo.name}"/>
+			<input type="text" name="name" id="name" class="form-control" placeholder="이름을 입력하세요" value="${vo.name}" required/>
 			<small id="name" class="text-info"></small>
 		</div>	
 	</div>
 	<div class="form-group row justify-content-center">
 		<label for = "address" class="col-sm-2 col-form-label">주소</label>
 		<div class="col-sm-6">	
-			<input type="text" name="address" id="address" class="form-control" placeholder="서울시 노원구" value="${vo.address}"/>	
+			<input type="text" name="address" id="address" class="form-control" placeholder="서울시 노원구" value="${vo.address}" required/>	
 			<small id="address" class="text-info"></small>		
 		</div>	
 	</div>
@@ -89,7 +89,7 @@ $(function(){
 	<div class="form-group row justify-content-center">
 		<label for = "email" class="col-sm-2 col-form-label">이메일</label>
 		<div class="col-sm-6">	
-			<input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" value="${vo.email}"/>	
+			<input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" value="${vo.email}" required/>	
 			<small id="email" class="text-info"></small>		
 		</div>	
 	</div>
